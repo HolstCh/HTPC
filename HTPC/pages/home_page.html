@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="../styles/home_page.css">
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-gray-900">
+        <div class="flex-navbar flex-nav-items navbar-text">
+            <a class="px-4" href="#Movies">Movies & TV</a>
+            <a class="px-4" href="#contact">Music</a>
+            <a class="px-4" href="#contact">Videos</a>
+        </div>
+    </header>
+    <section class="content-container responsive-width">
+        <h1 class="text-4xl py-5 content-title">Recommended Movies</h1>
+        <div class="content space-x-8">
+            <div class="arrow left-arrow" id="left-arrow1">&#9664;</div>
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <div class="arrow right-arrow" id="right-arrow1">&#9654;</div>
+        </div>
+    </section>
+    <section class="content-container responsive-width">
+        <h1 class="text-4xl py-5 content-title">Recommended Movies</h1>
+        <div class="content space-x-8">
+            <div class="arrow left-arrow" id="left-arrow2">&#9664;</div>
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <div class="arrow right-arrow" id="right-arrow2">&#9654;</div>
+        </div>
+    </section>
+    <section class="content-container responsive-width">
+        <h1 class="text-4xl py-5 content-title">Recommended Movies</h1>
+        <div class="content space-x-8">
+            <div class="arrow left-arrow" id="left-arrow3">&#9664;</div>
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/3.jpeg" alt="Movie 1">
+            <img src="../images/1.jpg" alt="Movie 2">
+            <img src="../images/2.jpg" alt="Movie 3">
+            <img src="../images/3.jpeg" alt="Movie 4">
+            <img src="../images/1.jpg" alt="Movie 5">
+            <img src="../images/2.jpg" alt="Movie 6">
+            <div class="arrow right-arrow" id="right-arrow3">&#9654;</div>
+        </div>
+    </section>
+    <script>
+        const content = document.querySelector('.content');
+        const leftArrow1 = document.getElementById('left-arrow1');
+        const rightArrow1 = document.getElementById('right-arrow1');
+        const leftArrow2 = document.getElementById('left-arrow2');
+        const rightArrow2 = document.getElementById('right-arrow2');
+        const leftArrow3 = document.getElementById('left-arrow3');
+        const rightArrow3 = document.getElementById('right-arrow3');
+
+        leftArrow1.addEventListener('click', () => {
+            content.scrollLeft -= 200; // Adjust the scroll distance as needed
+        });
+
+        rightArrow1.addEventListener('click', () => {
+            content.scrollLeft += 200; // Adjust the scroll distance as needed
+        });
+
+        leftArrow2.addEventListener('click', () => {
+            content.scrollLeft -= 200; // Adjust the scroll distance as needed
+        });
+
+        rightArrow2.addEventListener('click', () => {
+            content.scrollLeft += 200; // Adjust the scroll distance as needed
+        });
+
+        leftArrow3.addEventListener('click', () => {
+            content.scrollLeft -= 200; // Adjust the scroll distance as needed
+        });
+
+        rightArrow3.addEventListener('click', () => {
+            content.scrollLeft += 200; // Adjust the scroll distance as needed
+        });
+    </script>
+</body>
+</html>
