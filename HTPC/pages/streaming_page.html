@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="../styles/streaming_page.css">
+</head>
+<body>
+    <video controls="controls">
+        <source src="../videos/Barbie_trailer.mp4" type="video/mp4"/>
+    </video>
+    <h1>You're watching: Barbie</h1>
+    <h2>• Adventure • Comedy • Fantasy</h2>
+    <div class="flex-container">
+        <div><h3>Rate it: </h3></div>
+        <div class="flex-container" >
+            <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
+            <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
+            <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
+            <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
+            <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
+        </div>
+    </div>
+
+    <p>Barbie and Ken are having the time of their
+        lives in the colorful and seemingly perfect world of Barbie Land.
+        However, when they get a chance to go to the real world, they soon discover
+        the joys and perils of living among humans.</p>
+
+    <script>
+
+
+        const star1= document.getElementById('star 1');
+        const star2 = document.getElementById('star 2');
+        const star3 = document.getElementById('star 3');
+        const star4 = document.getElementById('star 4');
+        const star5 = document.getElementById('star 5');
+
+        star1.addEventListener('click', () => {
+            if(star1.src === "../images/star_filled.jpg"){
+               unfillRating();
+            }
+            else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_unfilled.jpg"
+                star3.src = "../images/star_unfilled.jpg"
+                star4.src = "../images/star_unfilled.jpg"
+                star5.src = "../images/star_unfilled.jpg"
+            }
+        });
+
+        star2.addEventListener('click', () => {
+            if(star2.src === "../images/star_filled.jpg"){
+                unfillRating();
+            } 
+            else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_filled.jpg"
+                star3.src = "../images/star_unfilled.jpg"
+                star4.src = "../images/star_unfilled.jpg"
+                star5.src = "../images/star_unfilled.jpg"
+            }
+        });
+
+        star3.addEventListener('click', () => {
+            if(star3.src === "../images/star_filled.jpg"){
+                unfillRating();
+            } 
+            else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_filled.jpg"
+                star3.src = "../images/star_filled.jpg"
+                star4.src = "../images/star_unfilled.jpg"
+                star5.src = "../images/star_unfilled.jpg"     
+            }
+        });
+
+       star4.addEventListener('click', () => {
+           if(star4.src === "../images/star_filled.jpg"){
+               unfillRating();
+           }
+           else{
+               star1.src = "../images/star_filled.jpg"
+               star2.src = "../images/star_filled.jpg"
+               star3.src = "../images/star_filled.jpg"
+               star4.src = "../images/star_filled.jpg"
+               star5.src = "../images/star_unfilled.jpg"
+           }
+        });
+
+        star5.addEventListener('click', () => {
+            if(star5.src === "../images/star_filled.jpg"){
+                unfillRating();
+            } 
+           else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_filled.jpg"
+                star3.src = "../images/star_filled.jpg"
+                star4.src = "../images/star_filled.jpg"
+                star5.src = "../images/star_filled.jpg"
+            }
+        });
+
+        function unfillRating(){
+            star1.src = "../images/star_unfilled.jpg"
+            star2.src = "../images/star_unfilled.jpg"
+            star3.src = "../images/star_unfilled.jpg"
+            star4.src = "../images/star_unfilled.jpg"
+            star5.src = "../images/star_unfilled.jpg"
+        }
+    </script>
+
+</body>
+</html>
