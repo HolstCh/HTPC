@@ -2,7 +2,6 @@ header{
     position: -webkit-sticky; /* first two lines make navbar stay in same position while scrolling across different browsers */
     position: sticky;
     top: 0; /* stick to top of viewport */
-    z-index: 10; /* for stacking navbar over Landing component */
 }
 
 /* mobile first approach, organize flex items by col on mobile, then by row if on larger screen */
@@ -10,9 +9,7 @@ header{
     display: flex; /* use flexbox for responsive navbar */
     flex-wrap: nowrap;
     flex-direction: row;
-    padding: 1.25rem;
     align-items: center;
-    overflow: hidden;
 }
 
 /* mobile first approach, organize flex items by row if on larger screen */
@@ -26,7 +23,7 @@ header{
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: white;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
     margin-left: 1.75rem;
 }
 
@@ -132,35 +129,39 @@ body, html {
 .user-profile {
     position: relative;
     display: inline-block;
-    z-index: 100;
 }
 
 .user-profile i {
     font-size: 4rem;
     border-radius: 50%;
-    margin-left: 24rem;
-
+    margin-left: 21.5rem;
 }
 
 /* Style the overlay */
 .overlay {
     position: absolute;
     top: 100%;
-    width: 150px;
+    width: 50%;
     background-color: #333;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 2rem;
     display: none;
-    margin-left: 21.5rem;
-    z-index: 200;
+    margin-left: 18rem;
+    z-index: 20;
+}
+
+.overlay a:hover{
+    color: #2b48e3;
 }
 
 /* Style the overlay links */
 .overlay a {
     display: block;
-    padding: 10px;
+    margin-right: 0.8rem;
+    padding: 0.5rem;
     text-decoration: none;
     color: #fff;
+    text-wrap: normal;
 }
 
 /* Show the overlay on hover */

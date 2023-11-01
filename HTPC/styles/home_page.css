@@ -55,14 +55,12 @@ header {
     border-color:#111827;
     border-width: 2rem;
     width: 90%;
-    z-index: 1;
 }
 
 .content-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: white;
-    z-index: 1;
 }
 
 .content {
@@ -72,7 +70,7 @@ header {
     justify-content:space-between;
     align-items: center;
     flex-direction: row;
-    z-index: 1;
+    z-index: 0;
 }
 
 .content img {
@@ -89,22 +87,27 @@ header {
     padding: 1rem;
     background: white;
     color: white;
+    z-index: 0;
 }
 
 .left-arrow {
     left: 0;
     background: #15267c;
+    z-index: 0;
 }
 
 .right-arrow {
     right: 0;
     background:  #15267c;
+    z-index: 0;
 }
 
 .right-arrow:hover{
     background: #2b48e3;
+    z-index: 0;
 }
 
 .left-arrow:hover{
     background: #2b48e3;
+    z-index: 0;
 }
