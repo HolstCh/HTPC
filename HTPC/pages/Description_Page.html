@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Description</title>
+    <style>
+       /* css style */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #111;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .movie-info {
+            flex: 1;
+            padding: 20px;
+        }
+        .movie-info h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .movie-info p {
+            font-size: 18px;
+        }
+        .movie-poster {
+            flex: 1;
+            max-width: 50%;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        .rating {
+            display: flex;
+        }
+        .rating .star {
+            color: gold;
+            font-size: 24px; /* Increase the size of stars */
+        }
+        .categories {
+            display: flex;
+            margin-top: 20px;
+        }
+        .category-box {
+            flex: 1;
+            padding: 5px; /* Decrease the padding for smaller boxes */
+            text-align: center;
+            background-color: #212121;
+            border: 1px solid #555;
+            margin: 0 5px;
+        }
+        .category-title {
+            font-size: 14px; /* Decrease the font size of category titles */
+            margin-bottom: 5px; /* Decrease the margin */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="movie-info">
+            <h1>Spider-Man: Across the Spider-Verse</h1>
+            <p>
+                Miles Morales is juggling his life between being a high school student and being Spider-Man.
+                When Wilson "Kingpin" Fisk uses a super collider, others from across the Spider-Verse are transported to this dimension.
+            </p>
+            <div class="rating">
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div>
+                <div class="star">&#9733;</div> <!-- All stars filled -->
+            </div>
+            <div class="categories">
+                <div class="category-box">
+                    <h2 class="category-title">Action</h2>
+                </div>
+                <div class="category-box">
+                    <h2 class="category-title">Animation</h2>
+                </div>
+                <div class="category-box">
+                    <h2 class="category-title">Superhero</h2>
+                </div>
+            </div>
+        </div>
+        <div class="movie-poster">
+            <img src="https://m.media-amazon.com/images/M/MV5BZmJhYjk1YTktZDVjZi00MDYwLWI3YTUtZDgxZDFlYjVkYjljXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" alt="Spider-Man: Across the Spider-Verse Poster">
+        </div>
+    </div>
+</body>
+</html>
