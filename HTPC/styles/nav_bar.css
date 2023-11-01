@@ -5,13 +5,6 @@ header{
     z-index: 10; /* for stacking navbar over Landing component */
 }
 
-footer{
-    position: -webkit-sticky; /* first two lines make navbar stay in same position while scrolling across different browsers */
-    position: sticky;
-    bottom: 0; /* stick to top of viewport */
-    z-index: 10; /* for stacking navbar over Landing component */
-}
-
 /* mobile first approach, organize flex items by col on mobile, then by row if on larger screen */
 .flex-navbar{
     display: flex; /* use flexbox for responsive navbar */
