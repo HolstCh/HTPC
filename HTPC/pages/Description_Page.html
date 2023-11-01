@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Movie Description</title>
     <style>
-       /* css style */
+        /* CSS styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #111;
@@ -12,6 +13,7 @@
             margin: 0;
             padding: 0;
         }
+
         .container {
             display: flex;
             justify-content: space-between;
@@ -19,57 +21,98 @@
             margin: 0 auto;
             padding: 20px;
         }
+
         .movie-info {
             flex: 1;
             padding: 20px;
         }
+
         .movie-info h1 {
             font-size: 32px;
             margin-bottom: 10px;
         }
+
         .movie-info p {
             font-size: 18px;
         }
+
         .movie-poster {
             flex: 1;
             max-width: 50%;
         }
+
         img {
             max-width: 100%;
             height: auto;
         }
+
         .rating {
             display: flex;
         }
+
         .rating .star {
             color: gold;
-            font-size: 24px; /* Increase the size of stars */
+            font-size: 24px;
         }
+
         .categories {
             display: flex;
             margin-top: 20px;
         }
+
         .category-box {
             flex: 1;
-            padding: 5px; /* Decrease the padding for smaller boxes */
+            padding: 5px;
             text-align: center;
             background-color: #212121;
             border: 1px solid #555;
             margin: 0 5px;
         }
+
         .category-title {
-            font-size: 14px; /* Decrease the font size of category titles */
-            margin-bottom: 5px; /* Decrease the margin */
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        /* Add styles for the "Add to Watch List" dropdown button */
+
+        .watchlist {
+            margin-top: 10px;
+            position: absolute;
+            top: 330px;
+            /* Adjust this value for the desired vertical position */
+            right: 1113px;
+            /* Adjust this value for the desired horizontal position */
+            width: 200px;
+            /* Set the width to your desired value */
+            height: 50px;
+            /* Set the height to your desired value */
+        }
+
+        label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        #watchlist-dropdown {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgb(0, 0, 0);
+            background-color: #2696a2;
+            color: #fff;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="movie-info">
             <h1>Spider-Man: Across the Spider-Verse</h1>
             <p>
                 Miles Morales is juggling his life between being a high school student and being Spider-Man.
-                When Wilson "Kingpin" Fisk uses a super collider, others from across the Spider-Verse are transported to this dimension.
+                When Wilson "Kingpin" Fisk uses a super collider, others from across the Spider-Verse are transported to
+                this dimension.
             </p>
             <div class="rating">
                 <div class="star">&#9733;</div>
@@ -90,9 +133,20 @@
                 </div>
             </div>
         </div>
+        <!-- Add the "Add to Watch List" dropdown button below the categories -->
+        <div class="watchlist">
+            <label for="watchlist-dropdown">Add to Watch List:</label>
+            <select id="watchlist-dropdown">
+                <option value="not-added">Not Added</option>
+                <option value="added">Added</option>
+            </select>
+        </div>
         <div class="movie-poster">
-            <img src="https://m.media-amazon.com/images/M/MV5BZmJhYjk1YTktZDVjZi00MDYwLWI3YTUtZDgxZDFlYjVkYjljXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg" alt="Spider-Man: Across the Spider-Verse Poster">
+            <img src="https://m.media-amazon.com/images/M/MV5BZmJhYjk1YTktZDVjZi00MDYwLWI3YTUtZDgxZDFlYjVkYjljXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg"
+                alt="Spider-Man: Across the Spider-Verse Poster">
         </div>
     </div>
+
 </body>
+
 </html>
