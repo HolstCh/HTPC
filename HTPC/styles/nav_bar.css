@@ -30,6 +30,10 @@ header{
     margin-left: 1.75rem;
 }
 
+a:hover {
+    color: #0459f8;
+}
+
 @media (min-width: 768px) {
     .navbar-text {
         margin-bottom: 0; /* Override margin for larger screens, equivalent to md:mb-0 */
@@ -40,10 +44,8 @@ header{
     font-size: 1.25rem; /* Equivalent to md:text-xl in Tailwind CSS */
     margin-right: auto; /* Equivalent to md:mr-auto in Tailwind CSS */
     margin-left: 1rem; /* Equivalent to md:ml-4 in Tailwind CSS */
-    padding-top: 0.25rem; /* Equivalent to md:py-1 in Tailwind CSS */
+    padding-top: 0.6rem; /* Equivalent to md:py-1 in Tailwind CSS */
     padding-left: 1rem; /* Equivalent to md:pl-4 in Tailwind CSS */
-    margin-right: 0.75rem; /* Equivalent to mr-3 in Tailwind CSS */
-    font-size: 0.92rem; /* Equivalent to text-base in Tailwind CSS */
 }
 
 @media (min-width: 768px) {
@@ -56,4 +58,124 @@ header{
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Reset some default styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the search container */
+.search-container {
+    display: flex;
+    margin-left: 5rem;
+}
+
+/* Style the search field */
+.search-field {
+    display: flex;
+    border: 3px solid #626060;
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Style the search input */
+#search {
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+/* Style the search button */
+#search-button {
+    background-color:#15267c;
+    color: #fff;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#search-button:hover {
+    background-color: #2b48e3;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .search-field {
+        flex-direction: column;
+    }
+
+    #search {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #search-button {
+        border-radius: 5px;
+    }
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Style the user profile container */
+.user-profile {
+    position: relative;
+    display: inline-block;
+    z-index: 100;
+}
+
+.user-profile i {
+    font-size: 4rem;
+    border-radius: 50%;
+    margin-left: 24rem;
+
+}
+
+/* Style the overlay */
+.overlay {
+    position: absolute;
+    top: 100%;
+    width: 150px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    display: none;
+    margin-left: 21.5rem;
+    z-index: 200;
+}
+
+/* Style the overlay links */
+.overlay a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Show the overlay on hover */
+.user-profile:hover .overlay {
+    display: block;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 768px) {
+    .user-icon {
+        font-size: 30px; /* Adjust the font size for smaller screens */
+    }
+
+    .overlay {
+        right: 0; /* Adjust the positioning for smaller screens */
+        width: auto; /* Let the overlay size itself based on content */
+    }
 }

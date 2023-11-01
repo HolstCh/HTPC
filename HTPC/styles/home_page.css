@@ -47,20 +47,22 @@ header {
 }
 
 .content-container {
-    background: #4b4b4b;
+    background: #444444;
     border-radius: 5rem;
     text-align: center;
     padding-bottom: 5rem;
     margin-left: 4rem;
     border-color:#111827;
     border-width: 2rem;
-    width: 90%
+    width: 90%;
+    z-index: 1;
 }
 
 .content-title {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: white;
+    z-index: 1;
 }
 
 .content {
@@ -70,6 +72,7 @@ header {
     justify-content:space-between;
     align-items: center;
     flex-direction: row;
+    z-index: 1;
 }
 
 .content img {
@@ -90,10 +93,18 @@ header {
 
 .left-arrow {
     left: 0;
-    background: #2b48e3;
+    background: #15267c;
 }
 
 .right-arrow {
     right: 0;
+    background:  #15267c;
+}
+
+.right-arrow:hover{
+    background: #2b48e3;
+}
+
+.left-arrow:hover{
     background: #2b48e3;
 }
