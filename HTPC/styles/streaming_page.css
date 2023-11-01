@@ -1,0 +1,42 @@
+body{
+    background-color: #111827;
+}
+h1{
+    color: white;
+    font-size:400%;
+    font-family: 'Roboto', sans-serif;
+}
+h2{
+    color: white;
+    font-size:400%;
+    font-family: 'Roboto', sans-serif;
+}
+h3{
+    color: white;
+    font-size:400%;
+    font-family: 'Roboto', sans-serif;
+}
+p{
+    color: white;
+    font-size:400%;
+    font-family: 'Roboto', sans-serif;
+}
+.flex-container {
+    display: flex;
+    background-color:#111827;
+    min-height: 0;
+}
+.nowrap {
+    flex-wrap: nowrap;
+}
+img{
+    background-color:#111827;
+    background-size: cover;
+}
+button{
+    background-color:#111827;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
