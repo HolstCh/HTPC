@@ -1,6 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color: #111827;
 }
 
 .subscription {
@@ -20,11 +21,13 @@ body {
     margin-top: 20px;
     margin-bottom: 20px;
     font-size: 35px;
+    color: white;
 }
 
 .card {
     border: 5px solid black;
     padding-bottom: 2%;
+    background-color: #E4E6EE;
 }
 
 .card-img-top {
@@ -55,14 +58,14 @@ button {
 }
 
 .add{
-    margin: auto;
     text-align: center;
     border-color: #04AA6D;
-    color:green 
+    background-color: #04AA6D;
+    color: white;
 }
 
 .add:hover{
-    background-color: #04AA6D;
+    background-color: green;
     color: white;
 }
 

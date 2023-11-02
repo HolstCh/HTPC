@@ -1,6 +1,8 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
+    background-color:#111827;
+
 }
 
 .subscription {
@@ -18,7 +20,12 @@ body {
 
 #no_sub_text {
     padding-right: 10px;
+    color: white;
 
+}
+
+h1 {
+    color: white;
 }
 
 .manage_subscriptions{
@@ -47,14 +54,15 @@ button {
 .add{
     text-align: center;
     border-color: #04AA6D;
-    color:green 
-}
-
-.add:hover{
     background-color: #04AA6D;
     color: white;
 }
 
-#test {
-    margin-top: 8px;
+.add:hover{
+    background-color: green;
+    color: white;
+}
+
+.div {
+    padding-top: 8px;
 }
