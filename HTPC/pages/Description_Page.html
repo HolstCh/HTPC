@@ -8,7 +8,7 @@
         /* CSS styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #111;
+            background-color: #11194f;
             color: #fff;
             margin: 0;
             padding: 0;
@@ -45,6 +45,7 @@
             max-width: 100%;
             height: auto;
         }
+        
 
         .rating {
             display: flex;
@@ -52,7 +53,7 @@
 
         .rating .star {
             color: gold;
-            font-size: 24px;
+            font-size: 35px;
         }
 
         .categories {
@@ -64,8 +65,8 @@
             flex: 1;
             padding: 5px;
             text-align: center;
-            background-color: #212121;
-            border: 1px solid #555;
+            background-color: #303034;
+            border: 2px solid #555;
             margin: 0 5px;
         }
 
@@ -74,12 +75,34 @@
             margin-bottom: 5px;
         }
 
-        /* Add styles for the "Add to Watch List" dropdown button */
+        .amazonicon {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 450px;
+            right: 1050px;
+        }
+
+        .appletvicon {
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 430px;
+            right: 895px;
+        }
+
+        .googleplayicon {
+            width: 115px;
+            height: 115px;
+            position: absolute;
+            top: 440px;
+            right: 770px;
+        }
 
         .watchlist {
             margin-top: 10px;
             position: absolute;
-            top: 330px;
+            top: 340px;
             /* Adjust this value for the desired vertical position */
             right: 1113px;
             /* Adjust this value for the desired horizontal position */
@@ -102,6 +125,16 @@
             background-color: #2696a2;
             color: #fff;
         }
+
+        .appsList {
+            font-size: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+            position: absolute;
+            top: 465px;
+            right: 1188px;
+        }
+
     </style>
 </head>
 
@@ -133,6 +166,18 @@
                 </div>
             </div>
         </div>
+
+        <div class="amazonicon">
+            <img src="../images/amazonicon.png" alt="Icon 1">
+        </div>
+
+        <div class="appletvicon">
+            <img src="../images/appletv.png" alt="Icon 2">
+        </div>
+
+        <div class="googleplayicon">
+            <img src="../images/googleplayicon.png" alt="Icon 3">
+        </div>
         <!-- Add the "Add to Watch List" dropdown button below the categories -->
         <div class="watchlist">
             <label for="watchlist-dropdown">Add to Watch List:</label>
@@ -141,6 +186,11 @@
                 <option value="added">Added</option>
             </select>
         </div>
+
+        <div class="appsList">
+            <h1>Available On: </h1>
+        </div>
+
         <div class="movie-poster">
             <img src="https://m.media-amazon.com/images/M/MV5BZmJhYjk1YTktZDVjZi00MDYwLWI3YTUtZDgxZDFlYjVkYjljXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg"
                 alt="Spider-Man: Across the Spider-Verse Poster">

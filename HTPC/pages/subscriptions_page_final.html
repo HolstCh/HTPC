@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="../styles/subscriptions.css">
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header class="bg-slate-900">
+        <div class="flex-navbar flex-nav-items navbar-text">
+            <a class="px-4 py-3" href="#Movies">Movies & TV</a>
+            <a class="px-4 py-3" href="#contact">Music</a>
+            <a class="px-4 py-3" href="#contact">Videos</a>
+            <div class="user-profile">
+                <div class="overlay">
+                    <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
+            </div>
+        </div>
+        <br>
+        <br>
+    <h1 class = "manage_subscriptions" body color="#111827">Manage Your Subscriptions</h1>
+    <div class = 'flex-container'>
+<!-- from https://getbootstrap.com/docs/4.0/components/card/ -->
+        <div class="card-subscribe" style="width: 18rem;" border-width = "thick">
+            <div class="card-header">
+                Subscribed <br> Current plan: $10/month 
+              </div>
+            <hr class = "horizontal_line">
+            <img class="card-img-top" src="../images/netflix.png" alt="Netflix">
+            <hr class = 'horizontal_line'>
+            <div class="card-body">
+                <h5 class="card-title">Netflix</h5>
+                <hr class = 'horizontal_line'>
+                <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription </a>
+                <button class="btn btn-exit">Unsubscribe</a>
+            </div>
+        </div>
+        <div class="card-primary" style="width: 18rem;" border-width = "thick">
+            <div class="card-header">
+                Primary Subscribed <br> Current plan: $5/month
+              </div>
+            <hr class = "horizontal_line">
+            <img class="card-img-top" src="../images/amazonicon.png" alt="Prime Video">
+            <hr class = 'horizontal_line'>
+            <div class="card-body">
+                <h5 class="card-title">Prime Video</h5>
+                <hr class = 'horizontal_line'>
+                <button class="btn btn-remove-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Remove as Primary Subscription </a>                
+                <button class="btn btn-exit">Unsubscribe</a>
+            </div>
+        </div>
+        <div class="card-unsubscribe" style="width: 18rem;" border-width = "thick">
+            <div class="card-header">
+                Unsubscribed <br> No Current Plan
+              </div>
+            <hr class = "horizontal_line">
+            <img class="card-img-top" src="../images/disneyplus.png" alt="DisneyPlus">
+            <hr class = 'horizontal_line'>
+            <div class="card-body">
+                <h5 class="card-title">Disney Plus</h5>
+                <hr class = 'horizontal_line'>
+                <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription </a>
+                <button class="btn btn-subscribe">Subscribe </a>
+            </div>
+        </div>
+    </div>
+    <div class = 'flex-container'>
+        <!-- from https://getbootstrap.com/docs/4.0/components/card/ -->
+        <div class="card-primary" style="width: 18rem;" border-width = "thick">
+            <div class="card-header">
+                Primary Subscribed <br> Current Plan: $10/month 
+                </div>
+            <hr class = "horizontal_line">
+            <img class="card-img-top" src="../images/spotify.png" alt="Spotify">
+            <hr class = 'horizontal_line'>
+            <div class="card-body">
+                <h5 class="card-title">Spotify</h5>
+                <hr class = 'horizontal_line'>
+                <button class="btn btn-remove-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Remove as Primary Subscription </a>                
+                <button class="btn btn-exit">Unsubscribe</a>
+            </div>
+        </div>
+        <div class="card-subscribe" style="width: 18rem;" border-width = "thick">
+            <div class="card-header">
+                Subscribed <br> Current Plan: $13/month
+                </div>
+            <hr class = "horizontal_line">
+            <img class="card-img-top" src="../images/youtube.webp" alt="youtube">
+            <hr class = 'horizontal_line'>
+            <div class="card-body">
+                <h5 class="card-title">YouTube</h5>
+                <hr class = 'horizontal_line'>
+                <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription</a>
+                <button class="btn btn-exit">Unsubscribe</a>
+            </div>
+        </div>
+        <div class="card-unsubscribe" style="width: 18rem;" border-width = "thick">
+            <div class="card-header">
+                Unsubscribed <br> No Current Plan
+                </div>
+            <hr class = "horizontal_line">
+            <img class="card-img-top" src="../images/soundcloud.png" alt="SoundCloud" >
+            <hr class = 'horizontal_line'>
+            <div class="card-body">
+                <h5 class="card-title">SoundCloud</h5>
+                <hr class = 'horizontal_line'>
+                <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription </a>
+                <button class="btn btn-subscribe">Subscribe </a>
+            </div>
+        </div>
+    </div>
+        <div class = 'flex-container-video'>
+            <!-- from https://getbootstrap.com/docs/4.0/components/card/ -->
+            <div class="card-unsubscribe" style="width: 18rem;" border-width = "thick">
+                <div class="card-header">
+                    Unsubscribed <br> No Current Plan
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/twitch.png" alt="twitch">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Twitch</h5>
+                    <hr class = 'horizontal_line'>
+                    <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription </a>
+                    <button class="btn btn-subscribe">Subscribe </a>
+                </div>
+            </div>
+            <div class="card-subscribe" style="width: 18rem;" border-width = "thick">
+                <div class="card-header">
+                    Subscribed <br> Current Plan: $13/month 
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/appletv.png" alt="appletv">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Apple TV</h5>
+                    <hr class = 'horizontal_line'>
+                    <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription</a>
+                    <button class="btn btn-exit">Unsubscribe</a>
+                </div>
+            </div>
+            <div class="card-subscribe" style="width: 18rem;" border-width = "thick">
+                <div class="card-header">
+                    Subscribed <br> Current Plan: $8/month 
+                    </div>
+                <hr class = "horizontal_line">
+                <img class="card-img-top" src="../images/hulu-icon.webp" alt="hulu-icon">
+                <hr class = 'horizontal_line'>
+                <div class="card-body">
+                    <h5 class="card-title">Hulu</h5>
+                    <hr class = 'horizontal_line'>
+                    <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription </a>
+                    <button class="btn btn-exit">Unsubscribe</a>
+                </div>
+            </div>
+        </div>
+</body>
