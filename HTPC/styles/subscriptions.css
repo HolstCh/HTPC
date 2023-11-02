@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #111827;
+}
+
+.subscription {
+    margin: 20px auto;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.flex-container-music {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.flex-container-video {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+.manage_subscriptions{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 35px;
+    color: white;
+}
+
+.card {
+    border: 5px solid black;
+    padding-bottom: 2%;
+    background-color: #E4E6EE;
+}
+
+.card-img-top {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%
+}
+
+.card-title {
+    font-size: 25px;
+}
+
+.card-body {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+button {
+    background-color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+#test {
+    padding-top: 8px;
+}
+
+.add{
+    text-align: center;
+    border-color: #04AA6D;
+    background-color: #04AA6D;
+    color: white;
+}
+
+.add:hover{
+    background-color: green;
+    color: white;
+}
+
+.btn-primary {
+    margin-top: 22px;
+    margin-bottom: 12px;
+    background-color: white;
+    padding: 5px 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: left;
+    border-color: #04AA6D;
+    color:green  
+}
+
+.btn-primary:hover{
+    background-color: #04AA6D;
+    color: white;
+}
+
+.btn-exit {
+    margin-top: 12px;
+    background-color: white;
+    padding: 5px 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: left;
+    border-color: red;
+    color:red  
+}
+
+.btn-exit:hover {
+    color: white;
+    background-color: red;
+}
+
+.horizontal_line {
+    position: relative;
+    height: 2px;
+    background: black;
+
+}
