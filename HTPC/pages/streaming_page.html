@@ -7,36 +7,50 @@
     <link rel="stylesheet" href="../styles/streaming_page.css">
 </head>
 <body>
-    <video controls="controls">
-        <source src="../videos/Barbie_trailer%20.mp4" type="video/mp4"/>
-    </video>
-    <h1>You're watching: Barbie</h1>
-    <h2>• Adventure • Comedy • Fantasy</h2>
-    <div class="flex-container">
-        <div><h3>Rate it: </h3></div>
-        <div class="flex-container" >
-            <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
-            <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
-            <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
-            <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
-            <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
+    <div class="w3-container">
+        <video controls="controls">
+            <source src="../videos/Barbie_trailer%20.mp4" type="video/mp4"/>
+        </video>
+        <div class="flex-container">
+            <div> <h1>You're watching: Barbie</h1></div>
+            <div> <button id="list_button">Add to list +</button></div>
         </div>
+        <h2>• Adventure • Comedy • Fantasy</h2>
+        <div class="flex-container">
+            <div><h3>Rate it: </h3></div>
+            <div class="flex-container" >
+                <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
+                <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
+                <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
+                <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
+                <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
+            </div>
+        </div>
+
+        <p>Barbie and Ken are having the time of their
+            lives in the colorful and seemingly perfect world of Barbie Land.
+            However, when they get a chance to go to the real world, they soon discover
+            the joys and perils of living among humans.</p>
     </div>
-
-    <p>Barbie and Ken are having the time of their
-        lives in the colorful and seemingly perfect world of Barbie Land.
-        However, when they get a chance to go to the real world, they soon discover
-        the joys and perils of living among humans.</p>
-
     <script>
 
-
+        const list_button=document.getElementById("list_button");
         const star1= document.getElementById('star 1');
         const star2 = document.getElementById('star 2');
         const star3 = document.getElementById('star 3');
         const star4 = document.getElementById('star 4');
         const star5 = document.getElementById('star 5');
 
+        list_button.addEventListener('click', () => {
+            if(list_button.textContent==="Added to list"){
+                list_button.textContent="Add to list +";
+            }
+            else {
+                list_button.textContent = "Added to list";
+                list_button.style.backgroundColor = ""
+            }
+
+        });
         star1.addEventListener('click', () => {
             if(star1.src === "../images/star_filled.jpg"){
                unfillRating();
