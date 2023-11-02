@@ -10,85 +10,59 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <header class="bg-gray-900">
+    <header class="bg-slate-900">
         <div class="flex-navbar flex-nav-items navbar-text">
-            <a class="px-4" href="#Movies">Movies & TV</a>
-            <a class="px-4" href="#contact">Music</a>
-            <a class="px-4" href="#contact">Videos</a>
+            <a class="px-4 py-3" href="#Movies">Movies & TV</a>
+            <a class="px-4 py-3" href="#contact">Music</a>
+            <a class="px-4 py-3" href="#contact">Videos</a>
+            <div class="search-container">
+                <div class="search-field">
+                    <input style="color: black" type="text" id="search" placeholder="Spider-Man">
+                    <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="overlay">
+                    <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
+            </div>
         </div>
+        <br>
+        <br>
     </header>
-    <section class="content-container responsive-width">
-        <h1 class="text-4xl py-5 content-title">Recommended Movies</h1>
-        <div class="content space-x-8">
+    <section class="content-container">
+        <h1 class="text-4xl py-5 content-title">Recommended Movies & Shows For You</h1>
+        <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow1">&#9664;</div>
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/Spider-Man.jpeg" alt="Movie 1">
+            <img src="../images/Guardians_of_the_Galaxy_Vol._3_poster.jpg" alt="Movie 2">
+            <img src="../images/John%20Wick%20Chapter%204.jpg" alt="Movie 3">
+            <img src="../images/Super%20Mario%20Bros%20Movie.jpg" alt="Movie 4">
             <div class="arrow right-arrow" id="right-arrow1">&#9654;</div>
         </div>
     </section>
     <section class="content-container responsive-width">
-        <h1 class="text-4xl py-5 content-title">Recommended Movies</h1>
-        <div class="content space-x-8">
+        <h1 class="text-4xl py-5 content-title">Trending Movies & Shows For Everyone</h1>
+        <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow2">&#9664;</div>
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/Sound%20of%20freedom.jpg" alt="Movie 1">
+            <img src="../images/Oppenheimer.jpeg" alt="Movie 2">
+            <img src="../images/Avatar%202.jpg" alt="Movie 3">
+            <img src="../images/The%20Little%20Mermaid.jpg" alt="Movie 4">
             <div class="arrow right-arrow" id="right-arrow2">&#9654;</div>
         </div>
     </section>
     <section class="content-container responsive-width">
-        <h1 class="text-4xl py-5 content-title">Recommended Movies</h1>
-        <div class="content space-x-8">
+        <h1 class="text-4xl py-5 content-title">My Movies List</h1>
+        <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow3">&#9664;</div>
             <img src="../images/3.jpeg" alt="Movie 1">
             <img src="../images/1.jpg" alt="Movie 2">
             <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
-            <img src="../images/3.jpeg" alt="Movie 1">
-            <img src="../images/1.jpg" alt="Movie 2">
-            <img src="../images/2.jpg" alt="Movie 3">
-            <img src="../images/3.jpeg" alt="Movie 4">
-            <img src="../images/1.jpg" alt="Movie 5">
-            <img src="../images/2.jpg" alt="Movie 6">
+            <img src="../images/ant%20man%20and%20the%20wasp.jpg" alt="Movie 4">
             <div class="arrow right-arrow" id="right-arrow3">&#9654;</div>
         </div>
     </section>

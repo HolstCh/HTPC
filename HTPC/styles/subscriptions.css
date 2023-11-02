@@ -116,6 +116,40 @@ button {
     background-color: red;
 }
 
+.btn-subscribe {
+    margin-top: 12px;
+    background-color: white;
+    padding: 5px 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: left;
+    border-color: #04AA6D;
+    color:green  
+}
+
+.btn-subscribe:hover {
+    color: white;
+    background-color: green;
+}
+
+
+.btn-remove-primary {
+    margin-top: 22px;
+    margin-bottom: 12px;
+    background-color: white;
+    padding: 5px 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: left;
+    border-color: red;
+    color:red  
+}
+
+.btn-remove-primary:hover {
+    color: white;
+    background-color: red;
+}
+
 .horizontal_line {
     position: relative;
     height: 2px;
