@@ -3,7 +3,12 @@ header{
     position: sticky;
     top: 0; /* stick to top of viewport */
     z-index: 10; /* for stacking navbar over Landing component */
+    background: #4b4b4b;
+    color: white;
+    padding-top: 1rem;
+    text-align: center;
 }
+
 
 footer{
     position: -webkit-sticky; /* first two lines make navbar stay in same position while scrolling across different browsers */

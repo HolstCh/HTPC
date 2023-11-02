@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.subscription {
+    margin: 20px auto;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#no_sub_text {
+    padding-right: 10px;
+
+}
+
+.manage_subscriptions{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: white;
+    padding: 10px 20px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.add{
+    text-align: center;
+    border-color: #04AA6D;
+    color:green 
+}
+
+.add:hover{
+    background-color: #04AA6D;
+    color: white;
+}
+
+#test {
+    margin-top: 8px;
+}
