@@ -38,10 +38,24 @@ body {
     color: white;
 }
 
-.card {
+/* #E4E6EE is the original light gray color */
+
+.card-subscribe {
     border: 5px solid black;
     padding-bottom: 2%;
-    background-color: #E4E6EE;
+    background-color: #eb9752;
+}
+
+.card-unsubscribe {
+    border: 5px solid black;
+    padding-bottom: 2%;
+    background-color: #C83200;
+}
+
+.card-primary {
+    border: 5px solid black;
+    padding-bottom: 2%;
+    background-color: #46B2B4;
 }
 
 .card-img-top {
