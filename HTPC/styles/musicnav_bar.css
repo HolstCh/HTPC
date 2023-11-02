@@ -3,6 +3,7 @@ header{
     position: sticky;
     top: 0; /* stick to top of viewport */
     z-index: 1000;
+    
 }
 
 /* mobile first approach, organize flex items by col on mobile, then by row if on larger screen */
@@ -11,13 +12,16 @@ header{
     flex-wrap: nowrap;
     flex-direction: row;
     align-items: center;
+ /*   background-color: #244e43; */
 }
 
 /* mobile first approach, organize flex items by row if on larger screen */
 @media (min-width: 768px) {
     .flex-navbar {
         flex-direction: row;
+       /* background-color: #244e43; */
     }
+    
 }
 
 .navbar-text {
