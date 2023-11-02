@@ -30,6 +30,11 @@ button{
     margin-left: 2.5rem;
     margin-top: 2.5rem;
 }
+.w3-container{
+    width: 80vw;
+}
+
+
 .flex-container {
     display: flex;
     background-color:#111827;
