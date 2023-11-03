@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streamix</title>
+  <link rel="stylesheet" href="../styles/nav_bar.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+    .content-item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      background-color: #ddd;
+      border-radius: 3rem;
+    }
+
+    .app-status {
+      font-weight: bold;
+    }
+
+    .subscribed-apps, .unsubscribed-apps {
+      margin-top: 10px;
+    }
+
+    .content-image {
+      max-width: 100%;
+      cursor: pointer;
+    }
+    .app-image{
+      max-width: 20%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+<header class="bg-slate-900">
+  <div class="flex-navbar flex-nav-items navbar-text">
+    <a class="px-4 py-5" href="#Movies">Movies & TV</a>
+    <a class="px-4 py-5" href="#contact">Music</a>
+    <a class="px-4 py-5" href="#contact">Videos</a>
+    <div class="search-container">
+      <div class="search-field">
+        <input style="color: black" type="text" id="search-input" placeholder="Spider-Man">
+        <button type="submit" class="search-bar" id="search-button" onclick="searchContent()"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+    <div class="user-profile">
+      <div class="overlay">
+        <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+        <a href="#" class="settings-link text-xl">Account & Settings</a>
+        <a href="#" class="settings-link text-xl">Logout</a>
+      </div>
+      <i class="fa fa-user-circle-o user-profile"></i>
+    </div>
+  </div>
+  <br>
+  <br>
+</header>
+<div id="content-container">
+  <div class="results" id="search-results">
+    <!-- Search results will be displayed here -->
+  </div>
+</div>
+
+<script>
+  function searchContent() {
+    // You can implement the search functionality here and populate the results dynamically.
+    // For simplicity, we'll use dummy data for now.
+    const searchInput = document.getElementById('search-input').value;
+    const searchResults = document.getElementById('search-results');
+    searchResults.innerHTML = ''; // Clear previous results
+
+    // Dummy data (replace with real data from your database or API)
+    const dummyData = [
+      {
+        title: "Spider-Man: Across the Spider Verse",
+        type: "",
+        subscribedApps: [
+          { name: "App A", imageUrl: "../images/netflix.png" },
+          { name: "App C", imageUrl: "../images/amazonicon.png" }
+        ],
+        unsubscribedApps: [
+          { name: "App C", imageUrl: "../images/disneyplus.png" }
+        ],
+        imageUrl: "../images/Spider-Man.jpeg"
+      },
+    ];
+
+    dummyData.forEach(item => {
+      const resultItem = document.createElement('div');
+      resultItem.className = 'content-item';
+      const type = document.createElement('span');
+      type.innerText = item.type;
+      const title = document.createElement('span');
+      title.innerText = item.title;
+      const image = document.createElement('img');
+      image.className = 'content-image px-40';
+      image.src = item.imageUrl;
+      image.alt = item.title;
+      image.onclick = () => openContent(item.title); // Replace openContent with the desired action
+      const subscribedApps = document.createElement('div');
+      subscribedApps.className = 'subscribed-apps';
+      subscribedApps.innerHTML = '<strong>Subscribed Apps:</strong>';
+      item.subscribedApps.forEach(app => {
+        subscribedApps.innerHTML += `<img class="app-image" src="${app.imageUrl}" alt="${app.name}" title="${app.name}">`;
+      });
+      const unsubscribedApps = document.createElement('div');
+      unsubscribedApps.className = 'unsubscribed-apps';
+      unsubscribedApps.innerHTML = '<strong>Unsubscribed Apps:</strong>';
+      item.unsubscribedApps.forEach(app => {
+        unsubscribedApps.innerHTML += `<img class="app-image" src="${app.imageUrl}" alt="${app.name}" title="${app.name}">`;
+      });
+
+      resultItem.appendChild(type);
+      resultItem.appendChild(title);
+      resultItem.appendChild(image);
+      resultItem.appendChild(subscribedApps);
+      resultItem.appendChild(unsubscribedApps);
+
+      searchResults.appendChild(resultItem);
+    });
+  }
+
+  function openContent(title) {
+    // Implement the action to open the content when the image is clicked.
+    // You can use the 'title' parameter to identify the content.
+    alert(`Opening content: ${title}`);
+  }
+</script>
+</body>
+</html>

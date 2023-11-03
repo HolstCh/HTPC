@@ -136,9 +136,39 @@
         }
 
     </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/subscriptions.css">
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-
 <body>
+    <header class="bg-slate-900">
+        <div class="flex-navbar flex-nav-items navbar-text">
+            <a class="px-4 py-5" href="#Movies">Movies & TV</a>
+            <a class="px-4 py-5" href="#contact">Music</a>
+            <a class="px-4 py-5" href="#contact">Videos</a>
+            <div class="search-container">
+                <div class="search-field">
+                    <input style="color: black" type="text" id="search" placeholder="Spider-Man">
+                    <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="overlay">
+                    <a href="#" class="subscription-link text-xl">My Lists</a>
+                    <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
+            </div>
+        </div>
+        <br>
+        <br>
+    </header>
     <div class="container">
         <div class="movie-info">
             <h1>Spider-Man: Across the Spider-Verse</h1>
@@ -167,7 +197,7 @@
             </div>
         </div>
 
-        <div class="amazonicon">
+        <div class="amazonicon ">
             <img src="../images/amazonicon.png" alt="Icon 1">
         </div>
 
@@ -176,26 +206,25 @@
         </div>
 
         <div class="googleplayicon">
-            <img src="../images/googleplayicon.png" alt="Icon 3">
+            <img src="../images/netflix.png" alt="Icon 3">
         </div>
         <!-- Add the "Add to Watch List" dropdown button below the categories -->
-        <div class="watchlist">
-            <label for="watchlist-dropdown">Add to Watch List:</label>
-            <select id="watchlist-dropdown">
-                <option value="not-added">Not Added</option>
-                <option value="added">Added</option>
-            </select>
-        </div>
 
-        <div class="appsList">
-            <h1>Available On: </h1>
-        </div>
 
         <div class="movie-poster">
             <img src="https://m.media-amazon.com/images/M/MV5BZmJhYjk1YTktZDVjZi00MDYwLWI3YTUtZDgxZDFlYjVkYjljXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_.jpg"
                 alt="Spider-Man: Across the Spider-Verse Poster">
         </div>
     </div>
+
+    <div class="watchlist p-10 mr-5 my-3 mt-12 py-12">
+        <label for="watchlist-dropdown">Add to Watch List:</label>
+        <select id="watchlist-dropdown">
+            <option value="Must-see list">Must-see list</option>
+        </select>
+        <button class="btn btn-subscribe">Add to list</button>
+    </div>
+
 
 </body>
 
