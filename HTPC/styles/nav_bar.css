@@ -135,7 +135,7 @@ body, html {
 .user-profile i {
     font-size: 4rem;
     border-radius: 50%;
-    margin-left: 21.5rem;
+    margin-left: 16rem;
 }
 
 /* Style the overlay */
@@ -147,7 +147,7 @@ body, html {
     color: #fff;
     border-radius: 2rem;
     display: none;
-    margin-left: 18rem;
+    margin-left: 13.2rem;
     z-index: 20;
 }
 
