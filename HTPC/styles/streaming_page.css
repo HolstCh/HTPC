@@ -25,10 +25,12 @@ p{
     color: #eee7d8;
     font-family: 'Roboto', sans-serif;
 }
-button{
+#list_button{
     height: 2.5rem;
     margin-left: 2.5rem;
     margin-top: 2.5rem;
+    color: #eee7d8;
+    font-family: 'Roboto', sans-serif;
 }
 .w3-container{
     width: 80vw;

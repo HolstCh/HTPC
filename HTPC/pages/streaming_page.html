@@ -5,149 +5,149 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
     <link rel="stylesheet" href="../styles/streaming_page.css">
-    <link rel="stylesheet" href="../styles/home_page.css">
     <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-<header class="bg-slate-900">
-    <div class="flex-navbar flex-nav-items navbar-text">
-        <a class="px-4 py-3" href="#Movies">Movies & TV</a>
-        <a class="px-4 py-3" href="#contact">Music</a>
-        <a class="px-4 py-3" href="#contact">Videos</a>
-        <div class="search-container">
-            <div class="search-field">
-                <input style="color: black" type="text" id="search" placeholder="Spider-Man">
-                <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+    <header class="bg-slate-900">
+        <div class="flex-navbar flex-nav-items navbar-text">
+            <a class="px-4 py-3" href="#Movies">Movies & TV</a>
+            <a class="px-4 py-3" href="#contact">Music</a>
+            <a class="px-4 py-3" href="#contact">Videos</a>
+            <div class="search-container">
+                <div class="search-field">
+                    <input style="color: black" type="text" id="search" placeholder="Spider-Man">
+                    <button type="submit" id="search-button"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="overlay">
+                    <a href="#" class="subscription-link text-xl">My Lists</a>
+                    <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
             </div>
         </div>
-        <div class="user-profile">
-            <div class="overlay">
-                <a href="#" class="subscription-link text-xl">My Lists</a>
-                <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
-                <a href="#" class="settings-link text-xl">Account & Settings</a>
-                <a href="#" class="settings-link text-xl">Logout</a>
+    </header>
+    <div class="w3-container">
+        <video controls="controls">
+            <source src="../videos/Barbie_trailer%20.mp4" type="video/mp4"/>
+        </video>
+        <div class="flex-container">
+            <div> <h1>You're watching: Barbie</h1></div>
+            <div> <button id="list_button">Add to list +</button></div>
+        </div>
+        <h2>• Adventure • Comedy • Fantasy</h2>
+        <div class="flex-container">
+            <div><h3>Rate it: </h3></div>
+            <div class="flex-container" >
+                <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
+                <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
+                <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
+                <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
+                <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
             </div>
-            <i class="fa fa-user-circle-o user-profile"></i>
         </div>
+
+        <p>Barbie and Ken are having the time of their
+            lives in the colorful and seemingly perfect world of Barbie Land.
+            However, when they get a chance to go to the real world, they soon discover
+            the joys and perils of living among humans.</p>
     </div>
-</header>
-<div class="w3-container">
-    <video controls="controls">
-        <source src="../videos/Barbie_trailer%20.mp4" type="video/mp4"/>
-    </video>
-    <div class="flex-container">
-        <div> <h1>You're watching: Barbie</h1></div>
-        <div> <button id="list_button">Add to list +</button></div>
-    </div>
-    <h2>• Adventure • Comedy • Fantasy</h2>
-    <div class="flex-container">
-        <div><h3>Rate it: </h3></div>
-        <div class="flex-container" >
-            <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
-            <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
-            <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
-            <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
-            <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
-        </div>
-    </div>
+    <script>
 
-    <p>Barbie and Ken are having the time of their
-        lives in the colorful and seemingly perfect world of Barbie Land.
-        However, when they get a chance to go to the real world, they soon discover
-        the joys and perils of living among humans.</p>
-</div>
-<script>
+        const list_button=document.getElementById("list_button");
+        const star1= document.getElementById('star 1');
+        const star2 = document.getElementById('star 2');
+        const star3 = document.getElementById('star 3');
+        const star4 = document.getElementById('star 4');
+        const star5 = document.getElementById('star 5');
 
-    const list_button=document.getElementById("list_button");
-    const star1= document.getElementById('star 1');
-    const star2 = document.getElementById('star 2');
-    const star3 = document.getElementById('star 3');
-    const star4 = document.getElementById('star 4');
-    const star5 = document.getElementById('star 5');
+        list_button.addEventListener('click', () => {
+            if(list_button.textContent==="Added to list"){
+                list_button.textContent="Add to list +";
+            }
+            else {
+                list_button.textContent = "Added to list";
+                list_button.style.backgroundColor = ""
+            }
 
-    list_button.addEventListener('click', () => {
-        if(list_button.textContent==="Added to list"){
-            list_button.textContent="Add to list +";
-        }
-        else {
-            list_button.textContent = "Added to list";
-            list_button.style.backgroundColor = ""
-        }
+        });
+        star1.addEventListener('click', () => {
+            if(star1.src === "../images/star_filled.jpg"){
+               unfillRating();
+            }
+            else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_unfilled.jpg"
+                star3.src = "../images/star_unfilled.jpg"
+                star4.src = "../images/star_unfilled.jpg"
+                star5.src = "../images/star_unfilled.jpg"
+            }
+        });
 
-    });
-    star1.addEventListener('click', () => {
-        if(star1.src === "../images/star_filled.jpg"){
-           unfillRating();
-        }
-        else{
-            star1.src = "../images/star_filled.jpg"
+        star2.addEventListener('click', () => {
+            if(star2.src === "../images/star_filled.jpg"){
+                unfillRating();
+            }
+            else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_filled.jpg"
+                star3.src = "../images/star_unfilled.jpg"
+                star4.src = "../images/star_unfilled.jpg"
+                star5.src = "../images/star_unfilled.jpg"
+            }
+        });
+
+        star3.addEventListener('click', () => {
+            if(star3.src === "../images/star_filled.jpg"){
+                unfillRating();
+            }
+            else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_filled.jpg"
+                star3.src = "../images/star_filled.jpg"
+                star4.src = "../images/star_unfilled.jpg"
+                star5.src = "../images/star_unfilled.jpg"
+            }
+        });
+
+       star4.addEventListener('click', () => {
+           if(star4.src === "../images/star_filled.jpg"){
+               unfillRating();
+           }
+           else{
+               star1.src = "../images/star_filled.jpg"
+               star2.src = "../images/star_filled.jpg"
+               star3.src = "../images/star_filled.jpg"
+               star4.src = "../images/star_filled.jpg"
+               star5.src = "../images/star_unfilled.jpg"
+           }
+        });
+
+        star5.addEventListener('click', () => {
+            if(star5.src === "../images/star_filled.jpg"){
+                unfillRating();
+            }
+           else{
+                star1.src = "../images/star_filled.jpg"
+                star2.src = "../images/star_filled.jpg"
+                star3.src = "../images/star_filled.jpg"
+                star4.src = "../images/star_filled.jpg"
+                star5.src = "../images/star_filled.jpg"
+            }
+        });
+
+        function unfillRating(){
+            star1.src = "../images/star_unfilled.jpg"
             star2.src = "../images/star_unfilled.jpg"
             star3.src = "../images/star_unfilled.jpg"
             star4.src = "../images/star_unfilled.jpg"
             star5.src = "../images/star_unfilled.jpg"
         }
-    });
-
-    star2.addEventListener('click', () => {
-        if(star2.src === "../images/star_filled.jpg"){
-            unfillRating();
-        }
-        else{
-            star1.src = "../images/star_filled.jpg"
-            star2.src = "../images/star_filled.jpg"
-            star3.src = "../images/star_unfilled.jpg"
-            star4.src = "../images/star_unfilled.jpg"
-            star5.src = "../images/star_unfilled.jpg"
-        }
-    });
-
-    star3.addEventListener('click', () => {
-        if(star3.src === "../images/star_filled.jpg"){
-            unfillRating();
-        }
-        else{
-            star1.src = "../images/star_filled.jpg"
-            star2.src = "../images/star_filled.jpg"
-            star3.src = "../images/star_filled.jpg"
-            star4.src = "../images/star_unfilled.jpg"
-            star5.src = "../images/star_unfilled.jpg"
-        }
-    });
-
-   star4.addEventListener('click', () => {
-       if(star4.src === "../images/star_filled.jpg"){
-           unfillRating();
-       }
-       else{
-           star1.src = "../images/star_filled.jpg"
-           star2.src = "../images/star_filled.jpg"
-           star3.src = "../images/star_filled.jpg"
-           star4.src = "../images/star_filled.jpg"
-           star5.src = "../images/star_unfilled.jpg"
-       }
-    });
-
-    star5.addEventListener('click', () => {
-        if(star5.src === "../images/star_filled.jpg"){
-            unfillRating();
-        }
-       else{
-            star1.src = "../images/star_filled.jpg"
-            star2.src = "../images/star_filled.jpg"
-            star3.src = "../images/star_filled.jpg"
-            star4.src = "../images/star_filled.jpg"
-            star5.src = "../images/star_filled.jpg"
-        }
-    });
-
-    function unfillRating(){
-        star1.src = "../images/star_unfilled.jpg"
-        star2.src = "../images/star_unfilled.jpg"
-        star3.src = "../images/star_unfilled.jpg"
-        star4.src = "../images/star_unfilled.jpg"
-        star5.src = "../images/star_unfilled.jpg"
-    }
-</script>
+    </script>
 </body>
 </html>
