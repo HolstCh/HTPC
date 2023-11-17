@@ -1,14 +1,6 @@
-const moviesData = [
-    {
-        title: "Spider-Man: Across the Spider-Verse",
-        description: "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
-        tags: ["Animation", "Action", "Adventure"],
-        src:"../images/spiderverse-poster.jpg",
-        subscribed:"",
-        unsubscribed:"",
-    },
-];
+import moviesData from "./moviesData.js";
 
+// save movie object to local storage to be rendered
 function saveDescriptionData(title)
 {
     console.log(title);
@@ -20,6 +12,10 @@ function saveDescriptionData(title)
         }
     }
 }
+// click handlers to overwrite movie object in localstorage
+document.getElementById('spiderman').addEventListener('click', function() {
+    saveDescriptionData('Spider-Man: Across the Spider-Verse');
+});
 
 const content = document.querySelector('.content');
 const leftArrow1 = document.getElementById('left-arrow1');

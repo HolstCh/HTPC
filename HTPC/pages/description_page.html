@@ -44,16 +44,15 @@
 
         .categories {
             display: flex;
-            margin-top: 20px;
         }
 
         .category-box {
             flex: 1;
-            padding: 5px;
+            padding: 0.5rem;
             text-align: center;
             background-color: #303034;
             border: 2px solid #555;
-            margin: 0 5px;
+            margin: 0 0.5rem;
         }
 
         .category-title {
@@ -61,41 +60,9 @@
             margin-bottom: 5px;
         }
 
-        .amazonicon {
-            width: 100px;
-            height: 100px;
-            position: absolute;
-            top: 450px;
-            right: 1050px;
-        }
-
-        .appletvicon {
-            width: 140px;
-            height: 140px;
-            position: absolute;
-            top: 430px;
-            right: 895px;
-        }
-
-        .googleplayicon {
-            width: 115px;
-            height: 115px;
-            position: absolute;
-            top: 440px;
-            right: 770px;
-        }
-
         .watchlist {
-            margin-top: 10px;
-            position: absolute;
-            top: 340px;
-            /* Adjust this value for the desired vertical position */
-            right: 1113px;
-            /* Adjust this value for the desired horizontal position */
-            width: 200px;
-            /* Set the width to your desired value */
-            height: 50px;
-            /* Set the height to your desired value */
+            width: 23rem;
+            height: 5rem;
         }
 
         label {
@@ -121,11 +88,10 @@
             right: 1188px;
         }
         .poster{
-            width: 20rem;
-            height: 20rem;
+            width: 25rem;
+            height: 25rem;
         }
-        .title{}
-        .description{}
+
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styles/subscriptions.css">
@@ -160,50 +126,47 @@
         <div class="movie-info">
             <h1 class="title"></h1>
             <p class="description"></p>
-            <div class="rating">
-                <div class="star">&#9733;</div>
-                <div class="star">&#9733;</div>
-                <div class="star">&#9733;</div>
-                <div class="star">&#9733;</div>
-                <div class="star">&#9733;</div> <!-- All stars filled -->
+            <div class="flex flex-row items-center justify-center space-x-4">
+                <p class="year"></p>
+                <p>●</p>
+                <p class="ageRating"></p>
+                <p>●</p>
+                <p class="duration"></p>
+                    <div class="rating">
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div>
+                        <div class="star">&#9733;</div> <!-- All stars filled -->
+                    </div>
+                    <p class="totalRatings"></p>
             </div>
-            <div class="categories">
+            <div class="categories py-1">
                 <div class="category-box">
-                    <h2 class="category-title">Action</h2>
+                    <h2 class="category-title tag1"></h2>
                 </div>
                 <div class="category-box">
-                    <h2 class="category-title">Animation</h2>
+                    <h2 class="category-title tag2"></h2>
                 </div>
                 <div class="category-box">
-                    <h2 class="category-title">Superhero</h2>
+                    <h2 class="category-title tag3"></h2>
                 </div>
             </div>
-        </div>
-
-        <div class="amazonicon ">
-            <img src="../images/amazonicon.png" alt="Icon 1">
-        </div>
-
-        <div class="appletvicon">
-            <img src="../images/appletv.png" alt="Icon 2">
-        </div>
-
-        <div class="googleplayicon">
-            <img src="../images/netflix.png" alt="Icon 3">
+            <div class="watchlist px-2 flex flex-row items-center justify-center space-x-4">
+                <select id="watchlist-dropdown">
+                    <option value="Must-see list">Must-see list</option>
+                </select>
+                <button class="bg-blue-900 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded whitespace-nowrap">Add to list</button>
+            </div>
+            <p>Subscribed Apps</p>
+            <div id="subscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
+            <p>Unsubscribed Apps</p>
+            <div id="unsubscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
         </div>
         <!-- Add the "Add to Watch List" dropdown button below the categories -->
-
         <div class="poster mx-20">
             <img src="../images/spiderverse-poster.jpg" alt="Spider-Man: Across the Spider-Verse Poster">
         </div>
-    </div>
-
-    <div class="watchlist p-10 mr-5 my-3 mt-12 py-12">
-        <label for="watchlist-dropdown">Add to Watch List:</label>
-        <select id="watchlist-dropdown">
-            <option value="Must-see list">Must-see list</option>
-        </select>
-        <button class="btn btn-subscribe">Add to list</button>
     </div>
     <script src="../scripts/description_page.js"></script>
 </body>
