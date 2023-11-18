@@ -24,6 +24,7 @@ function addSubscribedApps(src) {
     imageElement.alt = 'subscribedApp';
     imageElement.style.width = "6rem";
     imageElement.style.height = "6rem";
+    imageElement.style.cursor = "pointer";
     imageElement.addEventListener('click', function() {
         alert('Image clicked: ' + src);
         window.location.href = "streaming_page.html";
@@ -37,6 +38,7 @@ function addUnsubscribedApps(src) {
     imageElement.alt = 'unsubscribedApp';
     imageElement.style.width = "6rem";
     imageElement.style.height = "6rem";
+    imageElement.style.cursor = "pointer";
     imageElement.addEventListener('click', function() {
         alert('Image clicked: ' + src);
         window.location.href = "subscriptions_page_final.html";
