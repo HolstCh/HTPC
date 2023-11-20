@@ -17,6 +17,11 @@ document.getElementById('spiderman').addEventListener('click', function() {
     saveDescriptionData('Spider-Man: Across the Spider-Verse');
 });
 
+// click handlers to overwrite movie object in localstorage
+document.getElementById('guardians').addEventListener('click', function() {
+    saveDescriptionData('Guardians of the Galaxy Vol. 3');
+});
+
 const content = document.querySelector('.content');
 const leftArrow1 = document.getElementById('left-arrow1');
 const rightArrow1 = document.getElementById('right-arrow1');

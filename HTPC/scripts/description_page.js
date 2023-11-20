@@ -7,6 +7,7 @@ if (descriptionData !== null)
     console.log(descriptionData.description);
     document.querySelector('.title').textContent = descriptionData.title;
     document.querySelector('.description').textContent = descriptionData.description;
+    document.querySelector('#description-poster').src = descriptionData.src;
     document.querySelector('.tag1').textContent = descriptionData.tags[0];
     document.querySelector('.tag2').textContent = descriptionData.tags[1];
     document.querySelector('.tag3').textContent = descriptionData.tags[2];
