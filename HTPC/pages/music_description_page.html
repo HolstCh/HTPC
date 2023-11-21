@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .album-container {
+            display: flex;
+            max-width: 800px; /* Adjusted width */
+            margin: 20px auto;
+            background-color: #333;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+
+        .album-info {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .album-info img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .album-details {
+            margin-top: 20px;
+        }
+
+        .song-list-container {
+            flex: 1;
+            padding: 20px;
+            background-color: rgb(7, 32, 18);
+            border-radius: 5px;
+            width: 400px;
+            height: 550px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #fff; 
+        }
+
+        .side-label {
+            font-weight: bold;
+        }
+
+        .available-on {
+            margin-top: 20px;
+        }
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon-container img {
+            width: 40px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="album-container">
+        <div class="album-info">
+            <img src="../images/thriller.png" alt="Thriller Album Cover">
+            <div class="album-details">
+                <h1>Thriller (Album)</h1>
+                <p><strong>Artist:</strong> Michael Jackson</p>
+                <p><strong>Release Date:</strong> November 30, 1982</p>
+                <p><strong>Duration:</strong> 42:16 min</p>
+                <p><strong>Genre:</strong> Pop</p>
+            </div>
+        </div>
+
+        <div class="song-list-container">
+            <h2>Song List</h2>
+            <ul>
+                <li class="side-label">Side 1: </li>
+                <li>1. Wanna Be Startin' Somethin'</li>
+                <li>2. Baby Be Mine</li>
+                <li>3. The Girl Is Mine (with Paul McCartney)</li>
+                <li>4. Thriller</li>
+
+                <li>&nbsp;</li> <!-- Add a space to separate Side 1 and Side 2 -->
+
+                <li class="side-label">Side 2: </li>
+                <li>5. Beat It</li>
+                <li>6. Billie Jean</li>
+                <li>7. Human Nature</li>
+                <li>8. P.Y.T (Pretty Young Thing) </li>
+                <li>9. The Lady in My Life</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="available-on">
+        <h2>Available on:</h2>
+        <div class="icon-container">
+            <img src="../images/spotify.png" alt="spotify">
+        </div>
+    </div>
+</body>
+
+</html>
