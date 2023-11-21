@@ -1,13 +1,15 @@
 const musicData = [
     {
+        media:"music",
         title: "Tickets to My Downfall (SOLD OUT Deluxe)",
         artist: "Machine Gun Kelly",
+        year:"2020",
         ageRating:"Explicit",
         duration:"53m",
-        genre: "",
-        userRating: "5",
+        genre: "Pop Punk",
+        userRating: "1",
         totalRatings:"(20,000 ratings)",
-        songs:"",
+        songs:["kiss kiss","drunk face","Concert for Aliens", "Forget Me Too"],
         src:"../images/mgk.jpg",
         subscribed:["../images/spotify.png"],
         unsubscribed:["../images/soundcloud.png"],

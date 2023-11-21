@@ -1,5 +1,6 @@
 const moviesData = [
     {
+        media:"movie",
         title: "Spider-Man: Across the Spider-Verse",
         description: "Miles Morales catapults across the Multiverse, where he encounters a team of Spider-People charged with protecting its very existence. When the heroes clash on how to handle a new threat, Miles must redefine what it means to be a hero.",
         year: "2023",
@@ -13,6 +14,7 @@ const moviesData = [
         unsubscribed:["../images/amazonicon.png", "../images/appletv.png"],
     },
     {
+        media:"movie",
         title: "Guardians of the Galaxy Vol. 3",
         description: "Still reeling from the loss of Gamora, Peter Quill rallies his team to defend the universe and one of their own - a mission that could mean the end of the Guardians if not successful.",
         year: "2023",

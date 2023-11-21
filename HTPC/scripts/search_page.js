@@ -1,7 +1,13 @@
 import moviesData from "./moviesData.js";
+import musicData from "./musicData.js";
+import videoData from "./videoData.js";
+
 // import movies, music, and videos array of objects
 let allData = [];
 moviesData.forEach(movie =>{allData.push(movie)});
+musicData.forEach(album =>{allData.push(album)});
+videoData.forEach(video =>{allData.push(video)});
+
 // add objects from music & video data
 
 function updateGenres()
@@ -53,12 +59,6 @@ function search() {
     const resultsContainer = document.getElementById('resultsContainer');
     resultsContainer.innerHTML = '';
 
-    // Example data (replace with actual data from your search)
-    const searchData = [
-        {title: 'Movie Title 1', genre: 'Action', rating: '4 stars'},
-        {title: 'TV Show Title 2', genre: 'Drama', rating: '5 stars'}
-        // Add more result items as needed
-    ];
     // Display search results
     allData.forEach(item =>
     {
@@ -89,12 +89,36 @@ function search() {
         // Content details
         const contentDetails = document.createElement('div');
         contentDetails.classList.add('content-details');
-        contentDetails.innerHTML = `
-        <h5>${item.title}</h5>
-        <p>Genre: ${item.tags[0]} ● ${item.tags[1]} ● ${item.tags[2]}</p>
-        <p>Year: ${item.year}</p>
-        <p>Rating: ${item.userRating}</p>
-      `;
+        if (item.media === "movie")
+        {
+            contentDetails.innerHTML = `
+            <h5>${item.title}</h5>
+            <p>Genre: ${item.tags[0]} ● ${item.tags[1]} ● ${item.tags[2]}</p>
+            <p>Year: ${item.year}</p>
+            <p>Duration: ${item.duration}</p>
+            <p>Rating: ${item.userRating}</p>
+          `;
+        }
+        else if(item.media === "music")
+        {
+            contentDetails.innerHTML = `
+            <h5>${item.title}</h5>
+            <p>Artist: ${item.artist}</p>
+            <p>Genre: ${item.genre}</p>
+            <p>Year: ${item.year}</p>
+            <p>Duration: ${item.duration}</p>
+            <p>Rating: ${item.userRating}</p>
+          `;
+        }
+        else
+        {
+            <h5>${item.title}</h5>
+            <p>Artist: ${item.artist}</p>
+            <p>Genre: ${item.genre}</p>
+            <p>Year: ${item.year}</p>
+            <p>Duration: ${item.duration}</p>
+            <p>Rating: ${item.userRating}</p>
+        }
 
         // Append content details to container
         contentDetailsContainer.appendChild(contentDetails);
