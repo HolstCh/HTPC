@@ -1,135 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Video with Controls</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../styles/nav_bar.css">
-    <style>
-        iframe {
-            width: 70%;
-            height: 70vh;
-        }
-        .dropdown-item {
-            padding: 12px 16px;
-            display: block;
-            text-decoration: none;
-            color: #333;
-        }
-        .dropdown-container:hover .dropdown-content {
-            display: block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streamix</title>
+  <link rel="stylesheet" href="../styles/streaming_page.css">
+  <link rel="stylesheet" href="../styles/nav_bar.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+  body {
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  header {
+    background-color: #1F2937;
+    padding: 10px;
+    text-align: center;
+  }
+
+  .flex-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar-text {
+    margin: 0 auto;
+  }
+
+  .flex-nav-items a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    margin: 0 10px;
+  }
+
+  .user-profile {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .overlay {
+    display: none;
+    position: absolute;
+    background-color: #1F2937;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    text-align: left;
+  }
+
+  .user-profile:hover .overlay {
+    display: block;
+  }
+
+  .overlay a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .overlay a:hover {
+    background-color: #4A5568;
+  }
+
+  .user-profile i {
+    font-size: 2em;
+  }
+
+  .w3-container {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .title-container {
+    background-color: rgb(255, 71, 102);
+    padding: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  video {
+    display: block;
+    margin: 0 auto;
+    width: 70%;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  h1 {
+    font-size: 2.5em; /* Adjust the font size as needed */
+    margin: 0;
+    margin-left: -20px;
+    display: inline-block; /* Ensures margin-left works as expected */
+  }
+
+  h2,
+  h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background-color: #555;
+  }
+
+  .flex-container img {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+  }
+</style>
+
+<body>
 <header class="bg-slate-900">
-    <div class="flex-navbar flex-nav-items navbar-text">
-        <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
-        <a class="px-4 py-3" href="./music_page.html">Music</a>
-        <a class="px-4 py-3" href="./video_page.html">Videos</a>
-        <div class="user-profile">
-            <div class="overlay">
-                <a href="#" class="subscription-link text-xl">My Lists</a>
-                <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
-                <a href="#" class="settings-link text-xl">Account & Settings</a>
-                <a href="#" class="settings-link text-xl">Logout</a>
-            </div>
-            <i class="fa fa-user-circle-o user-profile"></i>
-        </div>
+  <div class="flex-navbar flex-nav-items navbar-text">
+    <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
+    <a class="px-4 py-3" href="./music_page.html">Music</a>
+    <a class="px-4 py-3" href="./video_page.html">Videos</a>
+    <div class="user-profile">
+      <div class="overlay text-center">
+        <a href="#" class="subscription-link text-xl">My Lists</a>
+        <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+        <a href="#" class="settings-link text-xl">Account & Settings</a>
+        <a href="#" class="settings-link text-xl">Logout</a>
+      </div>
+      <i class="fa fa-user-circle-o user-profile"></i>
     </div>
-    <br>
+  </div>
 </header>
-<body class="bg-slate-900">
-<div class="flex flex-col items-center justify-center">
-    <iframe
-            id="youtube-player"
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/st0cyz8orx0?enablejsapi=1"
-            frameborder="0"
-            allowfullscreen
-    ></iframe>
-    <div class="btn-group px-2 py-4">
-        <button class="btn btn-primary btn-lg" type="button">+ List</button>
-        <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <span class="visually-hidden list-type">Must-see list</span>
-        </button>
-        <div class="dropdown-menu">
-            <div class="dropdown-item" onclick="handleItemClick('Must-see list')">Must-see list</div>
-            <div class="dropdown-item" onclick="handleItemClick('Action Movies')">Action Movies</div>
-        </div>
+<div class="w3-container">
+  <div class="title-container">
+    <h1>Currently Watching:</h1>
+  </div>
+
+  <video controls="controls">
+    <source src="../videos/Barbie_trailer%20.mp4" type="video/mp4" />
+  </video>
+
+  <div class="flex-container">
+    <div>
+      <div>
+        <h3>Rate it: </h3>
+      </div>
+      <div class="flex-container">
+        <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
+        <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
+        <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
+        <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
+        <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
+      </div>
     </div>
-</div>
-<!--
-<div class="flex flex-row items-center justify-evenly">
-        <button onclick="playVideo()"><i class="fas fa-play bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></i></button>
-        <button onclick="pauseVideo()"><i class="fas fa-pause bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></i></button>
-        <button onclick="muteUnmuteVideo()"><i class="fas fa-volume-up bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></i></button>
-        <button onclick="rewindVideo()"><i class="fas fa-backward bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></i></button>
-        <button onclick="fastForwardVideo()"><i class="fas fa-forward bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></i></button>
-        <button onclick="decreaseVolume()"><i class="fas fa-volume-down bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></i></button>
-        <button onclick="increaseVolume()"><i class="fas fa-volume-up bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"></i></button>
+    <div><button id="list_button">Add to list +</button></div>
+  </div>
+
+  <h2>• Adventure • Comedy • Fantasy</h2>
+
+  <div class="flex-container">
+
+  </div>
+
+  <p>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land.
+    However, when they get a chance to go to the real world, they soon discover the joys and perils of living
+    among humans.</p>
 </div>
 <script>
-    var player;
-    function onYouTubeIframeAPIReady()
-    {
-        player = new YT.Player('youtube-player',
-            {
-            events: {
-                'onReady': onPlayerReady,
-            }
-        });
-    }
+  const list_button = document.getElementById("list_button");
+  const stars = document.querySelectorAll('.flex-container img');
 
-    function onPlayerReady(event) {
-        document.getElementById('youtube-player').style.display = 'block';
-    }
+  list_button.addEventListener('click', () => {
+    list_button.textContent = (list_button.textContent === "Added to list") ? "Add to list +" : "Added to list";
+    list_button.style.backgroundColor = "";
+  });
 
-    function playVideo() {
-        player.playVideo();
-    }
-
-    function pauseVideo() {
-        player.pauseVideo();
-    }
-
-    function muteUnmuteVideo() {
-        if (player.isMuted()) {
-            player.unMute();
-        } else {
-            player.mute();
-        }
-    }
-
-    function rewindVideo() {
-        var currentTime = player.getCurrentTime();
-        player.seekTo(currentTime - 10, true);
-    }
-
-    function fastForwardVideo() {
-        var currentTime = player.getCurrentTime();
-        player.seekTo(currentTime + 10, true);
-    }
-
-    function decreaseVolume() {
-        var currentVolume = player.getVolume();
-        player.setVolume(Math.max(currentVolume - 10, 0));
-    }
-
-    function increaseVolume() {
-        var currentVolume = player.getVolume();
-        player.setVolume(Math.min(currentVolume + 10, 100));
-    }
+  stars.forEach((star, index) => {
+    star.addEventListener('click', () => {
+      stars.forEach((s, i) => s.src = (i <= index) ? "../images/star_filled.jpg" : "../images/star_unfilled.jpg");
+    });
+  });
 </script>
-<script src="https://www.youtube.com/iframe_api"></script>
--->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
+
 </html>
