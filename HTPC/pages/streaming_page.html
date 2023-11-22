@@ -1,15 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
     <link rel="stylesheet" href="../styles/streaming_page.css">
     <link rel="stylesheet" href="../styles/nav_bar.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        background-color: #1F2937;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .flex-navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .navbar-text {
+        margin: 0 auto;
+    }
+
+    .flex-nav-items a {
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+        margin: 0 10px;
+    }
+
+    .user-profile {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .overlay {
+        display: none;
+        position: absolute;
+        background-color: #1F2937;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        z-index: 1;
+        text-align: left;
+    }
+
+    .user-profile:hover .overlay {
+        display: block;
+    }
+
+    .overlay a {
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .overlay a:hover {
+        background-color: #4A5568;
+    }
+
+    .user-profile i {
+        font-size: 2em;
+    }
+
+    .w3-container {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .title-container {
+        background-color: rgb(255, 71, 102);
+        padding: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    video {
+        display: block;
+        margin: 0 auto;
+        width: 70%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 2.5em; /* Adjust the font size as needed */
+        margin: 0;
+        margin-left: -20px;
+        display: inline-block; /* Ensures margin-left works as expected */
+    }
+
+    h2,
+    h3 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    button {
+        font-size: 1em;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #555;
+    }
+
+    .flex-container img {
+        width: 20px;
+        height: auto;
+        cursor: pointer;
+    }
+</style>
+
 <body>
     <header class="bg-slate-900">
         <div class="flex-navbar flex-nav-items navbar-text">
@@ -28,121 +162,55 @@
         </div>
     </header>
     <div class="w3-container">
-        <video controls="controls">
-            <source src="../videos/Barbie_trailer%20.mp4" type="video/mp4"/>
-        </video>
-        <div class="flex-container">
-            <div> <h1>You're watching: Barbie</h1></div>
-            <div> <button id="list_button">Add to list +</button></div>
-        </div>
-        <h2>• Adventure • Comedy • Fantasy</h2>
-        <div class="flex-container">
-            <div><h3>Rate it: </h3></div>
-            <div class="flex-container" >
-                <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
-                <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
-                <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
-                <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
-                <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
-            </div>
+        <div class="title-container">
+            <h1>Currently Watching:</h1>
         </div>
 
-        <p>Barbie and Ken are having the time of their
-            lives in the colorful and seemingly perfect world of Barbie Land.
-            However, when they get a chance to go to the real world, they soon discover
-            the joys and perils of living among humans.</p>
+        <video controls="controls">
+            <source src="../videos/Barbie_trailer%20.mp4" type="video/mp4" />
+        </video>
+
+        <div class="flex-container">
+            <div>
+                <div>
+                    <h3>Rate it: </h3>
+                </div>
+                <div class="flex-container">
+                    <div><img id="star 1" src="../images/star_unfilled.jpg" alt="" onclick="changeRating()"> </div>
+                    <div><img id="star 2" src="../images/star_unfilled.jpg" alt=""> </div>
+                    <div><img id="star 3" src="../images/star_unfilled.jpg" alt=""> </div>
+                    <div><img id="star 4" src="../images/star_unfilled.jpg" alt=""> </div>
+                    <div><img id="star 5" src="../images/star_unfilled.jpg" alt=""> </div>
+                </div>
+            </div>
+            <div><button id="list_button">Add to list +</button></div>
+        </div>
+
+        <h2>• Adventure • Comedy • Fantasy</h2>
+
+        <div class="flex-container">
+            
+        </div>
+
+        <p>Barbie and Ken are having the time of their lives in the colorful and seemingly perfect world of Barbie Land.
+            However, when they get a chance to go to the real world, they soon discover the joys and perils of living
+            among humans.</p>
     </div>
     <script>
-
-        const list_button=document.getElementById("list_button");
-        const star1= document.getElementById('star 1');
-        const star2 = document.getElementById('star 2');
-        const star3 = document.getElementById('star 3');
-        const star4 = document.getElementById('star 4');
-        const star5 = document.getElementById('star 5');
+        const list_button = document.getElementById("list_button");
+        const stars = document.querySelectorAll('.flex-container img');
 
         list_button.addEventListener('click', () => {
-            if(list_button.textContent==="Added to list"){
-                list_button.textContent="Add to list +";
-            }
-            else {
-                list_button.textContent = "Added to list";
-                list_button.style.backgroundColor = ""
-            }
-
-        });
-        star1.addEventListener('click', () => {
-            if(star1.src === "../images/star_filled.jpg"){
-               unfillRating();
-            }
-            else{
-                star1.src = "../images/star_filled.jpg"
-                star2.src = "../images/star_unfilled.jpg"
-                star3.src = "../images/star_unfilled.jpg"
-                star4.src = "../images/star_unfilled.jpg"
-                star5.src = "../images/star_unfilled.jpg"
-            }
+            list_button.textContent = (list_button.textContent === "Added to list") ? "Add to list +" : "Added to list";
+            list_button.style.backgroundColor = "";
         });
 
-        star2.addEventListener('click', () => {
-            if(star2.src === "../images/star_filled.jpg"){
-                unfillRating();
-            }
-            else{
-                star1.src = "../images/star_filled.jpg"
-                star2.src = "../images/star_filled.jpg"
-                star3.src = "../images/star_unfilled.jpg"
-                star4.src = "../images/star_unfilled.jpg"
-                star5.src = "../images/star_unfilled.jpg"
-            }
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                stars.forEach((s, i) => s.src = (i <= index) ? "../images/star_filled.jpg" : "../images/star_unfilled.jpg");
+            });
         });
-
-        star3.addEventListener('click', () => {
-            if(star3.src === "../images/star_filled.jpg"){
-                unfillRating();
-            }
-            else{
-                star1.src = "../images/star_filled.jpg"
-                star2.src = "../images/star_filled.jpg"
-                star3.src = "../images/star_filled.jpg"
-                star4.src = "../images/star_unfilled.jpg"
-                star5.src = "../images/star_unfilled.jpg"
-            }
-        });
-
-       star4.addEventListener('click', () => {
-           if(star4.src === "../images/star_filled.jpg"){
-               unfillRating();
-           }
-           else{
-               star1.src = "../images/star_filled.jpg"
-               star2.src = "../images/star_filled.jpg"
-               star3.src = "../images/star_filled.jpg"
-               star4.src = "../images/star_filled.jpg"
-               star5.src = "../images/star_unfilled.jpg"
-           }
-        });
-
-        star5.addEventListener('click', () => {
-            if(star5.src === "../images/star_filled.jpg"){
-                unfillRating();
-            }
-           else{
-                star1.src = "../images/star_filled.jpg"
-                star2.src = "../images/star_filled.jpg"
-                star3.src = "../images/star_filled.jpg"
-                star4.src = "../images/star_filled.jpg"
-                star5.src = "../images/star_filled.jpg"
-            }
-        });
-
-        function unfillRating(){
-            star1.src = "../images/star_unfilled.jpg"
-            star2.src = "../images/star_unfilled.jpg"
-            star3.src = "../images/star_unfilled.jpg"
-            star4.src = "../images/star_unfilled.jpg"
-            star5.src = "../images/star_unfilled.jpg"
-        }
     </script>
 </body>
+
 </html>

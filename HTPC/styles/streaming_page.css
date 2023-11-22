@@ -1,52 +1,49 @@
-body{
+body {
     background-color: #111827;
-}
-video{
-    width: inherit;
-    align-self: center;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
 }
 
-h1{
-    color: #eee7d8;
-    font-family: 'Roboto', sans-serif;
+video {
+    width: 100%;
+    max-width: 800px; /* Set a maximum width for the video */
+    display: block;
+    margin: 0 auto; /* Center the video horizontally */
+    margin-top: 20px; /* Add some top margin */
+}
 
+h2, h3, p, #list_button {
+    margin-top: 10px; /* Add some top margin to these elements */
 }
-h2{
-    color: #eee7d8;
-    font-family: 'Roboto', sans-serif;
 
-}
-h3{
-    color: #eee7d8;
-    font-family: 'Roboto', sans-serif;
-
-}
-p{
-    color: #eee7d8;
-    font-family: 'Roboto', sans-serif;
-}
-#list_button{
-    height: 2.5rem;
+#list_button {
+    height: 3.5rem;
     margin-left: 2.5rem;
-    margin-top: 2.5rem;
     color: #eee7d8;
     font-family: 'Roboto', sans-serif;
-}
-.w3-container{
-    width: 80vw;
+    background-color: #1e88e5; /* Blue color for the button */
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
 }
 
+.w3-container {
+    max-width: 80vw;
+    margin: 0 auto; /* Center the content horizontally */
+}
 
 .flex-container {
     display: flex;
-    background-color:#111827;
-}
-.nowrap {
-    flex-wrap: nowrap;
-}
-img{
-    background-color:#111827;
-    background-size: cover;
-    height: 5rem;
+    justify-content: space-between;
+    background-color: #111827;
+    padding: 10px;
 }
 
+img {
+    height: 5rem;
+    background-color: #111827;
+    object-fit: cover;
+}
+
+/* Add any additional styling for the stars or other elements as needed */
