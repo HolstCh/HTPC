@@ -8,28 +8,26 @@ moviesData.forEach(movie =>{allData.push(movie)});
 musicData.forEach(album =>{allData.push(album)});
 videoData.forEach(video =>{allData.push(video)});
 
-// add objects from music & video data
-
 function updateGenres()
 {
     const mediaType = document.getElementById('mediaType').value;
     const genreDropdown = document.getElementById('genreDropdown');
     const genreSelect = document.getElementById('genre');
 
-    // Reset genre dropdown
     genreSelect.innerHTML = '<option value="">-- Select Genre --</option>';
 
-    if (mediaType === 'movie') {
-        // Populate genres for movies
-        const movieGenres = ['Action', 'Drama', 'Comedy', 'Sci-Fi'];
+    if (mediaType === 'movie')
+    {
+        const movieGenres = ['Comedy', 'Action', 'Animation', 'Sci-Fi'];
         movieGenres.forEach(genre => {
             const option = document.createElement('option');
             option.value = genre.toLowerCase();
             option.textContent = genre;
             genreSelect.appendChild(option);
         });
-    } else if (mediaType === 'tvShow') {
-        // Populate genres for TV shows
+    }
+    else if (mediaType === 'TV')
+    {
         const tvShowGenres = ['Drama', 'Mystery', 'Thriller', 'Fantasy'];
         tvShowGenres.forEach(genre => {
             const option = document.createElement('option');
@@ -38,8 +36,26 @@ function updateGenres()
             genreSelect.appendChild(option);
         });
     }
-
-    // Show or hide the genre dropdown based on the selected media type
+    else if (mediaType === 'music')
+    {
+        const tvShowGenres = ['Pop Punk', 'EDM', 'Country', 'Rock', 'Jazz'];
+        tvShowGenres.forEach(genre => {
+            const option = document.createElement('option');
+            option.value = genre.toLowerCase();
+            option.textContent = genre;
+            genreSelect.appendChild(option);
+        });
+    }
+    else if (mediaType === 'video')
+    {
+        const tvShowGenres = ['Sports', 'Gaming', 'Educational'];
+        tvShowGenres.forEach(genre => {
+            const option = document.createElement('option');
+            option.value = genre.toLowerCase();
+            option.textContent = genre;
+            genreSelect.appendChild(option);
+        });
+    }
     genreDropdown.style.display = mediaType ? 'block' : 'none';
 }
 
@@ -93,7 +109,7 @@ function search() {
         {
             contentDetails.innerHTML = `
             <h5>${item.title}</h5>
-            <p>Genre: ${item.tags[0]} ● ${item.tags[1]} ● ${item.tags[2]}</p>
+            <p>Genre: ${item.tags[0]}</p>
             <p>Year: ${item.year}</p>
             <p>Duration: ${item.duration}</p>
             <p>Rating: ${item.userRating}</p>
@@ -110,14 +126,17 @@ function search() {
             <p>Rating: ${item.userRating}</p>
           `;
         }
-        else
+        else if(item.media === "video")
         {
+            contentDetails.innerHTML = `
             <h5>${item.title}</h5>
-            <p>Artist: ${item.artist}</p>
+            <p>Channel: ${item.channel}</p>
             <p>Genre: ${item.genre}</p>
-            <p>Year: ${item.year}</p>
+            <p>Views: ${item.viewCount}</p>
+            <p>Likes: ${item.likeCount}</p>
             <p>Duration: ${item.duration}</p>
             <p>Rating: ${item.userRating}</p>
+            `;
         }
 
         // Append content details to container
@@ -130,7 +149,7 @@ function search() {
         // Subscribed apps
         const subscribedAppsContainer = document.createElement('div');
         subscribedAppsContainer.classList.add('subscribed-apps', 'text-center');
-        subscribedAppsContainer.innerHTML = `<p>Subscribed Apps:</p>`;
+        subscribedAppsContainer.innerHTML = `<p class="px-3">Subscribed Apps:</p>`;
 
         // Append subscribed apps label before app images
         appsContainer.appendChild(subscribedAppsContainer);
@@ -143,7 +162,7 @@ function search() {
         // Unsubscribed apps
         const unsubscribedAppsContainer = document.createElement('div');
         unsubscribedAppsContainer.classList.add('unsubscribed-apps');
-        unsubscribedAppsContainer.innerHTML = `<p>Unsubscribed Apps:</p>`;
+        unsubscribedAppsContainer.innerHTML = `<p class="px-2">Unsubscribed Apps:</p>`;
 
         // Append unsubscribed apps label before app images
         appsContainer.appendChild(unsubscribedAppsContainer);
