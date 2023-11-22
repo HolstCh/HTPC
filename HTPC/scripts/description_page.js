@@ -46,3 +46,8 @@ function addUnsubscribedApps(src) {
     });
     unsubscribedApps.appendChild(imageElement);
 }
+
+function handleItemClick(item) {
+    document.querySelector('.list-type').textContent= item;
+    document.querySelector('.selectedItem').textContent= item;
+}
