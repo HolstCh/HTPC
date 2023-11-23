@@ -8,6 +8,7 @@ const videoData = [
         viewCount: "234,435",
         likeCount:"89,989",
         userRating: "3",
+        avgRating: "3",
         totalRatings:"(35,445 ratings)",
         duration: "6m 45s",
         genre: "Sports",
