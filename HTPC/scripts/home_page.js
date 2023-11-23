@@ -1,25 +1,38 @@
 import moviesData from "./moviesData.js";
+import musicData from "./musicData.js";
+import videoData from "./videoData.js";
+import {renderContent} from "./description_page.js";
 
-// save movie object to local storage to be rendered
-function saveDescriptionData(title)
-{
-    console.log(title);
-    for (let i = 0; i < moviesData.length; i++)
+// initialize all content data once
+document.addEventListener('DOMContentLoaded', function () {
+    if (!localStorage.getItem('data'))
     {
-        if (moviesData[i].title === title)
-        {
-            localStorage.setItem('descriptionData', JSON.stringify(moviesData[i]));
-        }
+        // import movies, music, and videos array of objects
+        let allData = [];
+        moviesData.forEach(movie =>{allData.push(movie)});
+        musicData.forEach(album =>{allData.push(album)});
+        videoData.forEach(video =>{allData.push(video)});
+        localStorage.setItem('data', JSON.stringify(allData));
     }
+});
+function clearData() {
+    localStorage.removeItem('data');
+    let allData = [];
+    moviesData.forEach(movie =>{allData.push(movie)});
+    musicData.forEach(album =>{allData.push(album)});
+    videoData.forEach(video =>{allData.push(video)});
+    localStorage.setItem('data', JSON.stringify(allData));
 }
-// click handlers to overwrite movie object in localstorage
-document.getElementById('spiderman').addEventListener('click', function() {
-    saveDescriptionData('Spider-Man: Across the Spider-Verse');
+document.querySelector('.clear').addEventListener('click', function() {
+    clearData();
 });
 
-// click handlers to overwrite movie object in localstorage
+// click handlers to determine which content to render in description page
+document.getElementById('spiderman').addEventListener('click', function() {
+    renderContent('Spider-Man: Across the Spider-Verse');
+});
 document.getElementById('guardians').addEventListener('click', function() {
-    saveDescriptionData('Guardians of the Galaxy Vol. 3');
+    renderContent('Guardians of the Galaxy Vol. 3');
 });
 
 const content = document.querySelector('.content');
