@@ -4,6 +4,9 @@ header{
     top: 0; /* stick to top of viewport */
     z-index: 1000;
     
+    background-image: url('../images/greencontainer.jpg');
+    background-size: 1500px;
+    background-position: center;
 }
 
 /* mobile first approach, organize flex items by col on mobile, then by row if on larger screen */

@@ -62,9 +62,10 @@ header {
     text-align: center;
     padding-bottom: 5rem;
     margin-left: 4rem;
-    border-color:#111827;
-    border-width: 0;
+    border-color:#3cffe8;
+    border-width: 3px;
     margin-bottom: 2rem;
+    margin-top: 2rem;
     width: 90%;
 }
 

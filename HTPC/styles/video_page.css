@@ -54,15 +54,18 @@ header {
     background-color: #632828;
     border-radius: 5rem;
     background-image: url('../images/redcontainer.png');
-    background-size: 1400px;
+    background-size: 1350px;
     background-position: center;
     background-repeat: repeat;
     text-align: center;
     padding-bottom: 5rem;
     margin-left: 4rem;
-    margin-bottom: 4rem;
-    border-color:#111827;
-    border-width: 0rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    border-color:#ff3c3c;
+    border-width: 3px;
+    
+
     width: 90%;
 }
 

@@ -6,6 +6,10 @@ header{
     color: white;
     padding-top: 1rem;
     text-align: center;
+
+    background-image: url('../images/bluecontainer.png');
+    background-size: 1500px;
+    background-position: center;
 }
 
 /* mobile first approach, organize flex items by col on mobile, then by row if on larger screen */
