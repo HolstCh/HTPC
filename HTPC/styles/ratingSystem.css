@@ -1,0 +1,29 @@
+.rating-container {
+    text-align: center;
+}
+
+.rating-stars {
+    font-size: 2em;
+    cursor: pointer;
+}
+
+.star {
+    color: #ccc;
+}
+
+.star:hover,
+.star.active {
+    color: #ffcc00;
+}
+
+.avg-rating {
+    display: flex;
+}
+
+.avg-rating .star {
+    color: #ffcc00;
+    font-size: 2rem;
+}
+.avg-rating .starSearch {
+    font-size: 2rem;
+}

@@ -67,28 +67,32 @@ body, html {
 .user-profile {
     position: relative;
     display: inline-block;
+    margin-right: 3rem;
 }
 
+.search-icon i{
+    font-size: 100rem;
+}
 .user-profile i {
     font-size: 4rem;
     border-radius: 50%;
-    margin-left: 40rem;
+    margin-right: 3rem;
 }
 
 /* Style the overlay */
 .overlay {
     position: absolute;
     top: 100%;
-    width: 30%;
+    left: 0;
+    width: 200%;
     background-color: #333;
     color: #fff;
     border-radius: 2rem;
     display: none;
-    margin-left: 35.5rem;
     z-index: 20;
 }
 
-.overlay a:hover{
+.overlay a:hover {
     color: #2b48e3;
 }
 
@@ -106,6 +110,7 @@ body, html {
 .user-profile:hover .overlay {
     display: block;
 }
+
 
 /* Media Query for responsiveness */
 @media (max-width: 768px) {

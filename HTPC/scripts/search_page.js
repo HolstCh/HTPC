@@ -1,12 +1,4 @@
-import moviesData from "./moviesData.js";
-import musicData from "./musicData.js";
-import videoData from "./videoData.js";
-
-// import movies, music, and videos array of objects
-let allData = [];
-moviesData.forEach(movie =>{allData.push(movie)});
-musicData.forEach(album =>{allData.push(album)});
-videoData.forEach(video =>{allData.push(video)});
+let allData = JSON.parse(localStorage.getItem('data'));
 
 function updateGenres()
 {
@@ -59,6 +51,7 @@ function updateGenres()
     genreDropdown.style.display = mediaType ? 'block' : 'none';
 }
 
+let avgRatings = [];
 function search() {
     const mediaType = document.getElementById('mediaType').value;
     const genre = document.getElementById('genre').value;
@@ -105,37 +98,57 @@ function search() {
         // Content details
         const contentDetails = document.createElement('div');
         contentDetails.classList.add('content-details');
+
+        avgRatings.push(item.avgRating);
         if (item.media === "movie")
         {
             contentDetails.innerHTML = `
             <h5>${item.title}</h5>
+            <div class="avg-rating starsContainer space-x-2">
+                <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
+                <div class="starSearch" style=colors[1]>&#9733;</div>
+                <div class="starSearch" style=colors[2]>&#9733;</div>
+                <div class="starSearch" style=colors[3]>&#9733;</div>
+                <div class="starSearch" style=colors[4]>&#9733;</div>
+            </div>
             <p>Genre: ${item.tags[0]}</p>
             <p>Year: ${item.year}</p>
             <p>Duration: ${item.duration}</p>
-            <p>Rating: ${item.userRating}</p>
           `;
         }
         else if(item.media === "music")
         {
             contentDetails.innerHTML = `
             <h5>${item.title}</h5>
+            <div class="avg-rating starsContainer space-x-2">
+                <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
+                <div class="starSearch" style=colors[1]>&#9733;</div>
+                <div class="starSearch" style=colors[2]>&#9733;</div>
+                <div class="starSearch" style=colors[3]>&#9733;</div>
+                <div class="starSearch" style=colors[4]>&#9733;</div>
+            </div>
             <p>Artist: ${item.artist}</p>
             <p>Genre: ${item.genre}</p>
             <p>Year: ${item.year}</p>
             <p>Duration: ${item.duration}</p>
-            <p>Rating: ${item.userRating}</p>
           `;
         }
         else if(item.media === "video")
         {
             contentDetails.innerHTML = `
             <h5>${item.title}</h5>
+            <div class="avg-rating starsContainer space-x-2">
+                <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
+                <div class="starSearch" style=colors[1]>&#9733;</div>
+                <div class="starSearch" style=colors[2]>&#9733;</div>
+                <div class="starSearch" style=colors[3]>&#9733;</div>
+                <div class="starSearch" style=colors[4]>&#9733;</div>
+            </div>
             <p>Channel: ${item.channel}</p>
             <p>Genre: ${item.genre}</p>
             <p>Views: ${item.viewCount}</p>
             <p>Likes: ${item.likeCount}</p>
             <p>Duration: ${item.duration}</p>
-            <p>Rating: ${item.userRating}</p>
             `;
         }
 
@@ -144,7 +157,7 @@ function search() {
 
         // Container for subscribed and unsubscribed apps
         const appsContainer = document.createElement('div');
-        appsContainer.classList.add('apps-container');
+        appsContainer.classList.add('apps-container', 'text-center');
 
         // Subscribed apps
         const subscribedAppsContainer = document.createElement('div');
@@ -180,7 +193,11 @@ function search() {
         // Append result item to result container
         resultContainer.appendChild(resultItem);
         resultsContainer.appendChild(resultContainer);
+
+        console.log(item.title);
+        console.log(item.avgRating);
     });
+    renderStarColors();
 }
     function createAppImage(src, alt) {
     const imageElement = document.createElement('img');
@@ -198,6 +215,57 @@ function search() {
     });
 
     return imageElement;
+}
+
+function renderStarColors()
+{
+    let colors = [];
+    for(let i = 0; i < avgRatings.length; i++)
+    {
+        colors.push(getColors(avgRatings[i]));
+    }
+
+    var starSearchContainers = document.querySelectorAll('.starsContainer');
+
+    // Iterate over each container
+    starSearchContainers.forEach(function (container, containerIndex) {
+        // Get all child div elements within the container
+        var stars = container.querySelectorAll('div');
+        // Apply different colors to each star within the set
+        stars.forEach(function (star, index) {
+            if (colors[containerIndex][index] === '#ffcc00') {
+                star.style.color = '#ffcc00';
+            }
+            else if(colors[containerIndex][index] === '#ccc')
+            {
+                star.style.color = '#ccc';
+            }
+        });
+    });
+}
+
+function getColors(avgRating)
+{
+    if(avgRating === "1")
+    {
+        return ['#ffcc00', '#ccc', '#ccc', '#ccc', '#ccc'];
+    }
+    else if(avgRating === "2")
+    {
+        return ['#ffcc00', '#ffcc00', '#ccc', '#ccc', '#ccc'];
+    }
+    else if(avgRating === "3")
+    {
+        return ['#ffcc00', '#ffcc00', '#ffcc00', '#ccc', '#ccc'];
+    }
+    else if(avgRating === "4")
+    {
+        return ['#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00', '#ccc'];
+    }
+    else if(avgRating === "5")
+    {
+        return ['#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00'];
+    }
 }
 
 // click handler to handle search results
