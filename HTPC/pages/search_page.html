@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../styles/nav_bar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../styles/nav_bar.css">
+  <link rel="stylesheet" href="../styles/ratingSystem.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Media Search</title>
   <style>
@@ -103,18 +104,26 @@
 </head>
 <body class="bg-slate-900">
 <header class="bg-slate-900">
-  <div class="flex-navbar flex-nav-items navbar-text">
-    <a class="px-4 py-3 hover:no-underline" href="./home_page.html">Movies & TV</a>
-    <a class="px-4 py-3 hover:no-underline" href="./music_page.html">Music</a>
-    <a class="px-4 py-3 hover:no-underline" href="./video_page.html">Videos</a>
-    <div class="user-profile">
-      <div class="overlay">
-        <a href="#" class="subscription-link text-xl">My Lists</a>
-        <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
-        <a href="#" class="settings-link text-xl">Account & Settings</a>
-        <a href="#" class="settings-link text-xl">Logout</a>
+  <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+    <div>
+      <a class="px-4 py-3 hover:no-underline" href="./home_page.html">Movies & TV</a>
+      <a class="px-4 py-3 hover:no-underline" href="./music_page.html">Music</a>
+      <a class="px-4 py-3 hover:no-underline" href="./video_page.html">Videos</a>
+    </div>
+    <div class="flex items-end">
+      <a href="./search_page.html">
+        <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+      </a>
+      <div class="user-profile relative py-2">
+        <div class="overlay left-[-4.8rem]">
+          <a href="./lists_page.html" class="subscription-link text-xl">My Lists</a>
+          <a href="./ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+          <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+          <a href="#" class="settings-link text-xl">Account & Settings</a>
+          <a href="#" class="settings-link text-xl">Logout</a>
+        </div>
+        <i class="fa fa-user-circle-o user-profile"></i>
       </div>
-      <i class="fa fa-user-circle-o user-profile"></i>
     </div>
   </div>
   <br>
@@ -162,16 +171,12 @@
           </div>
         </div>
       </div>
-
-      <!-- Display search results -->
       <div id="resultsContainer">
         <!-- Results will be dynamically populated here -->
       </div>
     </div>
   </div>
 </div>
-
-<!-- Bootstrap JS and Popper.js (required for Bootstrap functionality) -->
 <script type="module" src="../scripts/search_page.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
