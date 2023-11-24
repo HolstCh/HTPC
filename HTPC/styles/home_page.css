@@ -38,16 +38,26 @@ body {
     margin: 0;
     padding: 0;
     background-color: #111827;
+    background-image: url('../images/popcornbackground.png');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 500px;
 }
 
 .content-container {
     background: #444444;
+    background-image: url('../images/bluecontainer.png');
+    background-size: 1400px;
+    background-position: center;
+
     border-radius: 5rem;
     text-align: center;
     padding-bottom: 5rem;
     margin-left: 4rem;
-    border-color:#111827;
-    border-width: 2rem;
+    border-color:#3c4cff;
+    border-width: 3px;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     width: 90%;
 }
 
@@ -70,6 +80,7 @@ body {
 .content img {
     width: 15rem;
     height: 20rem;
+    border: 5px solid white;
 }
 .content a:nth-child(n+5)
 {
