@@ -2,27 +2,14 @@ const subscribedApps = document.getElementById('subscribed-apps');
 const unsubscribedApps = document.getElementById('unsubscribed-apps');
 const storedId = localStorage.getItem('id');
 const id = parseInt(storedId, 10);
-
 let allData = JSON.parse(localStorage.getItem('data'));
-
-// find id of content
-export function renderContent(title)
-{
-    console.log(title);
-    for (let i = 0; i < allData.length; i++)
-    {
-        if (allData[i].title === title)
-        {
-            localStorage.setItem('id', i);
-        }
-    }
-}
 
 // load data
 document.addEventListener('DOMContentLoaded', function ()
 {
     console.log(allData[id].title);
     console.log(allData[id].description);
+    console.log(allData);
     document.querySelector('.title').textContent = allData[id].title;
     document.querySelector('.description').textContent = allData[id].description;
     document.querySelector('#description-poster').src = allData[id].src;
