@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function ()
         </div>
           `;
 
-        const rightContent = document.createElement('div');
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('btn', 'btn-danger');
         deleteButton.textContent = 'Delete Rating';
