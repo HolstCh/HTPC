@@ -8,7 +8,7 @@ function updateGenres()
 
     genreSelect.innerHTML = '<option value="">-- Select Genre --</option>';
 
-    if (mediaType === 'movie')
+    if (mediaType === 'Movie')
     {
         const movieGenres = ['Comedy', 'Action', 'Animation', 'Sci-Fi'];
         movieGenres.forEach(genre => {
@@ -18,7 +18,7 @@ function updateGenres()
             genreSelect.appendChild(option);
         });
     }
-    else if (mediaType === 'TV')
+    else if (mediaType === 'TV Show')
     {
         const tvShowGenres = ['Drama', 'Mystery', 'Thriller', 'Fantasy'];
         tvShowGenres.forEach(genre => {
@@ -28,7 +28,7 @@ function updateGenres()
             genreSelect.appendChild(option);
         });
     }
-    else if (mediaType === 'music')
+    else if (mediaType === 'Music')
     {
         const tvShowGenres = ['Pop Punk', 'EDM', 'Country', 'Rock', 'Jazz'];
         tvShowGenres.forEach(genre => {
@@ -38,7 +38,7 @@ function updateGenres()
             genreSelect.appendChild(option);
         });
     }
-    else if (mediaType === 'video')
+    else if (mediaType === 'Video')
     {
         const tvShowGenres = ['Sports', 'Gaming', 'Educational'];
         tvShowGenres.forEach(genre => {
@@ -100,7 +100,7 @@ function search() {
         contentDetails.classList.add('content-details');
 
         avgRatings.push(item.avgRating);
-        if (item.media === "movie")
+        if (item.media === "Movie")
         {
             contentDetails.innerHTML = `
             <h5>${item.title}</h5>
@@ -116,7 +116,7 @@ function search() {
             <p>Duration: ${item.duration}</p>
           `;
         }
-        else if(item.media === "music")
+        else if(item.media === "Music")
         {
             contentDetails.innerHTML = `
             <h5>${item.title}</h5>
@@ -133,7 +133,24 @@ function search() {
             <p>Duration: ${item.duration}</p>
           `;
         }
-        else if(item.media === "video")
+        else if(item.media === "TV Show")
+        {
+            contentDetails.innerHTML = `
+            <h5>${item.title}</h5>
+            <div class="avg-rating starsContainer space-x-2">
+                <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
+                <div class="starSearch" style=colors[1]>&#9733;</div>
+                <div class="starSearch" style=colors[2]>&#9733;</div>
+                <div class="starSearch" style=colors[3]>&#9733;</div>
+                <div class="starSearch" style=colors[4]>&#9733;</div>
+            </div>
+            <p>Artist: ${item.artist}</p>
+            <p>Genre: ${item.genre}</p>
+            <p>Year: ${item.year}</p>
+            <p>Duration: ${item.duration}</p>
+          `;
+        }
+        else if(item.media === "Video")
         {
             contentDetails.innerHTML = `
             <h5>${item.title}</h5>
