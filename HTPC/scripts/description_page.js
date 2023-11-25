@@ -23,6 +23,66 @@ document.addEventListener('DOMContentLoaded', function ()
     allData[id].subscribed.forEach(addSubscribedApps)
     allData[id].unsubscribed.forEach(addUnsubscribedApps)
     renderStars();
+
+    const stars = document.querySelectorAll('.user-star');
+    if(allData[id].userRating !== "") {
+        handleStars(allData[id].userRating);
+    }
+
+    stars.forEach(star => {
+        star.addEventListener('click', function () {
+            const value = this.getAttribute('data-value');
+            handleStars(value);
+            updateRating(value);
+        });
+
+        star.addEventListener('mouseover', function () {
+            const value = this.getAttribute('data-value');
+            handleStars(value);
+        });
+
+        star.addEventListener('mouseout', function () {
+            handleStars(allData[id].userRating);
+        });
+    });
+
+    function updateRating(currentRating)
+    {
+        let totalStars = parseInt(allData[id].totalStars);
+        let totalUserRatings = parseInt(allData[id].totalUserRatings);
+
+        if(allData[id].userRating === "")
+        {
+            totalUserRatings = totalUserRatings + 1;
+            totalStars += parseInt(currentRating);
+            allData[id].userRating = currentRating;
+        }
+        else
+        {
+            totalStars -= allData[id].userRating;
+            totalStars += parseInt(currentRating);
+            allData[id].userRating = currentRating;
+        }
+
+        const averageRating = Math.round(totalStars / totalUserRatings);
+        allData[id].totalStars = totalStars.toString();
+        allData[id].totalUserRatings = totalUserRatings.toString();
+        allData[id].avgRating = averageRating.toString();
+        console.log(allData[id].avgRating);
+        allData[id].userRating = currentRating;
+        localStorage.setItem('data', JSON.stringify(allData));
+        document.querySelector('.totalRatings').textContent = "( " + totalUserRatings + " ratings" + " )";
+        renderStars();
+    }
+    function handleStars(value) {
+        stars.forEach(star => {
+            if (star.getAttribute('data-value') <= value) {
+                star.classList.add('active');
+            } else {
+                star.classList.remove('active');
+            }
+        });
+    }
 });
 
 function renderStars()
@@ -102,67 +162,3 @@ function handleItemClick(item) {
     document.querySelector('.list-type').textContent= item;
     document.querySelector('.selectedItem').textContent= item;
 }
-
-document.addEventListener('DOMContentLoaded', function ()
-{
-    const stars = document.querySelectorAll('.star');
-    const ratingValue = document.getElementById('rating-value');
-    let previousRating = 0;
-    let hasClicked = false;
-
-    stars.forEach(star => {
-        star.addEventListener('click', function () {
-            const value = this.getAttribute('data-value');
-            updateRating(value);
-        });
-
-        star.addEventListener('mouseover', function () {
-            const value = this.getAttribute('data-value');
-            highlightStars(value);
-        });
-
-        star.addEventListener('mouseout', function () {
-            const value = this.getAttribute('data-value');
-            highlightStars(value);
-        });
-    });
-
-    function updateRating(currentRating)
-    {
-        let totalStars = parseInt(allData[id].totalStars);
-        let totalUserRatings = parseInt(allData[id].totalUserRatings);
-        if(hasClicked === false)
-        {
-            totalUserRatings = totalUserRatings + 1;
-            totalStars += parseInt(currentRating);
-            previousRating = currentRating;
-            hasClicked = true;
-        }
-        else
-        {
-            totalStars -= previousRating;
-            totalStars += parseInt(currentRating);
-            previousRating = currentRating;
-        }
-
-        const averageRating = Math.round(totalStars / totalUserRatings);
-        allData[id].totalStars = totalStars.toString();
-        allData[id].totalUserRatings = totalUserRatings.toString();
-        allData[id].avgRating = averageRating.toString();
-        allData[id].userRating = currentRating.toString();
-        localStorage.setItem('data', JSON.stringify(allData));
-        document.querySelector('.totalRatings').textContent = "( " + totalUserRatings + " ratings" + " )";
-        highlightStars(currentRating);
-        renderStars();
-    }
-
-    function highlightStars(value) {
-        stars.forEach(star => {
-            if (star.getAttribute('data-value') <= value) {
-                star.classList.add('active');
-            } else {
-                star.classList.remove('active');
-            }
-        });
-    }
-});

@@ -41,6 +41,7 @@ let allData = [
         genre: "Pop Punk",
         userRating: "1",
         avgRating: "1",
+        totalStars:"1",
         totalRatings:"(20,000 ratings)",
         songs:["kiss kiss","drunk face","Concert for Aliens", "Forget Me Too"],
         src:"../images/mgk.jpg",
