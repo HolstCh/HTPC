@@ -33,6 +33,23 @@ let allData = [
     },
     {
         media:"Music",
+        title:"Thriller",
+        artist:"Michael Jackson",
+        year:"November 30, 1982",
+        ageRating:"Explicit",
+        duration:"42m 13s",
+        genre:"Pop",
+        userRating:"1",
+        avgRating:"1",
+        totalStars:"1",
+        totalRatings:"(20,000ratings)",
+        songs:["Wanna Be Startin'Somethin'","BabyBeMine","TheGirlIsMine(withPaulMcCartney)","Thriller","BeatIt","BillieJean","HumanNature","P.Y.T(PrettyYoungThing)","TheLadyinMyLife"],
+        src:"../images/thriller.png",
+        subscribed:["../images/spotify.png"],
+        unsubscribed:["../images/soundcloud.png"],
+    },
+    {
+        media:"Music",
         title: "Tickets to My Downfall (SOLD OUT Deluxe)",
         artist: "Machine Gun Kelly",
         year:"2020",
@@ -67,6 +84,10 @@ let allData = [
     },
 ];
 
+let allLists = [
+
+];
+
 // initialize all content data once
 document.addEventListener('DOMContentLoaded', function ()
 {
@@ -75,10 +96,16 @@ document.addEventListener('DOMContentLoaded', function ()
         localStorage.setItem('data', JSON.stringify(allData));
         console.log(allData);
     }
+    if(!localStorage.getItem('lists'))
+    {
+        localStorage.setItem('lists', JSON.stringify(allLists));
+        console.log(allData);
+    }
 });
 function clearData() {
     localStorage.removeItem('data');
     localStorage.setItem('data', JSON.stringify(allData));
+    localStorage.setItem('lists', JSON.stringify(allLists));
 }
 document.querySelector('.clear').addEventListener('click', function() {
     clearData();

@@ -1,108 +1,27 @@
-
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Streamix</title>
-        <link rel="stylesheet" href="../styles/music_page.css">
-        <link rel="stylesheet" href="../styles/musicnav_bar.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body>
-        <header class="bg-slate-900">
-            <div class="flex-navbar flex-nav-items navbar-text">
-                <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
-                <a class="px-4 py-3" href="./music_page.html">Music</a>
-                <a class="px-4 py-3" href="./video_page.html">Videos</a>
-                <div class="user-profile">
-                    <div class="overlay">
-                        <a href="#" class="subscription-link text-xl">My Lists</a>
-                        <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
-                        <a href="#" class="settings-link text-xl">Account & Settings</a>
-                        <a href="#" class="settings-link text-xl">Logout</a>
-                    </div>
-                    <i class="fa fa-user-circle-o user-profile"></i>
-                </div>
-            </div>
-            <br>
-        </header>
-
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streamix</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="../styles/ratingSystem.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
-            font-family: 'Roboto', sans-serif;
-            background-color: #000;
+            font-family: Arial, sans-serif;
             color: #fff;
             margin: 0;
             padding: 0;
-            background-image: url('../images/thrillerrepeat.jpg');
-            background-position: center;
-            background-repeat: repeat;
-        }
-
-        body::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Black overlay with 0.7 opacity */
-            z-index: -1;
-            /* Place the overlay behind other content */
-        }
-
-        .album-container {
-            display: flex;
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #333;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-            border-radius: 15px;
-            position: relative;
-        }
-
-        .album-info {
-            flex: 1;
-            padding: 20px;
-            background-image: url('../images/greyBack.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: repeat;
-            border-radius: 15px;
-        }
-
-        .album-info img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
         }
 
         .album-details {
             margin-top: 20px;
         }
-
-        .song-list-container {
-            flex: 1;
-            padding: 20px;
-            background-image: url('../images/notes.png');
-            background-size: 200px;
-            background-position: center;
-            background-repeat: repeat;
-            border-radius: 5px;
-            width: 300px;
-            max-height: 550px;
-            overflow-y: auto;
-        }
-
-
 
         ul {
             list-style-type: none;
@@ -125,21 +44,65 @@
         }
     </style>
 </head>
-
-<body>
-    <div class="album-container">
-        <div class="album-info">
-            <img src="../images/thriller.png" alt="Thriller Album Cover">
-            <div class="album-details">
-                <h1>Thriller (Album)</h1>
-                <p><strong>Artist:</strong> Michael Jackson</p>
-                <p><strong>Release Date:</strong> November 30, 1982</p>
-                <p><strong>Duration:</strong> 42:16 min</p>
-                <p><strong>Genre:</strong> Pop</p>
+<header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+        <div>
+            <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
+            <a class="px-4 py-3" href="./music_page.html">Music</a>
+            <a class="px-4 py-3" href="./video_page.html">Videos</a>
+        </div>
+        <div class="flex items-end">
+            <a href="./search_page.html">
+                <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+            </a>
+            <div class="user-profile relative">
+                <div class="overlay absolute top-full left-[-4.8rem] w-50">
+                    <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+                    <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+                    <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+                    <a href="#" class="settings-link text-xl clear">Account & Settings</a>
+                    <a href="#" class="settings-link text-xl">Logout</a>
+                </div>
+                <i class="fa fa-user-circle-o user-profile"></i>
             </div>
         </div>
-
-        <div class="song-list-container">
+    </div>
+    <br>
+</header>
+<body class="bg-slate-900">
+    <div class="grid grid-cols-3">
+        <div>
+            <img src="../images/thriller.png" alt="Thriller Album Cover">
+            <div class="flex flex-row">
+                <p class="mr-4"><strong>Album: </strong></p>
+                <p class="title"></p>
+            </div>
+            <div class="flex flex-row">
+                <p class="mr-4"><strong>Artist: </strong></p>
+                <p class="artist"></p>
+            </div>
+            <div class="flex flex-row">
+                <p class="mr-4"><strong>Release Date: </strong></p>
+                <p class="year"></p>
+            </div>
+            <div class="flex flex-row">
+                <p class="mr-4"><strong>Genre: </strong></p>
+                <p class="genre"></p>
+            </div>
+            <div class="flex flex-row">
+                <p class="mr-4"><strong>Duration: </strong></p>
+                <p class="duration"></p>
+            </div>
+            <div class="avg-rating space-x-2">
+                <div class="star" id="star1">&#9733;</div>
+                <div class="star" id="star2">&#9733;</div>
+                <div class="star" id="star3">&#9733;</div>
+                <div class="star" id="star4">&#9733;</div>
+                <div class="star" id="star5">&#9733;</div>
+            </div>
+            <p class="totalRatings"></p>
+        </div>
+        <div class="flex flex-col items-center">
             <h2>Song List</h2>
             <ul>
                 <li class="side-label">Side 1: </li>
@@ -158,8 +121,33 @@
                 <li>9. The Lady in My Life</li>
             </ul>
         </div>
+        <div class="flex flex-col items-center">
+            <div class="rating-container">
+                <p>Your Rating:</p>
+                <div class="rating-stars" id="stars">
+                    <span class="user-star" data-value="1">&#9733;</span>
+                    <span class="user-star" data-value="2">&#9733;</span>
+                    <span class="user-star" data-value="3">&#9733;</span>
+                    <span class="user-star" data-value="4">&#9733;</span>
+                    <span class="user-star" data-value="5">&#9733;</span>
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary btn-md" type="button">+ List</button>
+                <button type="button" class="btn btn-md btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="visually-hidden list-type">Must-see list</span>
+                </button>
+                <div class="dropdown-menu">
+                    <div class="dropdown-item" onclick="handleItemClick('Must-see list')">Must-see list</div>
+                    <div class="dropdown-item" onclick="handleItemClick('Action Movies')">Action Movies</div>
+                </div>
+            </div>
+            <p class="text-center mt-3">Subscribed Apps</p>
+            <div id="subscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
+            <p class="text-center">Unsubscribed Apps</p>
+            <div id="unsubscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
+        </div>
     </div>
-
     <div class="spotify-player">
         <!-- Paste the copied Spotify Play Button code here -->
         <iframe style="border-radius:12px"
@@ -167,6 +155,10 @@
             height="352" frameBorder="0" allowfullscreen=""
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
+    <script src="../scripts/music_description_page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
-
 </html>
