@@ -171,24 +171,29 @@ button {
 
 }
 
+/* this secion of code has some parts adapted from https://www.w3schools.com/howto/howto_js_dropdown.asp
+
+
 /* Dropdown Button */
-.dropbtn {
+.dropbtn, .dropbtnmov {
     background-color: #04AA6D;
     color: white;
-    padding: 16px;
+    padding: 5px;
     font-size: 16px;
     border: none;
     cursor: pointer;
     margin: auto;
-    margin-top: 70px;
+    margin-top: 55px;
   }
+
+  
   
   /* Dropdown button on hover & focus */
   .dropbtn:hover, .dropbtn:focus {
     background-color: rgb(15, 144, 62);
   }
 
-.dropdown {
+  .dropdown {
     position:relative;
     display: inline-block;
 }
@@ -216,3 +221,19 @@ button {
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;}
+
+.unsubscribeButton {
+    margin-top: 22px;
+    background-color: rgb(222, 52, 52);
+    padding: 5px 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: left;
+    border-color: rgb(222, 52, 52);
+    color:white;  
+}
+
+.unsubscribeButton:hover {
+    color: white;
+    background-color: rgb(197, 17, 17)
+}

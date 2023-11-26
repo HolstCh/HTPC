@@ -68,12 +68,15 @@
                 <h5 class="card-title">Disney Plus</h5>
                 <hr class = 'horizontal_line'>
                     <div class = "dropdown">
-                        <button class="dropbtn" onclick="myFunction()">Subscribe </button>
+                        <button class="dropbtn" onclick="dropdownFunction()">Subscribe </button>
                         <div id="myDropdown" class="dropdown-content">
                             <text id = "disney8">$8/month</text>
                             <text id = "disney12">$12/month</text>
                             <text id = "disney15">$15/month</text>
                         </div>
+                    </div>
+                    <div class = "cancel">
+                        <button class = "unsubscribeButton" onclick = "unsubConfirm()" hidden>Unsubscribe</button>
                     </div>
             </div>
         </div>
@@ -91,8 +94,9 @@
                 <h5 class="card-title">Spotify</h5>
                 <hr class = 'horizontal_line'>
                 <button class="btn btn-remove-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Remove as Primary Subscription </button>                
-                <button class="btn btn-exit">Unsubscribe</button>
-            </div>
+                <div class="button" id="button">
+                    <button type="fb-like">Fb-Like</button>
+                </div>            </div>
         </div>
         <div class="card-subscribe" style="width: 18rem;" border-width = "thick">
             <div class="card-header">
