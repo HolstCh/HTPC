@@ -3,10 +3,23 @@ const unsubscribedApps = document.getElementById('unsubscribed-apps');
 const storedId = localStorage.getItem('id');
 const id = parseInt(storedId, 10);
 let allData = JSON.parse(localStorage.getItem('data'));
+let allLists = JSON.parse(localStorage.getItem('lists'));
 
 // load data
 document.addEventListener('DOMContentLoaded', function ()
 {
+    console.log(allLists);
+    if(allLists)
+    {
+        for(let i = 0; i < allLists.length; i++)
+        {
+            let listDropdown = document.querySelector('.dropdown-menu');
+            listDropdown.innerHTML += `
+        <div class="dropdown-item" onClick="handleItemClick('${allLists[i].title}')">${allLists[i].title}</div>
+        `;
+            document.querySelector('.list-type').textContent= allLists[i].title;
+        }
+    }
     console.log(allData[id].title);
     console.log(allData[id].description);
     console.log(allData);
@@ -160,5 +173,16 @@ function addUnsubscribedApps(src) {
 
 function handleItemClick(item) {
     document.querySelector('.list-type').textContent= item;
-    document.querySelector('.selectedItem').textContent= item;
 }
+
+let content = document.querySelector('.addListItem');
+content.addEventListener('click', function() {
+    for(let i = 0; i < allLists.length; i++)
+    {
+        if(allLists[i].title === document.querySelector('.list-type').textContent)
+        {
+            allLists[i].listItems.push(allData[id]);
+        }
+    }
+    localStorage.setItem('lists', JSON.stringify(allLists));
+});
