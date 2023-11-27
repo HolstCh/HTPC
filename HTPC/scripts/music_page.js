@@ -16,3 +16,8 @@ function renderContent(title)
 document.getElementById('Thriller').addEventListener('click', function() {
     renderContent('Thriller');
 });
+
+document.getElementById('Tickets to My Downfall').addEventListener('click', function()
+{
+    renderContent('Tickets to My Downfall');
+});

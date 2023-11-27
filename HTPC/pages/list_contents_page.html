@@ -4,26 +4,106 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
-    <link rel="stylesheet" href="../styles/example_list_page.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../styles/nav_bar.css">
+    <link rel="stylesheet" href="../styles/ratingSystem.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/lists_page.css">
     <link rel="stylesheet" href="../styles/nav_bar.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        .container {
+            margin-top: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #f4f6f8;
+        }
+
+        button {
+            padding: 12px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.15s ease-in-out;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .result-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            width: 100%; /* Make containers wider */
+        }
+
+        .result-item {
+            flex: 1;
+        }
+
+        .result-item h5 {
+            color: #007bff;
+        }
+
+        .subscription-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .subscription-section img {
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: transform 0.2s;
+        }
+
+        .subscription-section img:hover {
+            transform: scale(1.1);
+        }
+
+        .subscribed-apps,
+        .unsubscribed-apps {
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-900">
     <header class="bg-slate-900">
         <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
             <div>
-                <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
-                <a class="px-4 py-3" href="./music_page.html">Music</a>
-                <a class="px-4 py-3" href="./video_page.html">Videos</a>
+                <a class="px-4 py-3 hover:no-underline" href="./home_page.html">Movies & TV</a>
+                <a class="px-4 py-3 hover:no-underline" href="./music_page.html">Music</a>
+                <a class="px-4 py-3 hover:no-underline" href="./video_page.html">Videos</a>
             </div>
             <div class="flex items-end">
                 <a href="./search_page.html">
                     <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
                 </a>
                 <div class="user-profile relative">
-                    <div class="overlay absolute top-full left-[-4.8rem] w-50">
+                    <div class="overlay left-[-4.8rem]">
                         <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
                         <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
                         <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
@@ -36,42 +116,22 @@
         </div>
         <br>
     </header>
-    <section class="content-container responsive-width">
-        <h1 class="text-4xl py-5 content-title">Must-see list</h1>
-        <div class="content space-x-8">
-           <ul class="watchlist">
-            <li>
-                <img src="../images/3.jpeg" alt="Movie 3">
-                <div class="title-info">
-                    <h2>Jurassic Park</h2>
-                    <p>Release Year: 2022</p>
-                    <p>Rating: 4.5</p>
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <h1></h1>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-10">
+                <div id="listContainer" class="bg-slate-900">
                 </div>
-                <button class="delete-button">Remove</button>
-            </li>
-            <li>
-                <img src="../images/1.jpg" alt="Movie 1">
-                <div class="title-info">
-                    <h2>Kings of the Future</h2>
-                    <p>Release Year: 2021</p>
-                    <p>Rating: 4.2</p>
-                    <p>Description: A great movie you won't want to miss.</p>
-                </div>
-                <button class="delete-button">Remove</button>
-            </li>
-            <li>
-                <img src="../images/2.jpg" alt="Movie 2">
-                <div class="title-info">
-                    <h2>Film Sourcing</h2>
-                    <p>Release Year: 2022</p>
-                    <p>Rating: 4.5</p>
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-                <button class="delete-button">Remove</button>
-            </li>
-           </ul>
+            </div>
         </div>
-    </section>
+    </div>
+    <script src="../scripts/list_contents_page.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 </body>
 </html>

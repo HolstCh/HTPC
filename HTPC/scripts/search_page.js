@@ -68,7 +68,6 @@ function search() {
     const resultsContainer = document.getElementById('resultsContainer');
     resultsContainer.innerHTML = '';
 
-    // Display search results
     allData.forEach(item =>
     {
         const resultContainer = document.createElement('div');
@@ -111,6 +110,7 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
+            <p>Total User Ratings: ${item.totalUserRatings}</p>
             <p>Genre: ${item.tags[0]}</p>
             <p>Year: ${item.year}</p>
             <p>Duration: ${item.duration}</p>
@@ -127,6 +127,7 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
+            <p>Total User Ratings: ${item.totalUserRatings}</p>
             <p>Artist: ${item.artist}</p>
             <p>Genre: ${item.genre}</p>
             <p>Year: ${item.year}</p>
@@ -144,6 +145,7 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
+            <p>Total User Ratings: ${item.totalUserRatings}</p>
             <p>Artist: ${item.artist}</p>
             <p>Genre: ${item.genre}</p>
             <p>Year: ${item.year}</p>
@@ -161,6 +163,7 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
+            <p>Total User Ratings: ${item.totalUserRatings}</p>
             <p>Channel: ${item.channel}</p>
             <p>Genre: ${item.genre}</p>
             <p>Views: ${item.viewCount}</p>
@@ -169,19 +172,16 @@ function search() {
             `;
         }
 
-        // Append content details to container
         contentDetailsContainer.appendChild(contentDetails);
 
-        // Container for subscribed and unsubscribed apps
         const appsContainer = document.createElement('div');
         appsContainer.classList.add('apps-container', 'text-center');
 
-        // Subscribed apps
         const subscribedAppsContainer = document.createElement('div');
         subscribedAppsContainer.classList.add('subscribed-apps', 'text-center');
         subscribedAppsContainer.innerHTML = `<p class="px-3">Subscribed Apps:</p>`;
 
-        // Append subscribed apps label before app images
+
         appsContainer.appendChild(subscribedAppsContainer);
 
         item.subscribed.forEach(src => {
@@ -189,12 +189,12 @@ function search() {
             subscribedAppsContainer.appendChild(imageElement);
         });
 
-        // Unsubscribed apps
+
         const unsubscribedAppsContainer = document.createElement('div');
         unsubscribedAppsContainer.classList.add('unsubscribed-apps');
         unsubscribedAppsContainer.innerHTML = `<p class="px-2">Unsubscribed Apps:</p>`;
 
-        // Append unsubscribed apps label before app images
+
         appsContainer.appendChild(unsubscribedAppsContainer);
 
         item.unsubscribed.forEach(src => {

@@ -3,6 +3,7 @@ const unsubscribedApps = document.getElementById('unsubscribed-apps');
 let allData = JSON.parse(localStorage.getItem('data'));
 const storedId2 = localStorage.getItem('id2');
 const id2 = parseInt(storedId2, 10);
+let allLists = JSON.parse(localStorage.getItem('lists'));
 
 // load data
 document.addEventListener('DOMContentLoaded', function ()
@@ -12,7 +13,33 @@ document.addEventListener('DOMContentLoaded', function ()
     console.log(allData[id2].title);
     console.log(allData[id2].description);
     console.log(allData);
+    console.log(allLists);
+    if(allLists)
+    {
+        for(let i = 0; i < allLists.length; i++)
+        {
+            let listDropdown = document.querySelector('.dropdown-menu');
+            listDropdown.innerHTML += `
+        <div class="dropdown-item" onClick="handleItemClick('${allLists[i].title}')">${allLists[i].title}</div>
+        `;
+            document.querySelector('.list-type').textContent= allLists[i].title;
+        }
+    }
+    let container = document.querySelector('.songs');
+    let div = document.createElement('div');
+    let songs = allData[id2].songs;
+    div.innerHTML = `<h2>${allData[id2].title} Songs</h2><br>`;
+    div.innerHTML += `<ol>`;
+    for(let i = 0; i < songs.length; i++)
+    {
+        div.innerHTML += `<li>${songs[i]}</li>`;
+    }
+    div.innerHTML += `</ol>`;
+    div.classList.add('list-decimal');
+    container.appendChild(div);
+
     document.querySelector('.title').textContent = allData[id2].title;
+    document.querySelector('.image').src = allData[id2].src;
     document.querySelector('.artist').textContent = allData[id2].artist;
     document.querySelector('.genre').textContent = allData[id2].genre;
     document.querySelector('.year').textContent = allData[id2].year;
@@ -65,11 +92,12 @@ document.addEventListener('DOMContentLoaded', function ()
         const averageRating = Math.round(totalStars / totalUserRatings);
         allData[id2].totalStars = totalStars.toString();
         allData[id2].totalUserRatings = totalUserRatings.toString();
+        console.log("r", allData[id2].totalUserRatings)
         allData[id2].avgRating = averageRating.toString();
         console.log(allData[id2].avgRating);
         allData[id2].userRating = currentRating;
         localStorage.setItem('data', JSON.stringify(allData));
-        document.querySelector('.totalRatings').textContent = "( " + totalUserRatings + " ratings" + " )";
+        document.querySelector('.totalRatings').textContent = "( " + allData[id2].totalUserRatings + " ratings" + " )";
         renderStars();
     }
     function handleStars(value) {
@@ -136,8 +164,7 @@ function addSubscribedApps(src) {
     imageElement.style.height = "6rem";
     imageElement.style.cursor = "pointer";
     imageElement.addEventListener('click', function() {
-        alert('Image clicked: ' + src);
-        window.location.href = "streaming_page.html";
+        document.querySelector('.spotify-player').classList.remove('hidden');
     });
     subscribedApps.appendChild(imageElement);
 }
@@ -156,8 +183,19 @@ function addUnsubscribedApps(src) {
     unsubscribedApps.appendChild(imageElement);
 }
 
-function handleItemClick(item)
-{
+function handleItemClick(item) {
     document.querySelector('.list-type').textContent= item;
-    document.querySelector('.selectedItem').textContent= item;
 }
+
+let content = document.querySelector('.addListItem');
+content.addEventListener('click', function() {
+    for(let i = 0; i < allLists.length; i++)
+    {
+        if(allLists[i].title === document.querySelector('.list-type').textContent)
+        {
+            allLists[i].listItems.push(allData[id2]);
+        }
+    }
+    console.log(allLists);
+    localStorage.setItem('lists', JSON.stringify(allLists));
+});

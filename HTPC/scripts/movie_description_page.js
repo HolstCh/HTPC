@@ -184,5 +184,6 @@ content.addEventListener('click', function() {
             allLists[i].listItems.push(allData[id]);
         }
     }
+    console.log(allLists);
     localStorage.setItem('lists', JSON.stringify(allLists));
 });
