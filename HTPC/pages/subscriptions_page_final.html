@@ -30,8 +30,8 @@
     <div class = 'flex-container'>
 <!-- from https://getbootstrap.com/docs/4.0/components/card/ -->
         <div class="card-subscribe" style="width: 18rem;" border-width = "thick">
-            <div class="card-header">
-                Subscribed <br> Current plan: $10/month 
+            <div class="card-header" id = "netflix-header">
+                Subscribed <br> Current plan: $6/month 
               </div>
             <hr class = "horizontal_line">
             <img class="card-img-top" src="../images/netflix.png" alt="Netflix">
@@ -39,8 +39,17 @@
             <div class="card-body">
                 <h5 class="card-title">Netflix</h5>
                 <hr class = 'horizontal_line'>
-                <button class="btn btn-primary" title = "A primary subscription will take priority over other subscription services in displaying media.">Set as Primary Subscription </button>
-                <button class="btn btn-exit">Unsubscribe</button>
+                <div class = "dropdown">
+                    <button class="subscribeButtonNetflix" onclick="dropdownFunction()">Edit Plan</button>
+                    <div id="myDropdown" class="dropdown-content">
+                        <text id = "netflix6" name = "netflix" onclick = "subscribeOnClick('netflix')">$6/month</text>
+                        <text id = "netflix17" onclick = "subscribeOnClick('netflix')">$17/month</text>
+                        <text id = "netflix21" onclick = "subscribeOnClick('netflix')">$21/month</text>
+                    </div>
+                </div>
+                <div class = "cancel">
+                    <button class = "unsubscribeButtonNetflix" onclick = "unsubConfirm('netflix')" hidden>Unsubscribe</button>
+                </div>
             </div>
         </div>
         <div class="card-primary" style="width: 18rem;" border-width = "thick">
@@ -68,15 +77,15 @@
                 <h5 class="card-title">Disney Plus</h5>
                 <hr class = 'horizontal_line'>
                     <div class = "dropdown">
-                        <button class="dropbtn" onclick="dropdownFunction()">Subscribe </button>
-                        <div id="myDropdown" class="dropdown-content">
-                            <text id = "disney8">$8/month</text>
-                            <text id = "disney12">$12/month</text>
-                            <text id = "disney15">$15/month</text>
+                        <button class="subscribeButtonDisney" onclick="dropdownFunction1()">Subscribe </button>
+                        <div id="myDropdown1" class="dropdown-content1">
+                            <text id = "disney8" onclick = "subscribeOnClick('disney+')">$8/month</text>
+                            <text id = "disney12" onclick = "subscribeOnClick('disney+')">$12/month</text>
+                            <text id = "disney15" onclick = "subscribeOnClick('disney+')">$15/month</text>
                         </div>
                     </div>
                     <div class = "cancel">
-                        <button class = "unsubscribeButton" onclick = "unsubConfirm()" hidden>Unsubscribe</button>
+                        <button class = "unsubscribeButtonDisney" onclick = "unsubConfirm('disney+')" hidden >Unsubscribe</button>
                     </div>
             </div>
         </div>
