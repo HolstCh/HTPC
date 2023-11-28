@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streamix</title>
+  <link rel="stylesheet" href="../styles/streaming_page_guardians.css">
+  <link rel="stylesheet" href="../styles/streamingnav_bar_guardians.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: black;
+      background-image: url('../images/guardianswallpaper.jpg');
+      background-repeat: repeat;
+      background-size: 500px;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    .banner-container img {
+      width: 100%;
+      height: 150px;
+      object-position: 0 50%;
+      border-radius: 10px;
+      border: 3px solid rgb(255, 166, 58);
+    }
+
+    video {
+      display: block;
+      margin: 0 auto;
+      width: 70%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      background-color: #5e1a5a;
+      border: 3px solid rgb(255, 166, 58);
+      border-radius: 10px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin: 0;
+      margin-left: -20px;
+      display: inline-block;
+    }
+
+    h2,
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+
+    button {
+      font-size: 1em;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    .flex-container img {
+      width: 20px;
+      height: auto;
+      cursor: pointer;
+    }
+
+    .tags-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+
+    }
+
+    .tag {
+      padding: 10px 20px;
+      margin: 0 10px;
+      background-color: #303034;
+      border: 2px solid #555;
+      color: #fff;
+      font-size: 16px;
+      background-color: #5e1a5a;
+      border: 3px solid rgb(255, 166, 58);
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text">
+      <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
+      <a class="px-4 py-3" href="./music_page.html">Music</a>
+      <a class="px-4 py-3" href="./video_page.html">Videos</a>
+      <div class="user-profile">
+        <div class="overlay text-center">
+          <a href="#" class="subscription-link text-xl">My Lists</a>
+          <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+          <a href="#" class="settings-link text-xl">Account & Settings</a>
+          <a href="#" class="settings-link text-xl">Logout</a>
+        </div>
+        <i class="fa fa-user-circle-o user-profile"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="w3-container">
+    <div class="banner-container">
+      <img src="../images/guardiansbanner.png" alt="Guardians Banner" class="guardians-banner">
+    </div>
+
+    <video controls="controls">
+      <source src="../videos/guardiansscene.mp4" type="video/mp4" />
+    </video>
+
+    <div class="flex-container">
+      <div>
+        <div class="flex-container">
+        </div>
+      </div>
+    </div>
+
+    <div class="tags-container">
+      <div class="tag">Adventure</div>
+      <div class="tag">Comedy</div>
+      <div class="tag">SuperHero</div>
+
+    </div>
+
+    <p>Still reeling from the loss of Gamora, Peter Quill must rally his team to defend the universe and protect one of
+      their own. If the mission is not completely successful, it could possibly lead to the end of the Guardians as we
+      know them.</p>
+  </div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
