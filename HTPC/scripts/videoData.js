@@ -14,7 +14,7 @@ const videoData = [
         genre: "Sports",
         src:"../images/messi.jpg",
         subscribed:["../images/youtube.webp"],
-        unsubscribed:["../images/twitch.png"],
+        unsubscribed:["../images/twitch.png", "../images/kick.png"],
     },
 ];
 

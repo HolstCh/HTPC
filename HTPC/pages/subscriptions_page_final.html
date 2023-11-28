@@ -48,7 +48,7 @@
                     </div>
                 </div>
                 <div class = "cancel">
-                    <button class = "unsubscribeButtonNetflix" onclick = "unsubConfirm('netflix')" >Unsubscribe</button> <!--  Netflix is subscribed to already, don't hide-->
+                    <button class = "unsubscribeButtonNetflix" onclick = "unsubConfirm('netflix')" id ="subscribe-btn-Netflix" >Unsubscribe</button> <!--  Netflix is subscribed to already, don't hide-->
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
                 <h5 class="card-title">Prime Video</h5>
                 <hr class = 'horizontal_line'>
                 <div class = "dropdown">
-                    <button class="subscribeButtonPrime" onclick="subscribeOnClick('prime')">Subscribe </button>
+                    <button class="subscribeButtonPrime" onclick="subscribeOnClick('prime')" id ="subscribe-btn-Prime">Subscribe </button>
                     <div id="myDropdownPrime" class="dropdown-content1">
                         <text id = "prime7" onclick = "dropdownPrime()">$7/month</text>
                         <text id = "prime15" onclick = "dropdownPrime()">$15/month</text>
@@ -85,7 +85,7 @@
                 <h5 class="card-title">Disney Plus</h5>
                 <hr class = 'horizontal_line'>
                     <div class = "dropdown">
-                        <button class="subscribeButtonDisney" onclick="subscribeOnClick('disney+')">Subscribe </button>
+                        <button class="subscribeButtonDisney" onclick="subscribeOnClick('disney+')" id ="subscribe-btn-Disney">Subscribe </button>
                         <div id="myDropdownDisney" class="dropdown-content2">
                             <text id = "disney8" onclick = "dropdownDisney()">$8/month</text>
                             <text id = "disney12" onclick = "dropdownDisney()">$12/month</text>
@@ -111,7 +111,7 @@
                 <h5 class="card-title">Spotify</h5>
                 <hr class = 'horizontal_line'>
                 <div class = "dropdown">
-                    <button class="subscribeButtonSpotify" onclick="subscribeOnClick('spotify')">Edit Plan</button>
+                    <button class="subscribeButtonSpotify" onclick="subscribeOnClick('spotify')" id ="subscribe-btn-Spotify">Edit Plan</button>
                     <div id="myDropdownSpotify" class="dropdown-content3">
                         <text id = "spotify6"  onclick = "dropdownSpotify()">$6/month</text>
                         <text id = "spotify11" onclick = "dropdownSpotify()">$11/month</text>
@@ -135,7 +135,7 @@
                 <h5 class="card-title">Apple Music</h5>
                 <hr class = 'horizontal_line'>
                 <div class = "dropdown">
-                    <button class="subscribeButtonApple" onclick="subscribeOnClick('apple')">Edit Plan</button>
+                    <button class="subscribeButtonApple" onclick="subscribeOnClick('apple')" id ="subscribe-btn-Apple">Edit Plan</button>
                     <div id="myDropdownApple" class="dropdown-content4">
                         <text id = "apple6"  onclick = "dropdownApple()">$6/month</text>
                         <text id = "apple11" onclick = "dropdownApple()">$11/month</text>
@@ -158,7 +158,7 @@
                 <h5 class="card-title">SoundCloud</h5>
                 <hr class = 'horizontal_line'>
                 <div class = "dropdown">
-                    <button class="subscribeButtonSoundCloud" onclick="subscribeOnClick('soundcloud')">Subscribe</button>
+                    <button class="subscribeButtonSoundCloud" onclick="subscribeOnClick('soundcloud')" id ="subscribe-btn-SoundCloud">Subscribe</button>
                     <div id="myDropdownSoundCloud" class="dropdown-content5">
                         <text id = "soundcloud5"  onclick = "dropdownSoundCloud()">$5/month</text>
                         <text id = "soundcloud10" onclick = "dropdownSoundCloud()">$10/month</text>
@@ -185,7 +185,7 @@
                     <h5 class="card-title">Twitch</h5>
                     <hr class = 'horizontal_line'>
                     <div class = "dropdown">
-                        <button class="subscribeButtonTwitch" onclick="subscribeOnClick('twitch')">Subscribe</button>
+                        <button class="subscribeButtonTwitch" onclick="subscribeOnClick('twitch')" id ="subscribe-btn-Twitch">Subscribe</button>
                         <div id="myDropdownTwitch" class="dropdown-content6">
                             <text id = "twitch14"  onclick = "dropdownTwitch()">CA$14/month</text>
                         </div>
@@ -206,7 +206,7 @@
                     <h5 class="card-title">YouTube</h5>
                     <hr class = 'horizontal_line'>
                     <div class = "dropdown">
-                        <button class="subscribeButtonYoutube" onclick="subscribeOnClick('youtube')">Edit Plan</button>
+                        <button class="subscribeButtonYoutube" onclick="subscribeOnClick('youtube')" id ="subscribe-btn-Youtube">Edit Plan</button>
                         <div id="myDropdownYoutube" class="dropdown-content7">
                             <text id = "youtube8"  onclick = "dropdownYoutube()">$8/month</text>
                             <text id = "youtube14" onclick = "dropdownYoutube()">$14/month</text>
@@ -214,7 +214,7 @@
                         </div>
                     </div>
                     <div class = "cancel">
-                        <button class = "unsubscribeButtonYoutube" onclick = "unsubConfirm('youtube')">Unsubscribe</button> 
+                        <button class = "unsubscribeButtonYoutube" onclick = "unsubConfirm('youtube')" >Unsubscribe</button> 
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@
                     <h5 class="card-title">Kick</h5>
                     <hr class = 'horizontal_line'>
                     <div class = "dropdown">
-                        <button class="subscribeButtonKick" onclick="subscribeOnClick('kick')">Subscribe</button>
+                        <button class="subscribeButtonKick" onclick="subscribeOnClick('kick')" id ="subscribe-btn-Kick">Subscribe</button>
                         <div id="myDropdownKick" class="dropdown-content8">
                             <text id = "kick5"  onclick = "dropdownKick()">$5/month</text>
                             <text id = "kick10" onclick = "dropdownKick()">$10/month</text>

@@ -13,7 +13,7 @@ const moviesData = [
         totalStars:"8",
         src:"../images/spiderverse-poster.jpg",
         subscribed:["../images/netflix.png"],
-        unsubscribed:["../images/amazonicon.png", "../images/appletv.png"],
+        unsubscribed:["../images/amazonicon.png", "../images/disneyplus.png"],
     },
     {
         media:"movie",
@@ -29,7 +29,7 @@ const moviesData = [
         totalStars:"9",
         src:"../images/Guardians_of_the_Galaxy_Vol._3_poster.jpg",
         subscribed:["../images/netflix.png"],
-        unsubscribed:["../images/amazonicon.png", "../images/appletv.png"],
+        unsubscribed:["../images/amazonicon.png", "../images/disneyplus.png"],
     }
 ];
 

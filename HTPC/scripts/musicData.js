@@ -12,7 +12,7 @@ const musicData = [
         totalRatings:"(20,000 ratings)",
         songs:["kiss kiss","drunk face","Concert for Aliens", "Forget Me Too"],
         src:"../images/mgk.jpg",
-        subscribed:["../images/spotify.webp"],
+        subscribed:["../images/spotify.webp", "../images/applemusic.png"],
         unsubscribed:["../images/soundcloud.png"],
     },
 ];
