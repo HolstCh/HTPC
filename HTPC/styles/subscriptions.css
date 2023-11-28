@@ -9,6 +9,7 @@ body {
     max-width: 300px;
     border: 1px solid #ccc;
     padding: 10px;
+    
 }
 
 .flex-container {
@@ -27,9 +28,15 @@ body {
 }
 
 .card{
-    border: 5px solid black;
     padding-bottom: 2%;
     background-color: #E4E6EE;
+    background-image: url('../images/subcontainerimage.png');
+    background-size: 1000px;
+    background-position-x: 70%;
+    background-position-y: 78%;
+    border: 5px;
+    border-color: rgb(255, 255, 255);;
+    border-radius: 10px;
 }
 
 /* #E4E6EE is the original light gray color */
