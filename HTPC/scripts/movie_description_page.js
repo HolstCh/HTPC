@@ -1,13 +1,12 @@
-const subscribedApps = document.getElementById('subscribed-apps');
-const unsubscribedApps = document.getElementById('unsubscribed-apps');
-const storedId = localStorage.getItem('id');
-const id = parseInt(storedId, 10);
-let allData = JSON.parse(localStorage.getItem('data'));
-let allLists = JSON.parse(localStorage.getItem('lists'));
-
 // load data
 document.addEventListener('DOMContentLoaded', function ()
 {
+    const subscribedApps = document.getElementById('subscribed-apps');
+    const unsubscribedApps = document.getElementById('unsubscribed-apps');
+    const storedId = localStorage.getItem('id');
+    const id = parseInt(storedId, 10);
+    let allData = JSON.parse(localStorage.getItem('data'));
+    let allLists = JSON.parse(localStorage.getItem('lists'));
     console.log(allLists);
     if(allLists)
     {
@@ -96,94 +95,93 @@ document.addEventListener('DOMContentLoaded', function ()
             }
         });
     }
-});
-
-function renderStars()
-{
-    console.log(allData[id].avgRating);
-    if(allData[id].avgRating === "1")
+    function renderStars()
     {
-        document.querySelector('#star1').style.color = '#ffcc00';
-        document.querySelector('#star2').style.color = '#ccc';
-        document.querySelector('#star3').style.color = '#ccc';
-        document.querySelector('#star4').style.color = '#ccc';
-        document.querySelector('#star5').style.color = '#ccc';
-    }
-    else if(allData[id].avgRating === "2")
-    {
-        document.querySelector('#star1').style.color = '#ffcc00';
-        document.querySelector('#star2').style.color = '#ffcc00';
-        document.querySelector('#star3').style.color = '#ccc';
-        document.querySelector('#star4').style.color = '#ccc';
-        document.querySelector('#star5').style.color = '#ccc';
-    }
-    else if(allData[id].avgRating === "3")
-    {
-        document.querySelector('#star1').style.color = '#ffcc00';
-        document.querySelector('#star2').style.color = '#ffcc00';
-        document.querySelector('#star3').style.color = '#ffcc00';
-        document.querySelector('#star4').style.color = '#ccc';
-        document.querySelector('#star5').style.color = '#ccc';
-    }
-    else if(allData[id].avgRating === "4")
-    {
-        document.querySelector('#star1').style.color = '#ffcc00';
-        document.querySelector('#star2').style.color = '#ffcc00';
-        document.querySelector('#star3').style.color = '#ffcc00';
-        document.querySelector('#star4').style.color = '#ffcc00';
-        document.querySelector('#star5').style.color = '#ccc';
-    }
-    else if(allData[id].avgRating === "5")
-    {
-        document.querySelector('#star1').style.color = '#ffcc00';
-        document.querySelector('#star2').style.color = '#ffcc00';
-        document.querySelector('#star3').style.color = '#ffcc00';
-        document.querySelector('#star4').style.color = '#ffcc00';
-        document.querySelector('#star5').style.color = '#ffcc00';
-    }
-}
-
-function addSubscribedApps(src) {
-    const imageElement = document.createElement('img');
-    imageElement.src = src;
-    imageElement.alt = 'subscribedApp';
-    imageElement.style.width = "6rem";
-    imageElement.style.height = "6rem";
-    imageElement.style.cursor = "pointer";
-    imageElement.addEventListener('click', function() {
-        alert('Image clicked: ' + src);
-        window.location.href = "streaming_page.html";
-    });
-    subscribedApps.appendChild(imageElement);
-}
-
-function addUnsubscribedApps(src) {
-    const imageElement = document.createElement('img');
-    imageElement.src = src;
-    imageElement.alt = 'unsubscribedApp';
-    imageElement.style.width = "6rem";
-    imageElement.style.height = "6rem";
-    imageElement.style.cursor = "pointer";
-    imageElement.addEventListener('click', function() {
-        alert('Image clicked: ' + src);
-        window.location.href = "subscriptions_page_final.html";
-    });
-    unsubscribedApps.appendChild(imageElement);
-}
-
-function handleItemClick(item) {
-    document.querySelector('.list-type').textContent= item;
-}
-
-let content = document.querySelector('.addListItem');
-content.addEventListener('click', function() {
-    for(let i = 0; i < allLists.length; i++)
-    {
-        if(allLists[i].title === document.querySelector('.list-type').textContent)
+        console.log(allData[id].avgRating);
+        if(allData[id].avgRating === "1")
         {
-            allLists[i].listItems.push(allData[id]);
+            document.querySelector('#star1').style.color = '#ffcc00';
+            document.querySelector('#star2').style.color = '#ccc';
+            document.querySelector('#star3').style.color = '#ccc';
+            document.querySelector('#star4').style.color = '#ccc';
+            document.querySelector('#star5').style.color = '#ccc';
+        }
+        else if(allData[id].avgRating === "2")
+        {
+            document.querySelector('#star1').style.color = '#ffcc00';
+            document.querySelector('#star2').style.color = '#ffcc00';
+            document.querySelector('#star3').style.color = '#ccc';
+            document.querySelector('#star4').style.color = '#ccc';
+            document.querySelector('#star5').style.color = '#ccc';
+        }
+        else if(allData[id].avgRating === "3")
+        {
+            document.querySelector('#star1').style.color = '#ffcc00';
+            document.querySelector('#star2').style.color = '#ffcc00';
+            document.querySelector('#star3').style.color = '#ffcc00';
+            document.querySelector('#star4').style.color = '#ccc';
+            document.querySelector('#star5').style.color = '#ccc';
+        }
+        else if(allData[id].avgRating === "4")
+        {
+            document.querySelector('#star1').style.color = '#ffcc00';
+            document.querySelector('#star2').style.color = '#ffcc00';
+            document.querySelector('#star3').style.color = '#ffcc00';
+            document.querySelector('#star4').style.color = '#ffcc00';
+            document.querySelector('#star5').style.color = '#ccc';
+        }
+        else if(allData[id].avgRating === "5")
+        {
+            document.querySelector('#star1').style.color = '#ffcc00';
+            document.querySelector('#star2').style.color = '#ffcc00';
+            document.querySelector('#star3').style.color = '#ffcc00';
+            document.querySelector('#star4').style.color = '#ffcc00';
+            document.querySelector('#star5').style.color = '#ffcc00';
         }
     }
-    console.log(allLists);
-    localStorage.setItem('lists', JSON.stringify(allLists));
+
+    function addSubscribedApps(src) {
+        const imageElement = document.createElement('img');
+        imageElement.src = src;
+        imageElement.alt = 'subscribedApp';
+        imageElement.style.width = "6rem";
+        imageElement.style.height = "6rem";
+        imageElement.style.cursor = "pointer";
+        imageElement.addEventListener('click', function() {
+            alert('Image clicked: ' + src);
+            window.location.href = "streaming_page.html";
+        });
+        subscribedApps.appendChild(imageElement);
+    }
+
+    function addUnsubscribedApps(src) {
+        const imageElement = document.createElement('img');
+        imageElement.src = src;
+        imageElement.alt = 'unsubscribedApp';
+        imageElement.style.width = "6rem";
+        imageElement.style.height = "6rem";
+        imageElement.style.cursor = "pointer";
+        imageElement.addEventListener('click', function() {
+            alert('Image clicked: ' + src);
+            window.location.href = "subscriptions_page_final.html";
+        });
+        unsubscribedApps.appendChild(imageElement);
+    }
+
+    function handleItemClick(item) {
+        document.querySelector('.list-type').textContent= item;
+    }
+
+    let content = document.querySelector('.addListItem');
+    content.addEventListener('click', function() {
+        for(let i = 0; i < allLists.length; i++)
+        {
+            if(allLists[i].title === document.querySelector('.list-type').textContent)
+            {
+                allLists[i].listItems.push(allData[id]);
+            }
+        }
+        console.log(allLists);
+        localStorage.setItem('lists', JSON.stringify(allLists));
+    });
 });
