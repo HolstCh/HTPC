@@ -69,17 +69,20 @@ document.addEventListener('DOMContentLoaded', function ()
 
     function handleClick()
     {
+        let textboxElement = document.querySelector('.newItem')
+        textboxElement.style.color = 'white';
         let list = document.querySelector('.newItem');
         let title = list.value;
-        let listObject = {
-            title: title,
-            media: mediaType,
-            listItems: [],
-        };
-        allLists.push(listObject);
-        localStorage.setItem('lists', JSON.stringify(allLists));
-        let listItem = document.createElement('li');
-        listItem.innerHTML = `
+        if(!document.getElementById(title)) {
+            let listObject = {
+                title: title,
+                media: mediaType,
+                listItems: [],
+            };
+            allLists.push(listObject);
+            localStorage.setItem('lists', JSON.stringify(allLists));
+            let listItem = document.createElement('li');
+            listItem.innerHTML = `
             <div class="title-info">
                 <a id="${listObject.title}" href="./list_contents_page.html">
                     <h2>${title}</h2>
@@ -88,20 +91,26 @@ document.addEventListener('DOMContentLoaded', function ()
             <button class="delete-button">X</button>
         `;
 
-        let deleteButton = listItem.querySelector('.delete-button');
-        deleteButton.addEventListener('click', function () {
-            deleteList(this);
-        });
+            let deleteButton = listItem.querySelector('.delete-button');
+            deleteButton.addEventListener('click', function () {
+                let listItem = document.getElementById(listObject.title)
+                listItem.remove()
+                deleteList(this);
+            });
 
-        let container = document.querySelector('.watchlist-items');
-        container.appendChild(listItem);
+            let container = document.querySelector('.watchlist-items');
+            container.appendChild(listItem);
 
-        document.getElementById(title).addEventListener('click', function() {
-            renderContent(title);
-        });
+            document.getElementById(title).addEventListener('click', function () {
+                renderContent(title);
+            });
 
-        list.value = '';
-        console.log(listObject);
+            list.value = '';
+            console.log(listObject);
+        } else {
+            textboxElement.style.color = 'red';
+            textboxElement.value = 'a list with that name already exists';
+        }
     }
 
     function deleteList(button) {
