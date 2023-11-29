@@ -1,5 +1,6 @@
 let allLists = JSON.parse(localStorage.getItem('lists'));
 let allData = JSON.parse(localStorage.getItem('data'));
+let mediaType = '';
 
 function loadData()
 {
@@ -76,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function ()
         let dropdown = document.getElementById("dropdownMenuButton");
         let list = document.querySelector('.newItem');
         let title = list.value;
-        if(dropdown.innerText !== "Select Media Type"){
+        if(mediaType !== ''){
             if(!document.getElementById(title) && title !== '') {
                 let listObject = {
                     title: title,
@@ -87,13 +88,13 @@ document.addEventListener('DOMContentLoaded', function ()
                 localStorage.setItem('lists', JSON.stringify(allLists));
                 let listItem = document.createElement('li');
                 listItem.innerHTML = `
-            <div class="title-info">
-                <a id="${listObject.title}" href="./list_contents_page.html">
-                    <h2>${title}</h2>
-                </a>
-            </div>
-            <button class="delete-button">X</button>
-        `;
+                    <div class="title-info">
+                        <a id="${listObject.title}" href="./list_contents_page.html">
+                            <h2>${title}</h2>
+                        </a>
+                    </div>
+                    <button class="delete-button">X</button>
+                `;
 
                 let deleteButton = listItem.querySelector('.delete-button');
                 deleteButton.addEventListener('click', function () {
@@ -123,7 +124,8 @@ document.addEventListener('DOMContentLoaded', function ()
                 paragraphElement.textContent = 'a list name cannot be empty';
             }
         } else {
-            paragraphElement.style.color = 'red'
+            paragraphElement.style.color = 'red';
+            paragraphElement.textContent = 'Select a media type';
         }
     }
 
