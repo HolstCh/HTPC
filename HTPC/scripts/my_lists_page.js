@@ -1,5 +1,6 @@
 let allLists = JSON.parse(localStorage.getItem('lists'));
 let allData = JSON.parse(localStorage.getItem('data'));
+let mediaType = '';
 
 function loadData()
 {
@@ -69,39 +70,63 @@ document.addEventListener('DOMContentLoaded', function ()
 
     function handleClick()
     {
+        // This error message pops out when two cases occur:
+        let paragraphElement = document.getElementById("errorMessage");
+        paragraphElement.textContent = '';
+
+        let dropdown = document.getElementById("dropdownMenuButton");
         let list = document.querySelector('.newItem');
         let title = list.value;
-        let listObject = {
-            title: title,
-            media: mediaType,
-            listItems: [],
-        };
-        allLists.push(listObject);
-        localStorage.setItem('lists', JSON.stringify(allLists));
-        let listItem = document.createElement('li');
-        listItem.innerHTML = `
-            <div class="title-info">
-                <a id="${listObject.title}" href="./list_contents_page.html">
-                    <h2>${title}</h2>
-                </a>
-            </div>
-            <button class="delete-button">X</button>
-        `;
+        if(mediaType !== ''){
+            if(!document.getElementById(title) && title !== '') {
+                let listObject = {
+                    title: title,
+                    media: mediaType,
+                    listItems: [],
+                };
+                allLists.push(listObject);
+                localStorage.setItem('lists', JSON.stringify(allLists));
+                let listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <div class="title-info">
+                        <a id="${listObject.title}" href="./list_contents_page.html">
+                            <h2>${title}</h2>
+                        </a>
+                    </div>
+                    <button class="delete-button">X</button>
+                `;
 
-        let deleteButton = listItem.querySelector('.delete-button');
-        deleteButton.addEventListener('click', function () {
-            deleteList(this);
-        });
+                let deleteButton = listItem.querySelector('.delete-button');
+                deleteButton.addEventListener('click', function () {
+                    let listItem = document.getElementById(listObject.title)
+                    listItem.remove()
+                    deleteList(this);
+                });
 
-        let container = document.querySelector('.watchlist-items');
-        container.appendChild(listItem);
+                let container = document.querySelector('.watchlist-items');
+                container.appendChild(listItem);
 
-        document.getElementById(title).addEventListener('click', function() {
-            renderContent(title);
-        });
+                document.getElementById(title).addEventListener('click', function () {
+                    renderContent(title);
+                });
 
-        list.value = '';
-        console.log(listObject);
+                list.value = '';
+                console.log(listObject);
+            }
+            // Error Case 1: The user attempts to create a list with a duplicate name
+            else if(document.getElementById(title)){
+                paragraphElement.style.color = 'red';
+                paragraphElement.textContent = 'a list with that name already exists';
+            }
+            // Error Case 2: The user attempts to create a list with no text input
+            else {
+                paragraphElement.style.color = 'red';
+                paragraphElement.textContent = 'a list name cannot be empty';
+            }
+        } else {
+            paragraphElement.style.color = 'red';
+            paragraphElement.textContent = 'Select a media type';
+        }
     }
 
     function deleteList(button) {

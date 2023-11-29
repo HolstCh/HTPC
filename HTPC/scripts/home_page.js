@@ -13,7 +13,7 @@ let allData = [
         totalStars:"8",
         src:"../images/spiderverse-poster.jpg",
         subscribed:["../images/netflix.png"],
-        unsubscribed:["../images/amazonicon.png", "../images/appletv.png"],
+        unsubscribed:["../images/amazonicon.png", "../images/disneyplus.png"],
     },
     {
         media:"Movie",
@@ -29,7 +29,7 @@ let allData = [
         totalStars:"9",
         src:"../images/Guardians_of_the_Galaxy_Vol._3_poster.jpg",
         subscribed:["../images/netflix.png"],
-        unsubscribed:["../images/amazonicon.png", "../images/appletv.png"],
+        unsubscribed:["../images/amazonicon.png", "../images/disneyplus.png"],
     },
     {
         media:"Music",
@@ -45,7 +45,7 @@ let allData = [
         totalUserRatings:"5",
         songs:["Wanna Be Startin' Somethin'","Baby Be Mine","The Girl Is Mine (with Paul McCartney)","Thriller","Beat It","Billie Jean","Human Nature","P.Y.T(Pretty Young Thing)","The Lady in My Life"],
         src:"../images/thriller.png",
-        subscribed:["../images/spotify.webp"],
+        subscribed:["../images/spotify.webp", "../images/applemusic.png"],
         unsubscribed:["../images/soundcloud.png"],
     },
     {
@@ -62,7 +62,7 @@ let allData = [
         totalUserRatings:"9",
         songs:["Title Track", "Kiss Kiss", 	"Drunk Face", 	"Bloody Valentine", "Forget Me Too (featuring Halsey)", "All I Know (featuring Trippie Redd)",  "Lonely","WWIII", "Kevin and Barracuda (Interlude)", "Concert for Aliens", "My Ex's Best Friend (featuring Blackbear)", "Jawbreaker"],
         src:"../images/mgk.jpg",
-        subscribed:["../images/spotify.webp"],
+        subscribed:["../images/spotify.webp", "../images/applemusic.png"],
         unsubscribed:["../images/soundcloud.png"],
     },
     {
@@ -80,7 +80,7 @@ let allData = [
         genre: "Sports",
         src:"../images/messi.jpg",
         subscribed:["../images/youtube.webp"],
-        unsubscribed:["../images/twitch.png"],
+        unsubscribed:["../images/twitch.png", "../images/kick.png"],
     },
 ];
 

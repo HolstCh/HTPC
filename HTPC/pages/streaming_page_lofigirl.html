@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Streamix</title>
+  <link rel="stylesheet" href="../styles/streaming_page_lofigirl.css">
+  <link rel="stylesheet" href="../styles/videonav_bar.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: black;
+      background-image: url('../images/tvred.png');
+      background-position: center;
+      background-repeat: repeat;
+      background-size: 200px;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      z-index: -1;
+    }
+
+    .banner-container img {
+      width: 100%;
+      height: 150px;
+      object-position: 0 50%;
+      border-radius: 10px;
+      border: 3px solid rgb(255, 255, 255);
+    }
+
+    video {
+      display: block;
+      margin: 0 auto;
+      width: 70%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .video-info-container {
+      background-color: #601c1c;
+      background-image: url('../images/redcontainer.png');
+      background-size: 1500px;
+      background-position: center;
+      border: 3px solid rgb(207, 51, 51);
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+
+    .video-info-container h2 {
+      font-size: 1.8em;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .video-info-container p {
+      font-size: 1.2em;
+      margin-bottom: 5px;
+    }
+
+    .video-info-container a {
+      color: #fff;
+      text-decoration: underline;
+      font-weight: bold;
+    }
+
+    .video-info-container a:hover {
+      color: rgb(91, 214, 255);
+      text-decoration: underline;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text">
+      <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
+      <a class="px-4 py-3" href="./music_page.html">Music</a>
+      <a class="px-4 py-3" href="./video_page.html">Videos</a>
+      <div class="user-profile">
+        <div class="overlay text-center">
+          <a href="#" class="subscription-link text-xl">My Lists</a>
+          <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
+          <a href="#" class="settings-link text-xl">Account & Settings</a>
+          <a href="#" class="settings-link text-xl">Logout</a>
+        </div>
+        <i class="fa fa-user-circle-o user-profile"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="w3-container">
+    <div class="banner-container">
+      <img src="../images/lofibanner.png" alt="lofi Banner" class="lofi banner">
+    </div>
+
+    <video controls="controls">
+      <source src="../videos/lofivid.mp4" type="video/mp4" />
+    </video>
+
+    <div class="video-info-container">
+      <h2>lofi hip hop radio 📚 - beats to relax/study to</h2>
+      <p>🔴Live Viewer Count: 34,183 watching now</p>
+      <p>Like Count: 2.3 Million Likes</p>
+      <p><a href="https://www.youtube.com/@LofiGirl" target="_blank">www.youtube.com/@LofiGirl</a></p>
+    </div>
+
+    <p>
+      About Channel:
+      "That girl studying by the window non-stop"
+    </p>
+  </div>
+
+  <script>
+
+  </script>
+</body>
+
+</html>
