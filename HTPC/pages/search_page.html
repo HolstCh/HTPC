@@ -8,8 +8,10 @@
   <link rel="stylesheet" href="../styles/nav_bar.css">
   <link rel="stylesheet" href="../styles/ratingSystem.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Media Search</title>
+  <title>Media Search Page</title>
   <style>
+/* The following code is from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
     body {
       background-color: #f8f9fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -100,6 +102,7 @@
       display: flex;
       align-items: center;
     }
+/* ---------------------------------------------------------------------------------------------------------------- */
   </style>
 </head>
 <body class="bg-slate-900">
@@ -128,13 +131,16 @@
   </div>
   <br>
 </header>
+<!-- The following code is from: ----------------------------------------------------------------------------- */
+ OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
+-->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-10">
       <div class="form-group">
         <label for="mediaType">Select Media Type</label>
         <select id="mediaType" class="form-control genreChange">
-          <option value="">Select Media Type</option>
+          <option value="">-- Select Media Type --</option>
           <option value="Movie">Movies</option>
           <option value="TV">TV</option>
           <option value="Music">Music</option>
@@ -143,7 +149,7 @@
       </div>
 
       <div class="form-group" id="genreDropdown" style="display: none;">
-        <label for="genre">Select Genre</label>
+        <label for="genre">-- Select Genre --</label>
         <select id="genre" class="form-control">
           <option value="">-- Select Genre --</option>
           <!-- Genres will be dynamically populated based on the selected media type -->

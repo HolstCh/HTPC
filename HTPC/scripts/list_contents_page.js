@@ -7,7 +7,8 @@ console.log(id3);
 console.log(allLists[id3]);
 document.addEventListener('DOMContentLoaded', function()
 {
-
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
     const resultsContainer = document.getElementById('listContainer');
     resultsContainer.innerHTML = '';
 
@@ -35,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function()
 
         const contentDetails = document.createElement('div');
         contentDetails.classList.add('content-details');
-
+// ----------------------------------------------------------------------------------------------------------------
         avgRatings.push(item.avgRating);
         if (item.media === "Movie")
         {
@@ -109,7 +110,8 @@ document.addEventListener('DOMContentLoaded', function()
                     <p>Duration: ${item.duration}</p>
                     `;
         }
-
+// The following code is modified from: ---------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
         contentDetailsContainer.appendChild(contentDetails);
 
         const appsContainer = document.createElement('div');
@@ -155,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function()
         deleteButton.addEventListener('click', function () {
             deleteItem(this, item.title);
         });
-
+// -----------------------------------------------------------------------------------------------------------------
         console.log(item.title);
         console.log(item.avgRating);
     });
@@ -180,6 +182,8 @@ function deleteItem(button, itemTitle)
     listItem.remove();
 }
 
+// The following code is modified from: -----------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
 function createAppImage(src, alt) {
     const imageElement = document.createElement('img');
     imageElement.src = src;
@@ -197,7 +201,7 @@ function createAppImage(src, alt) {
 
     return imageElement;
 }
-
+// ----------------------------------------------------------------------------------------------------------------
 function renderStarColors()
 {
     let colors = [];
@@ -206,12 +210,12 @@ function renderStarColors()
         colors.push(getColors(avgRatings[i]));
     }
 
-    var starSearchContainers = document.querySelectorAll('.starsContainer');
-
-    // Iterate over each container
+// The following code is modified from: ----------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
+    let starSearchContainers = document.querySelectorAll('.starsContainer');
     starSearchContainers.forEach(function (container, containerIndex) {
         // Get all child div elements within the container
-        var stars = container.querySelectorAll('div');
+        let stars = container.querySelectorAll('div');
         // Apply different colors to each star within the set
         stars.forEach(function (star, index) {
             if (colors[containerIndex][index] === '#ffcc00') {

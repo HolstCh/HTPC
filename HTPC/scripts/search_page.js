@@ -1,74 +1,56 @@
-let allData = JSON.parse(localStorage.getItem('data'));
-
-function updateGenres()
+document.addEventListener('DOMContentLoaded', function()
 {
-    const mediaType = document.getElementById('mediaType').value;
-    const genreDropdown = document.getElementById('genreDropdown');
-    const genreSelect = document.getElementById('genre');
-
-    genreSelect.innerHTML = '<option value="">-- Select Genre --</option>';
-
-    if (mediaType === 'Movie')
+    let allData = JSON.parse(localStorage.getItem('data'));
+    let avgRatings = [];
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
+    function updateGenres()
     {
-        const movieGenres = ['Comedy', 'Action', 'Animation', 'Sci-Fi'];
-        movieGenres.forEach(genre => {
-            const option = document.createElement('option');
-            option.value = genre.toLowerCase();
-            option.textContent = genre;
-            genreSelect.appendChild(option);
-        });
-    }
-    else if (mediaType === 'TV Show')
-    {
-        const tvShowGenres = ['Drama', 'Mystery', 'Thriller', 'Fantasy'];
-        tvShowGenres.forEach(genre => {
-            const option = document.createElement('option');
-            option.value = genre.toLowerCase();
-            option.textContent = genre;
-            genreSelect.appendChild(option);
-        });
-    }
-    else if (mediaType === 'Music')
-    {
-        const tvShowGenres = ['Pop Punk', 'EDM', 'Country', 'Rock', 'Jazz'];
-        tvShowGenres.forEach(genre => {
-            const option = document.createElement('option');
-            option.value = genre.toLowerCase();
-            option.textContent = genre;
-            genreSelect.appendChild(option);
-        });
-    }
-    else if (mediaType === 'Video')
-    {
-        const tvShowGenres = ['Sports', 'Gaming', 'Educational'];
-        tvShowGenres.forEach(genre => {
-            const option = document.createElement('option');
-            option.value = genre.toLowerCase();
-            option.textContent = genre;
-            genreSelect.appendChild(option);
-        });
-    }
-    genreDropdown.style.display = mediaType ? 'block' : 'none';
-}
+        const mediaType = document.getElementById('mediaType').value;
+        const genreDropdown = document.getElementById('genreDropdown');
+        const genreSelect = document.getElementById('genre');
 
-let avgRatings = [];
-function search() {
-    const mediaType = document.getElementById('mediaType').value;
-    const genre = document.getElementById('genre').value;
-    const rating = document.getElementById('rating').value;
-    const searchBar = document.getElementById('searchBar').value;
+        genreSelect.innerHTML = '<option value="">-- Select Genre --</option>';
 
-    // Perform search logic based on selected media type, genre, rating, and search query
-    console.log('Media Type:', mediaType);
-    console.log('Genre:', genre);
-    console.log('Rating:', rating);
-    console.log('Search Query:', searchBar);
-
-    // Example: Replace this section with actual search logic and results
-    const resultsContainer = document.getElementById('resultsContainer');
-    resultsContainer.innerHTML = '';
-
-    allData.forEach(item =>
+        if (mediaType === 'Movie')
+        {
+            const movieGenres = ['Comedy', 'Action', 'Animation', 'Sci-Fi'];
+            movieGenres.forEach(genre => {
+                const option = document.createElement('option');
+                option.textContent = genre;
+                genreSelect.appendChild(option);
+            });
+        }
+        else if (mediaType === 'TV Show')
+        {
+            const tvShowGenres = ['Drama', 'Mystery', 'Thriller', 'Fantasy'];
+            tvShowGenres.forEach(genre => {
+                const option = document.createElement('option');
+                option.textContent = genre;
+                genreSelect.appendChild(option);
+            });
+        }
+        else if (mediaType === 'Music')
+        {
+            const tvShowGenres = ['Pop Punk', 'EDM', 'Country', 'Rock', 'Jazz'];
+            tvShowGenres.forEach(genre => {
+                const option = document.createElement('option');
+                option.textContent = genre;
+                genreSelect.appendChild(option);
+            });
+        }
+        else if (mediaType === 'Video')
+        {
+            const tvShowGenres = ['Sports', 'Gaming', 'Educational'];
+            tvShowGenres.forEach(genre => {
+                const option = document.createElement('option');
+                option.textContent = genre;
+                genreSelect.appendChild(option);
+            });
+        }
+        genreDropdown.style.display = mediaType ? 'block' : 'none';
+    }
+    function appendContainers(resultsContainer, i)
     {
         const resultContainer = document.createElement('div');
         resultContainer.classList.add('result-container');
@@ -76,33 +58,33 @@ function search() {
         const resultItem = document.createElement('div');
         resultItem.classList.add('result-item', 'd-flex');
 
-        // Container for content image
+        // container for content image
         const contentImageContainer = document.createElement('div');
         contentImageContainer.classList.add('content-image-container', 'mr-4');
 
-        // Content image
+        // content image
         const contentImage = document.createElement('img');
-        contentImage.src = item.src;
+        contentImage.src = allData[i].src;
         contentImage.style.width = "13rem";
         contentImage.style.height = "13rem";
-        contentImage.alt = item.title;
+        contentImage.alt = allData[i].title;
 
-        // Append content image to container
+        // append content image to container
         contentImageContainer.appendChild(contentImage);
 
-        // Container for content details
+        // container for content details
         const contentDetailsContainer = document.createElement('div');
         contentDetailsContainer.classList.add('content-details-container', 'mr-4');
 
-        // Content details
+        // content details
         const contentDetails = document.createElement('div');
         contentDetails.classList.add('content-details');
-
-        avgRatings.push(item.avgRating);
-        if (item.media === "Movie")
+// ---------------------------------------------------------------------------------------------------------------
+        avgRatings.push(allData[i].avgRating);
+        if (allData[i].media === "Movie")
         {
             contentDetails.innerHTML = `
-            <h5>${item.title}</h5>
+            <h5>${allData[i].title}</h5>
             <div class="avg-rating starsContainer space-x-2">
                 <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
                 <div class="starSearch" style=colors[1]>&#9733;</div>
@@ -110,16 +92,16 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
-            <p>Total User Ratings: ${item.totalUserRatings}</p>
-            <p>Genre: ${item.tags[0]}</p>
-            <p>Year: ${item.year}</p>
-            <p>Duration: ${item.duration}</p>
+            <p>Total User Ratings: ${allData[i].totalUserRatings}</p>
+            <p>Genre: ${allData[i].tags[0]}</p>
+            <p>Year: ${allData[i].year}</p>
+            <p>Duration: ${allData[i].duration}</p>
           `;
         }
-        else if(item.media === "Music")
+        else if(allData[i].media === "Music")
         {
             contentDetails.innerHTML = `
-            <h5>${item.title}</h5>
+            <h5>${allData[i].title}</h5>
             <div class="avg-rating starsContainer space-x-2">
                 <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
                 <div class="starSearch" style=colors[1]>&#9733;</div>
@@ -127,17 +109,17 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
-            <p>Total User Ratings: ${item.totalUserRatings}</p>
-            <p>Artist: ${item.artist}</p>
-            <p>Genre: ${item.genre}</p>
-            <p>Year: ${item.year}</p>
-            <p>Duration: ${item.duration}</p>
+            <p>Total User Ratings: ${allData[i].totalUserRatings}</p>
+            <p>Artist: ${allData[i].artist}</p>
+            <p>Genre: ${allData[i].genre}</p>
+            <p>Year: ${allData[i].year}</p>
+            <p>Duration: ${allData[i].duration}</p>
           `;
         }
-        else if(item.media === "TV Show")
+        else if(allData[i].media === "TV Show")
         {
             contentDetails.innerHTML = `
-            <h5>${item.title}</h5>
+            <h5>${allData[i].title}</h5>
             <div class="avg-rating starsContainer space-x-2">
                 <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
                 <div class="starSearch" style=colors[1]>&#9733;</div>
@@ -145,17 +127,17 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
-            <p>Total User Ratings: ${item.totalUserRatings}</p>
-            <p>Artist: ${item.artist}</p>
-            <p>Genre: ${item.genre}</p>
-            <p>Year: ${item.year}</p>
-            <p>Duration: ${item.duration}</p>
+            <p>Total User Ratings: ${allData[i].totalUserRatings}</p>
+            <p>Artist: ${allData[i].artist}</p>
+            <p>Genre: ${allData[i].genre}</p>
+            <p>Year: ${allData[i].year}</p>
+            <p>Duration: ${allData[i].duration}</p>
           `;
         }
-        else if(item.media === "Video")
+        else if(allData[i].media === "Video")
         {
             contentDetails.innerHTML = `
-            <h5>${item.title}</h5>
+            <h5>${allData[i].title}</h5>
             <div class="avg-rating starsContainer space-x-2">
                 <div class="starSearch" style='color: #ffcc00;'>&#9733;</div>
                 <div class="starSearch" style=colors[1]>&#9733;</div>
@@ -163,14 +145,16 @@ function search() {
                 <div class="starSearch" style=colors[3]>&#9733;</div>
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
-            <p>Total User Ratings: ${item.totalUserRatings}</p>
-            <p>Channel: ${item.channel}</p>
-            <p>Genre: ${item.genre}</p>
-            <p>Views: ${item.viewCount}</p>
-            <p>Likes: ${item.likeCount}</p>
-            <p>Duration: ${item.duration}</p>
+            <p>Total User Ratings: ${allData[i].totalUserRatings}</p>
+            <p>Channel: ${allData[i].channel}</p>
+            <p>Genre: ${allData[i].genre}</p>
+            <p>Views: ${allData[i].viewCount}</p>
+            <p>Likes: ${allData[i].likeCount}</p>
+            <p>Duration: ${allData[i].duration}</p>
             `;
         }
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
 
         contentDetailsContainer.appendChild(contentDetails);
 
@@ -181,120 +165,186 @@ function search() {
         subscribedAppsContainer.classList.add('subscribed-apps', 'text-center');
         subscribedAppsContainer.innerHTML = `<p class="px-3">Subscribed Apps:</p>`;
 
-
         appsContainer.appendChild(subscribedAppsContainer);
 
-        item.subscribed.forEach(src => {
+        allData[i].subscribed.forEach(src => {
             const imageElement = createAppImage(src, 'subscribedApp');
             subscribedAppsContainer.appendChild(imageElement);
         });
-
 
         const unsubscribedAppsContainer = document.createElement('div');
         unsubscribedAppsContainer.classList.add('unsubscribed-apps');
         unsubscribedAppsContainer.innerHTML = `<p class="px-2">Unsubscribed Apps:</p>`;
 
-
         appsContainer.appendChild(unsubscribedAppsContainer);
 
-        item.unsubscribed.forEach(src => {
+        allData[i].unsubscribed.forEach(src => {
             const imageElement = createAppImage(src, 'unsubscribedApp');
             unsubscribedAppsContainer.appendChild(imageElement);
         });
 
-        // Append elements to result item
         resultItem.appendChild(contentImageContainer);
         resultItem.appendChild(contentDetailsContainer);
         resultItem.appendChild(appsContainer);
 
-        // Append result item to result container
         resultContainer.appendChild(resultItem);
         resultsContainer.appendChild(resultContainer);
 
-        console.log(item.title);
-        console.log(item.avgRating);
-    });
-    renderStarColors();
-}
-    function createAppImage(src, alt) {
-    const imageElement = document.createElement('img');
-    imageElement.src = src;
-    imageElement.alt = alt;
-    imageElement.style.width = "6rem";
-    imageElement.style.height = "6rem";
-    imageElement.style.cursor = "pointer";
-
-    // Add click event listener
-    imageElement.addEventListener('click', function() {
-        const location = alt === 'subscribedApp' ? 'streaming_page.html' : 'subscriptions_page_final.html';
-        alert(`Image clicked: ${src}`);
-        window.location.href = location;
-    });
-
-    return imageElement;
-}
-
-function renderStarColors()
-{
-    let colors = [];
-    for(let i = 0; i < avgRatings.length; i++)
-    {
-        colors.push(getColors(avgRatings[i]));
+        console.log(allData[i].title);
+        console.log(allData[i].avgRating);
     }
 
-    var starSearchContainers = document.querySelectorAll('.starsContainer');
+    function search()
+    {
+        const mediaType = document.getElementById('mediaType').value;
+        const genre = document.getElementById('genre').value;
+        const rating = document.getElementById('rating').value;
+        const searchBar = document.getElementById('searchBar').value;
 
-    // Iterate over each container
-    starSearchContainers.forEach(function (container, containerIndex) {
-        // Get all child div elements within the container
-        var stars = container.querySelectorAll('div');
-        // Apply different colors to each star within the set
-        stars.forEach(function (star, index) {
-            if (colors[containerIndex][index] === '#ffcc00') {
-                star.style.color = '#ffcc00';
-            }
-            else if(colors[containerIndex][index] === '#ccc')
+        console.log('Media Type:', mediaType);
+        console.log('Genre:', genre);
+        console.log('Rating:', rating);
+        console.log('Search Query:', searchBar);
+
+        const resultsContainer = document.getElementById('resultsContainer');
+        while (resultsContainer.firstChild) {
+            resultsContainer.removeChild(resultsContainer.firstChild);
+            console.log("h")
+        }
+// ---------------------------------------------------------------------------------------------------------------
+        avgRatings = [];
+        for(let i = 0; i < allData.length; i++)
+        {
+            let dataGenre = "";
+            if(allData[i].media === "Movie")
             {
-                star.style.color = '#ccc';
+                for(let j = 0; j < allData[i].tags.length; j++)
+                {
+                    if(genre === allData[i].tags[j])
+                    {
+                        dataGenre = allData[i].tags[j];
+                        break;
+                    }
+                }
             }
+            else
+            {
+                dataGenre = allData[i].genre;
+            }
+
+            if(mediaType === allData[i].media && genre === dataGenre && rating === allData[i].avgRating && searchBar === "")
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else if(mediaType === allData[i].media && genre === dataGenre && rating === "" && searchBar === "")
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else if(mediaType === allData[i].media && genre === "" && rating === "" && searchBar === "")
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else if(mediaType === "" && genre === dataGenre && rating === "" && searchBar === "")
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else if(mediaType === "" && genre === "" && rating === allData[i].avgRating && searchBar === "")
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else if(mediaType ===  allData[i].media && genre === "" && rating === allData[i].avgRating && searchBar === "")
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else if(mediaType === "" && genre === dataGenre && rating === allData[i].avgRating && searchBar === "")
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else if(mediaType === "" && genre === "" && rating === "" && searchBar === allData[i].title)
+            {
+                appendContainers(resultsContainer, i);
+            }
+            else {}
+        }
+        renderStarColors();
+    }
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
+    function createAppImage(src, alt) {
+        const imageElement = document.createElement('img');
+        imageElement.src = src;
+        imageElement.alt = alt;
+        imageElement.style.width = "6rem";
+        imageElement.style.height = "6rem";
+        imageElement.style.cursor = "pointer";
+
+        // Add click event listener
+        imageElement.addEventListener('click', function()
+        {
+            const location = alt === 'subscribedApp' ? 'streaming_page.html' : 'subscriptions_page_final.html';
+            window.location.href = location;
         });
+
+        return imageElement;
+    }
+// ---------------------------------------------------------------------------------------------------------------
+    function renderStarColors()
+    {
+        let colors = [];
+        for(let i = 0; i < avgRatings.length; i++)
+        {
+            colors.push(getColors(avgRatings[i]));
+        }
+        let starSearchContainers = document.querySelectorAll('.starsContainer');
+
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
+
+        // iterate over each container
+        starSearchContainers.forEach(function (container, containerIndex) {
+            var stars = container.querySelectorAll('div');
+            stars.forEach(function (star, index) {
+                if (colors[containerIndex][index] === '#ffcc00') {
+                    star.style.color = '#ffcc00';
+                }
+                else if(colors[containerIndex][index] === '#ccc')
+                {
+                    star.style.color = '#ccc';
+                }
+            });
+        });
+    }
+// ------------------------------------------------------------------------------------------------------------------
+    function getColors(avgRating)
+    {
+        if(avgRating === "1")
+        {
+            return ['#ffcc00', '#ccc', '#ccc', '#ccc', '#ccc'];
+        }
+        else if(avgRating === "2")
+        {
+            return ['#ffcc00', '#ffcc00', '#ccc', '#ccc', '#ccc'];
+        }
+        else if(avgRating === "3")
+        {
+            return ['#ffcc00', '#ffcc00', '#ffcc00', '#ccc', '#ccc'];
+        }
+        else if(avgRating === "4")
+        {
+            return ['#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00', '#ccc'];
+        }
+        else if(avgRating === "5")
+        {
+            return ['#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00'];
+        }
+    }
+
+    // click handler to handle search results
+    document.getElementById('searchClick').addEventListener('click', function() {
+        search();
     });
-}
-
-function getColors(avgRating)
-{
-    if(avgRating === "1")
-    {
-        return ['#ffcc00', '#ccc', '#ccc', '#ccc', '#ccc'];
-    }
-    else if(avgRating === "2")
-    {
-        return ['#ffcc00', '#ffcc00', '#ccc', '#ccc', '#ccc'];
-    }
-    else if(avgRating === "3")
-    {
-        return ['#ffcc00', '#ffcc00', '#ffcc00', '#ccc', '#ccc'];
-    }
-    else if(avgRating === "4")
-    {
-        return ['#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00', '#ccc'];
-    }
-    else if(avgRating === "5")
-    {
-        return ['#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00', '#ffcc00'];
-    }
-}
-
-// click handler to handle search results
-document.getElementById('searchClick').addEventListener('click', function() {
-    search();
+    // click handler to handle search results
+    document.querySelector('.genreChange').addEventListener('change', function() {
+        updateGenres();
+    });
 });
-// click handler to handle search results
-document.querySelector('.genreChange').addEventListener('change', function() {
-    updateGenres();
-});
-
-function openApp(appName) {
-    // Replace this with the actual logic to open the app
-    alert(`Opening ${appName}`);
-}
