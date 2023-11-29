@@ -34,3 +34,9 @@
 .user-star.active {
     color: #ffcc00;
 }
+
+.banner-container img {
+    max-width: 80vw;
+    height: 500px;
+    margin: 0 auto; 
+}

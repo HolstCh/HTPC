@@ -13,24 +13,46 @@
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
+      background-color: #ffffff;
+      background-image: url('../images/ratingswallpaper.png');
+      background-size: 200px;
+      background-repeat: repeat;
+      background-position: center;
     }
+
+    .banner-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid rgb(255, 255, 255);
+}
 
     .rating-container {
       display: flex;
       justify-content: center;
       background-color: #ffffff;
+      background-image: url('../images/bluecontainer.png');
+      background-size: 1000px;
+      background-position: center;
       border-radius: 8px;
       padding: 20px;
       text-align: center;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 2rem;
-      width: 50%; /* Make containers wider */
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      width: 50%;
+      border-width: 3px;
+      border-radius: 10px;
+      border-color: rgb(127, 255, 251);
+      color: white;
     }
 
     .rating-card button {
       margin-top: 5px;
       cursor: pointer;
     }
+
   </style>
 </head>
 <header class="bg-slate-900">
@@ -59,6 +81,13 @@
   <br>
 </header>
 <body class="bg-slate-900">
+
+  <div class="banner-container">
+    <img src="../images/ratingsbanner.png" >
+  </div>
+
+  <div class="fixed-container">
+  </div>
 
 <div id="ratingHistory" class="flex items-center flex-col"></div>
 <script src="../scripts/ratings_page.js"></script>
