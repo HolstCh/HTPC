@@ -1,4 +1,3 @@
-/* used to adjust width of outermost container to specific screen ... if between min and next min level, then set to min */
 .responsive-width {
     width: 100%;
 }
@@ -35,6 +34,9 @@
 
 body {
     font-family: Arial, sans-serif;
+    background-image: url('../images/listwallpaper.png');
+    background-size: 200px;
+    background-repeat: repeat;
     margin: 0;
     padding: 0;
     background-color: #111827;
@@ -49,12 +51,16 @@ header {
 
 .content-container {
     background: #4b4b4b;
+    background-image: url('../images/bluecontainercrop.png');
+    background-size: 1500px;
+    background-position: center;
     border-radius: 5rem;
     text-align: center;
     padding-bottom: 5rem;
     margin-left: 4rem;
-    border-color:#111827;
-    border-width: 2rem;
+    margin: 3rem;
+    border-color: rgb(31, 91, 255);
+    border-width: 3px;
     width: 90%
 }
 
@@ -88,7 +94,11 @@ li {
     width: 100%;
     margin: 0 auto;
     padding: 20px;
-    background-color: #4b4b4b;
+    background-color: #337f99;
+    background-image: url('../images/bluecontainercrop.png');
+    background-size: 1500px;
+    background-repeat: repeat;
+    background-position: center;
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     color: white;
@@ -107,7 +117,10 @@ li {
 .watchlist li {
     margin: 10px 0;
     padding: 10px;
-    background-color: #303030;
+    background-color: rgb(69, 94, 94);
+    border-radius: 10px;
+    border-color: rgb(95, 236, 236);
+    border-width: 2px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     display: flex; /* Display the image and description side by side */
     
