@@ -1,6 +1,6 @@
 // top of JS file:
-let allLists = JSON.parse(localStorage.getItem('lists'));
 let allData = JSON.parse(localStorage.getItem('data'));
+let allLists = JSON.parse(localStorage.getItem('lists'));
 
 // this block of code is taken from https://www.w3schools.com/howto/howto_js_dropdown.asp
 
@@ -137,7 +137,7 @@ window.onclick = function(event) {
 }
 
 // subscribe button (dropdown) and unsubscribe button 
-const subscribeButtonNetflix = document.querySelector(".subscribeButtonNetflix")
+const subscribeButtonNetflix = document.getElementById("subNetflix")
 const subscribeButtonDisney = document.querySelector(".subscribeButtonDisney")
 const subscribeButtonPrime = document.querySelector(".subscribeButtonPrime")
 const subscribeButtonSpotify = document.querySelector(".subscribeButtonSpotify")
@@ -237,7 +237,6 @@ function unsubConfirm(name) {
 
 }
 
-
 function subscribeOnClick(name) {
   text = "Would you like to subscribe?"
   if (confirm(text) == true){
@@ -248,6 +247,7 @@ function subscribeOnClick(name) {
       showUnsubscribeNetflix.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
       dropdownNetflix()
       imageSubscribeApp('netflix')
+      console.log("ok")
     }
     else if (String(name).valueOf() === "disney+") {
       subscribeButtonDisney.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
@@ -268,6 +268,7 @@ function subscribeOnClick(name) {
       subscribeButtonSpotify.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeSpotify.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
       dropdownSpotify()
+      imageSubscribeApp('spotify')
     }
     else if (String(name).valueOf() === "apple") {
       subscribeButtonApple.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
@@ -313,6 +314,10 @@ const netflixHeader = document.querySelector("#netflix-header")
 document.querySelector("#netflix6").addEventListener("click", function() {netflixHeader.innerHTML = "Subscribed <br> Current Plan: $6/month"})
 document.querySelector("#netflix17").addEventListener("click", function() {netflixHeader.innerHTML = "Subscribed <br> Current Plan: $17/month"})
 document.querySelector("#netflix21").addEventListener("click", function() {netflixHeader.innerHTML = "Subscribed <br> Current Plan: $21/month"})
+//document.querySelector("#netflix6").addEventListener("click", saveData())
+//document.querySelector("#netflix17").addEventListener("click", saveData())
+//document.querySelector("#netflix21").addEventListener("click", saveData())
+
 
 //prime 
 const primeHeader = document.querySelector("#prime-header")
@@ -430,6 +435,21 @@ function imageSubscribeApp(name)
                 allData[i].unsubscribed.splice(indexUnsub, 1);
             }
         }
+        if(allData[i].media === "TV Show" && (name === "netflix" || name === "prime" || name === "disney"))
+        {
+            // check if src doesn't exist already in its sub list, then add it (-1 means doesn't exist, any other index is location of src string)
+            let indexSub = allData[i].subscribed.indexOf(imgFilePath);
+            if (indexSub === -1)
+            {
+                allData[i].subscribed.push(imgFilePath);
+            }
+            // check if src exists in its unsub list, then remove it (-1 means doesn't exist, any other index is location of src string)
+            let indexUnsub = allData[i].unsubscribed.indexOf(imgFilePath);
+            if (indexUnsub !== -1)
+            {
+                allData[i].unsubscribed.splice(indexUnsub, 1);
+            }
+        }
           // check if app belongs in object by checking media type
           if(allData[i].media === "Video" && (name === "twitch" || name === "youtube" || name === "kick"))
           {
@@ -468,6 +488,19 @@ function imageSubscribeApp(name)
             }
             // check if object has same media type (allLists[j].listItems[k] is same as allData object)
             if(allLists[j].listItems[k].media === "Movie" && (name === "netflix" || name === "prime" || name === "disney"))
+            {
+                let indexSub = allLists[j].listItems[k].subscribed.indexOf(imgFilePath);
+                if (indexSub === -1)
+                {
+                    allLists[j].listItems[k].subscribed.push(imgFilePath);
+                }
+                let indexUnsub = allLists[j].listItems[k].unsubscribed.indexOf(imgFilePath);
+                if (indexUnsub !== -1)
+                {
+                    allLists[j].listItems[k].unsubscribed.splice(indexUnsub, 1);
+                }
+            }
+            if(allLists[j].listItems[k].media === "TV Show" && (name === "netflix" || name === "prime" || name === "disney"))
             {
                 let indexSub = allLists[j].listItems[k].subscribed.indexOf(imgFilePath);
                 if (indexSub === -1)
@@ -553,22 +586,38 @@ function imageUnsubscribeApp(name)
                 allData[i].subscribed.splice(indexSub, 1);
             }
         }
-        // check if app belongs in object by checking media type
-        if(allData[i].media === "Movie" && (name === "netflix" || name === "prime" || name === "disney"))
-        {
-            // check if src doesn't exist already in its sub list, then add it (-1 means doesn't exist, any other index is location of src string)
-            let indexUnsub = allData[i].unsubscribed.indexOf(imgFilePath);
-            if (indexUnsub === -1)
+          // check if app belongs in object by checking media type
+          if(allData[i].media === "Movie" && (name === "netflix" || name === "prime" || name === "disney"))
+          {
+              // check if src doesn't exist already in its sub list, then add it (-1 means doesn't exist, any other index is location of src string)
+              let indexUnsub = allData[i].unsubscribed.indexOf(imgFilePath);
+              if (indexUnsub === -1)
+              {
+                  allData[i].unsubscribed.push(imgFilePath);
+              }
+              // check if src exists in its unsub list, then remove it (-1 means doesn't exist, any other index is location of src string)
+              let indexSub = allData[i].subscribed.indexOf(imgFilePath);
+              if (indexSub !== -1)
+              {
+                  allData[i].subscribed.splice(indexSub, 1);
+              }
+          }
+            // check if app belongs in object by checking media type
+            if(allData[i].media === "TV Show" && (name === "netflix" || name === "prime" || name === "disney"))
             {
-                allData[i].unsubscribed.push(imgFilePath);
+                // check if src doesn't exist already in its sub list, then add it (-1 means doesn't exist, any other index is location of src string)
+                let indexUnsub = allData[i].unsubscribed.indexOf(imgFilePath);
+                if (indexUnsub === -1)
+                {
+                    allData[i].unsubscribed.push(imgFilePath);
+                }
+                // check if src exists in its unsub list, then remove it (-1 means doesn't exist, any other index is location of src string)
+                let indexSub = allData[i].subscribed.indexOf(imgFilePath);
+                if (indexSub !== -1)
+                {
+                    allData[i].subscribed.splice(indexSub, 1);
+                }
             }
-            // check if src exists in its unsub list, then remove it (-1 means doesn't exist, any other index is location of src string)
-            let indexSub = allData[i].subscribed.indexOf(imgFilePath);
-            if (indexSub !== -1)
-            {
-                allData[i].subscribed.splice(indexSub, 1);
-            }
-        }
           // check if app belongs in object by checking media type
           if(allData[i].media === "Video" && (name === "twitch" || name === "youtube" || name === "kick"))
           {
@@ -619,6 +668,19 @@ function imageUnsubscribeApp(name)
                     allLists[j].listItems[k].subscribed.splice(indexSub, 1);
                 }
             }
+            if(allLists[j].listItems[k].media === "TV Show" && (name === "netflix" || name === "prime" || name === "disney"))
+            {
+                let indexUnsub = allLists[j].listItems[k].unsubscribed.indexOf(imgFilePath);
+                if (indexUnsub === -1)
+                {
+                    allLists[j].listItems[k].unsubscribed.push(imgFilePath);
+                }
+                let indexSub = allLists[j].listItems[k].subscribed.indexOf(imgFilePath);
+                if (indexSub !== -1)
+                {
+                    allLists[j].listItems[k].subscribed.splice(indexSub, 1);
+                }
+            }
             // check if object has same media type (allLists[j].listItems[k] is same as allData object)
             if(allLists[j].listItems[k].media === "Video" && (name === "twitch" || name === "youtube" || name === "kick"))
             {
@@ -644,3 +706,69 @@ function imageUnsubscribeApp(name)
     console.log(allLists);
 };
 
+
+/*
+// clicking the button for the first time will work but it breaks after that because.. 
+// can stil lclick on things, but the text is not updating
+
+function saveData() {
+  var inputData = document.querySelector('#netflix-header').innerHTML;
+  localStorage.setItem('savedData', inputData);
+  console.log("save")
+  displayData()
+}
+// Function to display data from local storage
+function displayData() {
+  var savedData = localStorage.getItem('savedData');
+  var displayElement = document.querySelector('#netflix-header');
+  if (savedData) {
+      displayElement.innerHTML =  savedData;
+      console.log("save1")
+  } else {
+  }
+}
+
+
+function wtf() {
+  // 
+
+  var inputData1 = document.querySelector('#please').innerHTML;
+  subscribeButtonNetflix.textContent = "ajajakjsdkajsdakdas"
+  localStorage.setItem('savedData1', inputData1);
+  console.log("wtf")
+  console.log(allLists)
+  console.log(allData)
+  displayData1()
+}
+// Function to display data from local storage
+function displayData1() {
+  var savedData1 = localStorage.getItem('savedData1');
+  var displayElement1 = document.querySelector('#please');
+  if (savedData1) {
+      displayElement1.innerHTML = savedData1;
+      console.log("wtf1")
+  } else {
+  }
+}
+
+ localStorage.clear()
+// Display data on page load
+displayData()
+displayData1()
+
+var appData = [
+  { name: "Netflix", subButton: "Description1", UnsubButton: "Version1" },
+  { name: "Prime", subButton: "Description2", UnsubButton: "Version2" },
+  // ... more apps
+];
+
+var appDataJSON = JSON.stringify(appData);
+
+localStorage.setItem("appData", appDataJSON);
+
+var storedAppDataJSON = localStorage.getItem("appData");
+if (storedAppDataJSON) {
+    var storedAppData = JSON.parse(storedAppDataJSON);
+    // Now, storedAppData contains your array of string arrays or objects
+}
+*/
