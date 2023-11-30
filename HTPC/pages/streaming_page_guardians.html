@@ -121,22 +121,31 @@
 </head>
 
 <body>
-  <header class="bg-slate-900">
-    <div class="flex-navbar flex-nav-items navbar-text">
-      <a class="px-4 py-3 active" href="./home_page.html">Movies & TV</a>
-      <a class="px-4 py-3" href="./music_page.html">Music</a>
+<header class="bg-slate-900">
+  <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+    <div>
+      <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
+      <a class="px-4 py-3 active" href="./music_page.html">Music</a>
       <a class="px-4 py-3" href="./video_page.html">Videos</a>
-      <div class="user-profile">
-        <div class="overlay text-center">
-          <a href="#" class="subscription-link text-xl">My Lists</a>
-          <a href="#" class="subscription-link text-xl">Manage Subscriptions</a>
-          <a href="#" class="settings-link text-xl">Account & Settings</a>
+    </div>
+    <div class="flex items-end">
+      <a href="./search_page.html">
+        <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+      </a>
+      <div class="user-profile relative">
+        <div class="overlay absolute top-full left-[-4.8rem] w-50">
+          <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+          <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+          <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+          <a href="#" class="settings-link text-xl clear">Account & Settings</a>
           <a href="#" class="settings-link text-xl">Logout</a>
         </div>
         <i class="fa fa-user-circle-o user-profile"></i>
       </div>
     </div>
-  </header>
+  </div>
+  <br>
+</header>
 
   <div class="w3-container">
     <div class="banner-container">
