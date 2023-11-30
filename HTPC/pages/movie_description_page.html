@@ -376,7 +376,13 @@
             imageElement.style.cursor = "pointer";
             imageElement.addEventListener('click', function() {
                 alert('Image clicked: ' + src);
-                window.location.href = "streaming_page.html";
+                if (allData[id].title === 'Spider-Man: Across the Spider-Verse') {
+                    window.location.href = "streaming_page_spiderman.html";
+                }
+                else if (allData[id].title === 'Guardians of the Galaxy Vol. 3') {
+                    window.location.href = "streaming_page_guardians.html";
+                }
+
             });
             subscribedApps.appendChild(imageElement);
         }
