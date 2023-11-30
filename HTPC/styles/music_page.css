@@ -1,4 +1,4 @@
-/* used to adjust width of outermost container to specific screen ... if between min and next min level, then set to min */
+
 .responsive-width {
     width: 100%;
 }
