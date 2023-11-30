@@ -82,6 +82,23 @@ let allData = [
         subscribed:["../images/youtube.webp"],
         unsubscribed:["../images/twitch.png", "../images/kick.png"],
     },
+    {
+        media:"TV Show",
+        title:"Wednesday",
+        description: "Smart, sarcastic and a little dead inside, Wednesday Addams investigates a murder spree while making new friends - and foes - at Nevermore Academy.",
+        year: "2023",
+        ageRating: "TV-14",
+        tags: ["Mystery", "Comedy", "Thriller"],
+        userRating: "",
+        avgRating: "4",
+        totalUserRatings: "4",
+        totalStars: "16",
+        src:"../images/wednesdayposter.jpg",
+        subscribed:["../images/netflix.png"],
+        unsubscribed:["../images/amazonicon.png", "../images/disneyplus.png"],
+
+
+    }
 ];
 
 let allLists = [
@@ -128,6 +145,9 @@ document.getElementById('spiderman').addEventListener('click', function() {
 });
 document.getElementById('guardians').addEventListener('click', function() {
     renderContent('Guardians of the Galaxy Vol. 3');
+});
+document.getElementById('wednesday').addEventListener('click', function() {
+    renderContent('Wednesday');
 });
 
 const content = document.querySelector('.content');

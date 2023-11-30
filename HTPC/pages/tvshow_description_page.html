@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movie Description</title>
+    <title>TV Show Description</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,17 +18,17 @@
             flex-direction: row;
         }
 
-        .movie-info {
+        .tvshow-info {
             flex: 1;
             padding: 20px;
         }
 
-        .movie-info h1 {
+        .tvshow-info h1 {
             font-size: 32px;
             margin-bottom: 10px;
         }
 
-        .movie-info p {
+        .tvshow-info p {
             font-size: 18px;
         }
 
@@ -131,11 +131,59 @@
             background-color: #546e7a;
         }
 
+        /* following css code adapted from https://www.javatpoint.com/how-to-create-dropdown-list-using-javascript*/ 
+        /* set the position of dropdown */  
+        .dropdown {  
+            position: relative;  
+            display: inline-block;  
+        }  
+        /* set the size and position of button on web */  
+        .button1 {  
+            border: 2px solid black;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+        }  
+        .button1:hover {
+            background-color: #2196F3;
+            color:white
+        }
+        .button1:active {
+            background-color: #2196F3;
+            color:white
+        }
+
+        .success {
+            border-color: #2196F3;
+            color: white;
+        }
+
+        /* provide css to background of list items */   
+        #dropdown-items {  
+            display: none;  
+            position: absolute;  
+            background-color: white;  
+            min-width: 185px;  
+        }  
+        /* provide css to list items */   
+        #dropdown-items a {  
+            display: block;  
+            font-size: 18px;  
+            background-color: #ddd;  
+            color: black;  
+            text-decoration: none;  
+            padding: 10px;  
+        }  
+
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/nav_bar.css">
     <link rel="stylesheet" href="../styles/ratingSystem.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <header class="bg-slate-900">
@@ -165,7 +213,7 @@
 </header>
 <body class="bg-slate-900">
     <div class="container bg-slate-900 text-white">
-        <div class="movie-info">
+        <div class="tvshow-info">
             <h1 class="title text-center"></h1>
             <p class="description"></p>
             <div class="flex flex-row items-center justify-center space-x-4">
@@ -200,6 +248,23 @@
                     <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="visually-hidden list-type">Choose List</span>
                     </button>
+                    <!-- code for dropdown adapted from https://www.javatpoint.com/how-to-create-dropdown-list-using-javascript-->
+                    <div class="dropdown">  
+                        <button onclick="show_dropdown()" class="button1 success">Episode List
+                        <i class = "bx bx-chevron-down" id ="arrow"> </i>
+                        </button>  
+                            <!-- dropdown list items will show when we click the drop button -->   
+                            <div id="dropdown-items">  
+                               <a href="streaming_page_wednesday.html"> Episode 1 </a>  
+                               <a href="streaming_page_wednesday.html"> Episode 2 </a>  
+                               <a href="streaming_page_wednesday.html"> Episode 3 </a>  
+                               <a href="streaming_page_wednesday.html"> Episode 4 </a>  
+                               <a href="streaming_page_wednesday.html"> Episode 5 </a>  
+                               <a href="streaming_page_wednesday.html"> Episode 6 </a>  
+                               <a href="streaming_page_wednesday.html"> Episode 7 </a>  
+                               <a href="streaming_page_wednesday.html"> Episode 8 </a>  
+                            </div>  
+                    </div>
                     <div class="dropdown-menu"></div>
                 </div>
                 <div class="rating-container">
@@ -217,9 +282,12 @@
             <div id="subscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
             <p class="text-center">Unsubscribed Apps</p>
             <div id="unsubscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
+
         </div>
         <div class="mx-20">
+            <div class = "test">
             <img class="poster" src="" alt="media content" id="description-poster">
+            </div>
         </div>
     </div>
     <script src="../scripts/movie_description_page.js"></script>
@@ -227,5 +295,238 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        const subscribedApps = document.getElementById('subscribed-apps');
+        const unsubscribedApps = document.getElementById('unsubscribed-apps');
+        const storedId = localStorage.getItem('id');
+        const id = parseInt(storedId, 10);
+        let allData = JSON.parse(localStorage.getItem('data'));
+        let allLists = JSON.parse(localStorage.getItem('lists'));
+        console.log(allLists);
+ 
+      // show and hide dropdown list item on button click  
+      // adapted from https://www.javatpoint.com/how-to-create-dropdown-list-using-javascript
+      function show_dropdown() {  
+         var click = document.getElementById("dropdown-items");  
+         if(click.style.display ==="none") {  
+            click.style.display ="block";  
+         } else {  
+            click.style.display ="none";  
+         }   
+         
+      }  
+        if(allLists)
+        {
+            for(let i = 0; i < allLists.length; i++)
+            {
+                let listDropdown = document.querySelector('.dropdown-menu');
+                listDropdown.innerHTML += `
+        <div class="dropdown-item" onClick="handleItemClick('${allLists[i].title}')">${allLists[i].title}</div>
+        `;
+                document.querySelector('.list-type').textContent= allLists[i].title;
+            }
+        }
+        console.log(allData[id].title);
+        console.log(allData[id].description);
+        console.log(allData);
+        document.querySelector('.title').textContent = allData[id].title;
+        document.querySelector('.description').textContent = allData[id].description;
+        document.querySelector('#description-poster').src = allData[id].src;
+        document.querySelector('.tag1').textContent = allData[id].tags[0];
+        document.querySelector('.tag2').textContent = allData[id].tags[1];
+        document.querySelector('.tag3').textContent = allData[id].tags[2];
+        document.querySelector('.year').textContent = allData[id].year;
+        document.querySelector('.ageRating').textContent = allData[id].ageRating;
+        document.querySelector('.duration').textContent = allData[id].duration;
+        document.querySelector('.totalRatings').textContent = "( " + allData[id].totalUserRatings + " ratings )";
+        allData[id].subscribed.forEach(addSubscribedApps)
+        allData[id].unsubscribed.forEach(addUnsubscribedApps)
+        renderStars();
+
+        const stars = document.querySelectorAll('.user-star');
+        if(allData[id].userRating !== "") {
+            handleStars(allData[id].userRating);
+        }
+
+        stars.forEach(star => {
+            star.addEventListener('click', function () {
+                const value = this.getAttribute('data-value');
+                handleStars(value);
+                updateRating(value);
+            });
+
+            star.addEventListener('mouseover', function () {
+                const value = this.getAttribute('data-value');
+                handleStars(value);
+            });
+
+            star.addEventListener('mouseout', function () {
+                handleStars(allData[id].userRating);
+            });
+        });
+
+        function updateRating(currentRating)
+        {
+            let totalStars = parseInt(allData[id].totalStars);
+            let totalUserRatings = parseInt(allData[id].totalUserRatings);
+
+            if(allData[id].userRating === "")
+            {
+                totalUserRatings = totalUserRatings + 1;
+                totalStars += parseInt(currentRating);
+                allData[id].userRating = currentRating;
+            }
+            else
+            {
+                totalStars -= allData[id].userRating;
+                totalStars += parseInt(currentRating);
+                allData[id].userRating = currentRating;
+            }
+
+            const averageRating = Math.round(totalStars / totalUserRatings);
+            allData[id].totalStars = totalStars.toString();
+            allData[id].totalUserRatings = totalUserRatings.toString();
+            allData[id].avgRating = averageRating.toString();
+            console.log(allData[id].avgRating);
+            allData[id].userRating = currentRating;
+            localStorage.setItem('data', JSON.stringify(allData));
+            document.querySelector('.totalRatings').textContent = "( " + totalUserRatings + " ratings" + " )";
+            renderStars();
+        }
+        function handleStars(value) {
+            stars.forEach(star => {
+                if (star.getAttribute('data-value') <= value) {
+                    star.classList.add('active');
+                } else {
+                    star.classList.remove('active');
+                }
+            });
+        }
+        function renderStars()
+        {
+            console.log(allData[id].avgRating);
+            if(allData[id].avgRating === "1")
+            {
+                document.querySelector('#star1').style.color = '#ffcc00';
+                document.querySelector('#star2').style.color = '#ccc';
+                document.querySelector('#star3').style.color = '#ccc';
+                document.querySelector('#star4').style.color = '#ccc';
+                document.querySelector('#star5').style.color = '#ccc';
+            }
+            else if(allData[id].avgRating === "2")
+            {
+                document.querySelector('#star1').style.color = '#ffcc00';
+                document.querySelector('#star2').style.color = '#ffcc00';
+                document.querySelector('#star3').style.color = '#ccc';
+                document.querySelector('#star4').style.color = '#ccc';
+                document.querySelector('#star5').style.color = '#ccc';
+            }
+            else if(allData[id].avgRating === "3")
+            {
+                document.querySelector('#star1').style.color = '#ffcc00';
+                document.querySelector('#star2').style.color = '#ffcc00';
+                document.querySelector('#star3').style.color = '#ffcc00';
+                document.querySelector('#star4').style.color = '#ccc';
+                document.querySelector('#star5').style.color = '#ccc';
+            }
+            else if(allData[id].avgRating === "4")
+            {
+                document.querySelector('#star1').style.color = '#ffcc00';
+                document.querySelector('#star2').style.color = '#ffcc00';
+                document.querySelector('#star3').style.color = '#ffcc00';
+                document.querySelector('#star4').style.color = '#ffcc00';
+                document.querySelector('#star5').style.color = '#ccc';
+            }
+            else if(allData[id].avgRating === "5")
+            {
+                document.querySelector('#star1').style.color = '#ffcc00';
+                document.querySelector('#star2').style.color = '#ffcc00';
+                document.querySelector('#star3').style.color = '#ffcc00';
+                document.querySelector('#star4').style.color = '#ffcc00';
+                document.querySelector('#star5').style.color = '#ffcc00';
+            }
+        }
+
+        function addSubscribedApps(src) {
+            const imageElement = document.createElement('img');
+            imageElement.src = src;
+            imageElement.alt = 'subscribedApp';
+            imageElement.style.width = "6rem";
+            imageElement.style.height = "6rem";
+            imageElement.style.cursor = "pointer";
+            imageElement.addEventListener('click', function() {
+                alert('Image clicked: ' + src);
+                window.location.href = "streaming_page_wednesday.html";
+            });
+            subscribedApps.appendChild(imageElement);
+        }
+
+        function addUnsubscribedApps(src) {
+            const imageElement = document.createElement('img');
+            imageElement.src = src;
+            imageElement.alt = 'unsubscribedApp';
+            imageElement.style.width = "6rem";
+            imageElement.style.height = "6rem";
+            imageElement.style.cursor = "pointer";
+            imageElement.addEventListener('click', function() {
+                alert('Image clicked: ' + src);
+                window.location.href = "subscriptions_page_final.html";
+            });
+            unsubscribedApps.appendChild(imageElement);
+        }
+
+        function handleItemClick(item) {
+            document.querySelector('.list-type').textContent = item;
+        }
+
+        let content = document.querySelector('.addListItem');
+        content.addEventListener('click', function()
+        {
+            let originalColor = content.style.backgroundColor;
+            let originalText = content.innerText;
+            for(let i = 0; i < allLists.length; i++)
+            {
+                console.log("hi", i);
+                let itemExists = allLists[i].listItems.findIndex(item => item.title === allData[id].title);
+                if (allLists[i].media === 'Movies & TV Shows' && document.querySelector('.list-type').textContent === allLists[i].title)
+                {
+                    console.log("hello", itemExists);
+                    if (itemExists === -1)
+                    {
+                        content.innerText = "Success!";
+                        content.style.backgroundColor = "#28a745";
+                        setTimeout(function () {
+                            content.style.backgroundColor = originalColor;
+                            content.innerText = originalText;
+                        }, 2000);
+                        allLists[i].listItems.push(allData[id]);
+                        localStorage.setItem('lists', JSON.stringify(allLists));
+                    }
+                    else
+                    {
+                        content.innerText = "Media Already Exists!";
+                        content.style.backgroundColor = "#dc3545";
+                        setTimeout(function () {
+                            content.style.backgroundColor = originalColor;
+                            content.innerText = originalText;
+                        }, 2000);
+                    }
+                    break;
+                }
+                else if(allLists[i].media !== 'Movies & TV Shows' && document.querySelector('.list-type').textContent === allLists[i].title)
+                {
+                    content.innerText = "Wrong List Type!";
+                    content.style.backgroundColor = "#dc3545";
+                    setTimeout(function () {
+                        content.style.backgroundColor = originalColor;
+                        content.innerText = originalText;
+                    }, 2000);
+                }
+                else{}
+            }
+            console.log(allLists);
+        });
+
+    </script>
 </body>
 </html>
