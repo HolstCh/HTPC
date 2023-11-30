@@ -1,5 +1,8 @@
 body {
     font-family: Arial, sans-serif;
+    background-image: url('../images/subpagewallpaper.png');
+    background-size: 500px;
+    background-repeat: repeat;
     text-align: center;
     background-color: #111827;
 }
