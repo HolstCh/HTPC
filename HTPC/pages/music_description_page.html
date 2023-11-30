@@ -49,16 +49,20 @@
             background: #444444;
             background-color: #244e43;
             background-image: url('../images/greencontainer.jpg');
-            background-size: 1400px;
+            background-size: 1080px;
             background-position: center;
-            background-repeat: repeat;
             border-radius: 5rem;
             text-align: center;
-            padding-bottom: 5rem;
-            margin-left: 4rem;
+            padding-bottom: 3rem;
+            margin-left: 3rem;
             border-color: #3cffe8;
             border-width: 3px;
         }
+
+        .content-img {
+        margin-top: 2rem;
+        border: 3px solid #ffffff;
+}
     </style>
 </head>
 <header class="bg-slate-900">
@@ -99,41 +103,46 @@
             allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
     <div class="grid grid-cols-3 py-10">
-        <div>
-            <div class="flex flex-row justify-center">
-                <img src="" class="image poster" alt="media content" id="album image">
+        <section class="first-container">
+            <div>
+                <div class="flex flex-row justify-center">
+                    <section class="content-img">
+                            <img src="" class="image poster" alt="media content" id="album image">
+                    </section>
+                </div>
+                <div class="flex flex-col items-start mt-3 ml-20 text-lg">
+                    <div>
+                        <strong class="mr-2">Album:</strong>
+                        <span class="title"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Artist:</strong>
+                        <span class="artist"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Release Date:</strong>
+                        <span class="year"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Genre:</strong>
+                        <span class="genre"></span>
+                    </div>
+                    <div>
+                        <strong class="mr-2">Duration:</strong>
+                        <span class="duration"></span>
+                    </div>
+                </div>
+                <div class="avg-rating space-x-2 items-center justify-center">
+                    <div class="star" id="star1">&#9733;</div>
+                    <div class="star" id="star2">&#9733;</div>
+                    <div class="star" id="star3">&#9733;</div>
+                    <div class="star" id="star4">&#9733;</div>
+                    <div class="star" id="star5">&#9733;</div>
+                </div>
+                <p class="totalRatings text-center"></p>
             </div>
-            <div class="flex flex-col items-start mt-3 ml-20 text-lg">
-                <div>
-                    <strong class="mr-2">Album:</strong>
-                    <span class="title"></span>
-                </div>
-                <div>
-                    <strong class="mr-2">Artist:</strong>
-                    <span class="artist"></span>
-                </div>
-                <div>
-                    <strong class="mr-2">Release Date:</strong>
-                    <span class="year"></span>
-                </div>
-                <div>
-                    <strong class="mr-2">Genre:</strong>
-                    <span class="genre"></span>
-                </div>
-                <div>
-                    <strong class="mr-2">Duration:</strong>
-                    <span class="duration"></span>
-                </div>
-            </div>
-            <div class="avg-rating space-x-2 items-center justify-center">
-                <div class="star" id="star1">&#9733;</div>
-                <div class="star" id="star2">&#9733;</div>
-                <div class="star" id="star3">&#9733;</div>
-                <div class="star" id="star4">&#9733;</div>
-                <div class="star" id="star5">&#9733;</div>
-            </div>
-            <p class="totalRatings text-center"></p>
-        </div>
+        </section>
+        
         <div class="flex justify-center text-lg songs py-3 pl-20 ml-3"></div>
         <div class="flex flex-col items-center py-3">
             <div class="rating-container">
@@ -206,7 +215,7 @@
         document.querySelector('.genre').textContent = allData[id2].genre;
         document.querySelector('.year').textContent = allData[id2].year;
         document.querySelector('.duration').textContent = allData[id2].duration;
-        document.querySelector('.totalRatings').textContent = "( " + allData[id2].totalUserRatings + " ratings )";
+        document.querySelector('.totalRatings').innerHTML = "<strong>( " + allData[id2].totalUserRatings + " ratings )</strong>";
         allData[id2].subscribed.forEach(addSubscribedApps)
         allData[id2].unsubscribed.forEach(addUnsubscribedApps)
         renderStars();
