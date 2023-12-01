@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function()
         }
         else if (mediaType === 'TV Show')
         {
-            const tvShowGenres = ['Drama', 'Mystery', 'Thriller', 'Fantasy'];
+            const tvShowGenres = ['Mystery', 'Drama', 'Thriller', 'Fantasy'];
             tvShowGenres.forEach(genre => {
                 const option = document.createElement('option');
                 option.textContent = genre;
@@ -128,10 +128,8 @@ document.addEventListener('DOMContentLoaded', function()
                 <div class="starSearch" style=colors[4]>&#9733;</div>
             </div>
             <p>Total User Ratings: ${allData[i].totalUserRatings}</p>
-            <p>Artist: ${allData[i].artist}</p>
-            <p>Genre: ${allData[i].genre}</p>
+            <p>Genre: ${allData[i].tags[0]}</p>
             <p>Year: ${allData[i].year}</p>
-            <p>Duration: ${allData[i].duration}</p>
           `;
         }
         else if(allData[i].media === "Video")
@@ -209,14 +207,15 @@ document.addEventListener('DOMContentLoaded', function()
         const resultsContainer = document.getElementById('resultsContainer');
         while (resultsContainer.firstChild) {
             resultsContainer.removeChild(resultsContainer.firstChild);
-            console.log("h")
+            console.log("h");
         }
 // ---------------------------------------------------------------------------------------------------------------
         avgRatings = [];
         for(let i = 0; i < allData.length; i++)
         {
+            console.log(allData[i].media);
             let dataGenre = "";
-            if(allData[i].media === "Movie")
+            if(allData[i].media === "Movie" || allData[i].media === "TV")
             {
                 for(let j = 0; j < allData[i].tags.length; j++)
                 {

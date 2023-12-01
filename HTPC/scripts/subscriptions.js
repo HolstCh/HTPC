@@ -1,55 +1,136 @@
-// top of JS file:
 let allData = JSON.parse(localStorage.getItem('data'));
 let allLists = JSON.parse(localStorage.getItem('lists'));
+let allApps = JSON.parse(localStorage.getItem('apps'));
+console.log(allApps)
 
+// subscribe button (dropdown) and unsubscribe button
+const subscribeButtonNetflix = document.querySelector(".subscribeButtonNetflix")
+const subscribeButtonDisney = document.querySelector(".subscribeButtonDisney")
+const subscribeButtonPrime = document.querySelector(".subscribeButtonPrime")
+const subscribeButtonSpotify = document.querySelector(".subscribeButtonSpotify")
+const subscribeButtonApple = document.querySelector(".subscribeButtonApple")
+const subscribeButtonSoundCloud = document.querySelector(".subscribeButtonSoundCloud")
+const subscribeButtonTwitch = document.querySelector(".subscribeButtonTwitch")
+const subscribeButtonYoutube = document.querySelector(".subscribeButtonYoutube")
+const subscribeButtonKick = document.querySelector(".subscribeButtonKick")
+
+const showUnsubscribeNetflix = document.querySelector(".unsubscribeButtonNetflix")
+const showUnsubscribeDisney = document.querySelector(".unsubscribeButtonDisney")
+const showUnsubscribePrime = document.querySelector(".unsubscribeButtonPrime")
+const showUnsubscribeSpotify = document.querySelector(".unsubscribeButtonSpotify")
+const showUnsubscribeApple = document.querySelector(".unsubscribeButtonApple")
+const showUnsubscribeSoundCloud = document.querySelector(".unsubscribeButtonSoundCloud")
+const showUnsubscribeTwitch = document.querySelector(".unsubscribeButtonTwitch")
+const showUnsubscribeYoutube = document.querySelector(".unsubscribeButtonYoutube")
+const showUnsubscribeKick = document.querySelector(".unsubscribeButtonKick")
+
+const netflixHeader = document.querySelector("#netflix-header");
+const primeHeader = document.querySelector("#prime-header");
+const disneyHeader = document.querySelector("#disney-header");
+const spotifyHeader = document.querySelector("#spotify-header");
+const appleHeader = document.querySelector("#apple-header");
+const soundcloudHeader = document.querySelector("#soundcloud-header");
+const twitchHeader = document.querySelector("#twitch-header");
+const youtubeHeader = document.querySelector("#youtube-header");
+const kickHeader = document.querySelector("#kick-header");
+
+for(let i = 0; i < allApps.length; i++)
+{
+    if(allApps[i].state === "unsub")
+    {
+        loadUnsub(allApps[i].app);
+    }
+    else if(allApps[i].state === "sub")
+    {
+        console.log(allApps[i]);
+        loadSub(allApps[i].app, i);
+    }
+}
 // this block of code is taken from https://www.w3schools.com/howto/howto_js_dropdown.asp
 
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
-function dropdownNetflix() {
+function dropdownNetflix(selection) {
   document.getElementById("myDropdownNetflix").classList.toggle("show");
+  let index = checkApp("netflix");
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
   
-function dropdownDisney() {
+function dropdownDisney(selection) {
   document.getElementById("myDropdownDisney").classList.toggle("show");
+  let index = checkApp("disney+")
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-function dropdownPrime() {
+function dropdownPrime(selection) {
   document.getElementById("myDropdownPrime").classList.toggle("show");
+  let index = checkApp("prime");
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-function dropdownSpotify() {
+function dropdownSpotify(selection) {
   document.getElementById("myDropdownSpotify").classList.toggle("show");
+  let index = checkApp("spotify");
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-function dropdownApple() {
+function dropdownApple(selection) {
   document.getElementById("myDropdownApple").classList.toggle("show");
+  let index = checkApp("apple");
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-function dropdownSoundCloud() {
+function dropdownSoundCloud(selection) {
   document.getElementById("myDropdownSoundCloud").classList.toggle("show");
+  let index = checkApp("soundcloud")
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-function dropdownTwitch() {
+function dropdownTwitch(selection) {
   document.getElementById("myDropdownTwitch").classList.toggle("show");
+  let index = checkApp("twitch");
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-function dropdownYoutube() {
+function dropdownYoutube(selection) {
   document.getElementById("myDropdownYoutube").classList.toggle("show");
+  let index = checkApp("youtube");
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-function dropdownKick() {
+function dropdownKick(selection) {
   document.getElementById("myDropdownKick").classList.toggle("show");
+  let index = checkApp("kick");
+  allApps[index].plan = selection.innerText.trim();
+  console.log(selection.innerText.trim());
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
   
-// Close the dropdown menu if the user clicks outside of it
+// Close the dropdown menu if the user clicks
 window.onclick = function(event) {
   if (!event.target.matches('.subscribeButtonKick')) {
     var dropdowns = document.getElementsByClassName("dropdown-content8");
     var i;
     for (i = 0; i < dropdowns.length; i++) {
       var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
+      if (openDropdown.classList.contains('show'))
+      {
         openDropdown.classList.remove('show');
       }
     }
@@ -136,41 +217,95 @@ window.onclick = function(event) {
   }
 }
 
-// subscribe button (dropdown) and unsubscribe button 
-const subscribeButtonNetflix = document.getElementById("subNetflix")
-const subscribeButtonDisney = document.querySelector(".subscribeButtonDisney")
-const subscribeButtonPrime = document.querySelector(".subscribeButtonPrime")
-const subscribeButtonSpotify = document.querySelector(".subscribeButtonSpotify")
-const subscribeButtonApple = document.querySelector(".subscribeButtonApple")
-const subscribeButtonSoundCloud = document.querySelector(".subscribeButtonSoundCloud")
-const subscribeButtonTwitch = document.querySelector(".subscribeButtonTwitch")
-const subscribeButtonYoutube = document.querySelector(".subscribeButtonYoutube")
-const subscribeButtonKick = document.querySelector(".subscribeButtonKick")
+function checkApp(appName){
+    for(let i = 0; i < allApps.length; i++)
+    {
+        if(allApps[i].app === appName)
+            return i;
+    }
+}
 
-
-
-
-const showUnsubscribeNetflix = document.querySelector(".unsubscribeButtonNetflix")
-const showUnsubscribeDisney = document.querySelector(".unsubscribeButtonDisney")
-const showUnsubscribePrime = document.querySelector(".unsubscribeButtonPrime")
-const showUnsubscribeSpotify = document.querySelector(".unsubscribeButtonSpotify")
-const showUnsubscribeApple = document.querySelector(".unsubscribeButtonApple")
-const showUnsubscribeSoundCloud = document.querySelector(".unsubscribeButtonSoundCloud")
-const showUnsubscribeTwitch = document.querySelector(".unsubscribeButtonTwitch")
-const showUnsubscribeYoutube = document.querySelector(".unsubscribeButtonYoutube")
-const showUnsubscribeKick = document.querySelector(".unsubscribeButtonKick")
-
-
-
-
-
+function loadUnsub(name)
+{
+    let text = "Unsubscribed <br> No Current Plan";
+    if (String(name).valueOf() === "netflix")
+    {
+        netflixHeader.innerHTML = text;
+        showUnsubscribeNetflix.setAttribute("hidden", "hidden");
+        subscribeButtonNetflix.textContent = "Subscribe";
+        subscribeButtonNetflix.style.marginTop = "30px"
+        imageUnsubscribeApp('netflix')
+    }
+    else if (String(name).valueOf() === "disney+") {
+        disneyHeader.innerHTML = text;
+        showUnsubscribeDisney.setAttribute("hidden", "hidden");
+        subscribeButtonDisney.textContent = "Subscribe";
+        subscribeButtonDisney.style.marginTop = "30px"
+        imageUnsubscribeApp('disney')
+    }
+    else if (String(name).valueOf() === "prime") {
+        primeHeader.innerHTML = text;
+        showUnsubscribePrime.setAttribute("hidden", "hidden");
+        subscribeButtonPrime.textContent = "Subscribe";
+        subscribeButtonPrime.style.marginTop = "30px"
+        imageUnsubscribeApp('prime')
+    }
+    else if (String(name).valueOf() === "spotify") {
+        spotifyHeader.innerHTML = text;
+        showUnsubscribeSpotify.setAttribute("hidden", "hidden");
+        subscribeButtonSpotify.textContent = "Subscribe";
+        subscribeButtonSpotify.style.marginTop = "30px"
+        imageUnsubscribeApp('spotify')
+    }
+    else if (String(name).valueOf() === "apple") {
+        appleHeader.innerHTML = text;
+        showUnsubscribeApple.setAttribute("hidden", "hidden");
+        subscribeButtonApple.textContent = "Subscribe";
+        subscribeButtonApple.style.marginTop = "30px"
+        imageUnsubscribeApp('apple')
+    }
+    else if (String(name).valueOf() === "soundcloud") {
+        soundcloudHeader.innerHTML = text;
+        showUnsubscribeSoundCloud.setAttribute("hidden", "hidden");
+        subscribeButtonSoundCloud.textContent = "Subscribe";
+        subscribeButtonSoundCloud.style.marginTop = "30px"
+        imageUnsubscribeApp('soundcloud')
+    }
+    else if (String(name).valueOf() === "twitch") {
+        twitchHeader.innerHTML = text;
+        showUnsubscribeTwitch.setAttribute("hidden", "hidden");
+        subscribeButtonTwitch.textContent = "Subscribe";
+        subscribeButtonTwitch.style.marginTop = "30px"
+        imageUnsubscribeApp('twitch')
+    }
+    else if (String(name).valueOf() === "youtube") {
+        youtubeHeader.innerHTML = text;
+        showUnsubscribeYoutube.setAttribute("hidden", "hidden");
+        subscribeButtonYoutube.textContent = "Subscribe";
+        subscribeButtonYoutube.style.marginTop = "30px"
+        imageUnsubscribeApp('youtube')
+    }
+    else if (String(name).valueOf() === "kick") {
+        kickHeader.innerHTML = text;
+        showUnsubscribeKick.setAttribute("hidden", "hidden");
+        subscribeButtonKick.textContent = "Subscribe";
+        subscribeButtonKick.style.marginTop = "30px"
+        imageUnsubscribeApp('kick')
+    }
+    localStorage.setItem('apps', JSON.stringify(allApps));
+}
 
 function unsubConfirm(name) {
   let text = "Are you sure you want to unsubscribe?";
-  if (confirm(text) == true) {
+  if (confirm(text) === true)
+  {
     text = "Unsubscribed <br> No Current Plan"
 
-    if (String(name).valueOf() === "netflix") {
+    if (String(name).valueOf() === "netflix")
+    {
+      let index = checkApp("netflix");
+      allApps[index].state = "unsub";
+      allApps[index].plan = "No Current Plan";
       netflixHeader.innerHTML = text;
       showUnsubscribeNetflix.setAttribute("hidden", "hidden");
       subscribeButtonNetflix.textContent = "Subscribe";
@@ -178,6 +313,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('netflix')
     }
     else if (String(name).valueOf() === "disney+") {
+      let index = checkApp("disney+");
+      allApps[index].state = "unsub";
+      allApps[index].plan = "No Current Plan";
       disneyHeader.innerHTML = text;
       showUnsubscribeDisney.setAttribute("hidden", "hidden");
       subscribeButtonDisney.textContent = "Subscribe";
@@ -185,6 +323,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('disney')
     }
     else if (String(name).valueOf() === "prime") {
+        let index = checkApp("prime");
+        allApps[index].state = "unsub";
+        allApps[index].plan = "No Current Plan";
       primeHeader.innerHTML = text;
       showUnsubscribePrime.setAttribute("hidden", "hidden");
       subscribeButtonPrime.textContent = "Subscribe";
@@ -192,6 +333,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('prime')
     }
     else if (String(name).valueOf() === "spotify") {
+        let index = checkApp("spotify");
+        allApps[index].state = "unsub";
+        allApps[index].plan = "No Current Plan";
       spotifyHeader.innerHTML = text;
       showUnsubscribeSpotify.setAttribute("hidden", "hidden");
       subscribeButtonSpotify.textContent = "Subscribe";
@@ -199,6 +343,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('spotify')
     }
     else if (String(name).valueOf() === "apple") {
+        let index = checkApp("apple");
+        allApps[index].state = "unsub";
+        allApps[index].plan = "No Current Plan";
       appleHeader.innerHTML = text;
       showUnsubscribeApple.setAttribute("hidden", "hidden");
       subscribeButtonApple.textContent = "Subscribe";
@@ -206,6 +353,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('apple')
     }
     else if (String(name).valueOf() === "soundcloud") {
+        let index = checkApp("soundcloud");
+        allApps[index].state = "unsub";
+        allApps[index].plan = "No Current Plan";
       soundcloudHeader.innerHTML = text;
       showUnsubscribeSoundCloud.setAttribute("hidden", "hidden");
       subscribeButtonSoundCloud.textContent = "Subscribe";
@@ -213,6 +363,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('soundcloud')
     }
     else if (String(name).valueOf() === "twitch") {
+        let index = checkApp("twitch");
+        allApps[index].state = "unsub";
+        allApps[index].plan = "No Current Plan";
       twitchHeader.innerHTML = text;
       showUnsubscribeTwitch.setAttribute("hidden", "hidden");
       subscribeButtonTwitch.textContent = "Subscribe";
@@ -220,6 +373,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('twitch')
     }
     else if (String(name).valueOf() === "youtube") {
+        let index = checkApp("youtube");
+        allApps[index].state = "unsub";
+        allApps[index].plan = "No Current Plan";
       youtubeHeader.innerHTML = text;
       showUnsubscribeYoutube.setAttribute("hidden", "hidden");
       subscribeButtonYoutube.textContent = "Subscribe";
@@ -227,6 +383,9 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('youtube')
     }
     else if (String(name).valueOf() === "kick") {
+        let index = checkApp("kick");
+        allApps[index].state = "unsub";
+        allApps[index].plan = "No Current Plan";
       kickHeader.innerHTML = text;
       showUnsubscribeKick.setAttribute("hidden", "hidden");
       subscribeButtonKick.textContent = "Subscribe";
@@ -234,14 +393,85 @@ function unsubConfirm(name) {
       imageUnsubscribeApp('kick')
     }
   }
+  localStorage.setItem('apps', JSON.stringify(allApps));
+}
+
+function loadSub(name, i)
+{
+    if (String(name).valueOf() === "netflix") {
+        netflixHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonNetflix.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonNetflix.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeNetflix.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('netflix')
+        console.log("ok")
+    }
+    else if (String(name).valueOf() === "disney+") {
+        disneyHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonDisney.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonDisney.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeDisney.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('disney')
+    }
+    else if (String(name).valueOf() === "prime") {
+        primeHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonPrime.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonPrime.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribePrime.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('prime')
+    }
+    else if (String(name).valueOf() === "spotify") {
+        spotifyHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonSpotify.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonSpotify.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeSpotify.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('spotify')
+    }
+    else if (String(name).valueOf() === "apple") {
+        appleHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonApple.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonApple.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeApple.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('apple')
+    }
+    else if (String(name).valueOf() === "soundcloud") {
+        soundcloudHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonSoundCloud.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonSoundCloud.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeSoundCloud.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('soundcloud')
+    }
+    else if (String(name).valueOf() === "twitch") {
+        twitchHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonTwitch.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonTwitch.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeTwitch.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('twitch')
+    }
+    else if (String(name).valueOf() === "youtube") {
+        youtubeHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonYoutube.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonYoutube.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeYoutube.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('youtube')
+    }
+    else if (String(name).valueOf() === "kick") {
+        kickHeader.innerHTML = "Subscribed <br> Current Plan: " + allApps[i].plan;
+        subscribeButtonKick.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
+        subscribeButtonKick.style.marginTop = "25px"; // move button location so it's aligned evenly
+        showUnsubscribeKick.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed
+        imageSubscribeApp('kick')
+    }
 
 }
 
 function subscribeOnClick(name) {
   text = "Would you like to subscribe?"
-  if (confirm(text) == true){
+  if (confirm(text) === true){
 
     if (String(name).valueOf() === "netflix") {
+        let index = checkApp("netflix");
+        allApps[index].state = "sub";
       subscribeButtonNetflix.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonNetflix.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeNetflix.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -250,6 +480,8 @@ function subscribeOnClick(name) {
       console.log("ok")
     }
     else if (String(name).valueOf() === "disney+") {
+        let index = checkApp("disney+");
+        allApps[index].state = "sub";
       subscribeButtonDisney.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonDisney.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeDisney.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -257,6 +489,8 @@ function subscribeOnClick(name) {
       imageSubscribeApp('disney')
     }
     else if (String(name).valueOf() === "prime") {
+        let index = checkApp("prime");
+        allApps[index].state = "sub";
       subscribeButtonPrime.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonPrime.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribePrime.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -264,6 +498,8 @@ function subscribeOnClick(name) {
       imageSubscribeApp('prime')
     }
     else if (String(name).valueOf() === "spotify") {
+        let index = checkApp("spotify");
+        allApps[index].state = "sub";
       subscribeButtonSpotify.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonSpotify.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeSpotify.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -271,6 +507,8 @@ function subscribeOnClick(name) {
       imageSubscribeApp('spotify')
     }
     else if (String(name).valueOf() === "apple") {
+        let index = checkApp("apple");
+        allApps[index].state = "sub";
       subscribeButtonApple.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonApple.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeApple.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -278,6 +516,8 @@ function subscribeOnClick(name) {
       imageSubscribeApp('apple')
     }
     else if (String(name).valueOf() === "soundcloud") {
+        let index = checkApp("soundcloud");
+        allApps[index].state = "sub";
       subscribeButtonSoundCloud.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonSoundCloud.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeSoundCloud.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -285,6 +525,8 @@ function subscribeOnClick(name) {
       imageSubscribeApp('soundcloud')
     }
     else if (String(name).valueOf() === "twitch") {
+        let index = checkApp("twitch");
+        allApps[index].state = "sub";
       subscribeButtonTwitch.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonTwitch.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeTwitch.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -292,6 +534,8 @@ function subscribeOnClick(name) {
       imageSubscribeApp('twitch')
     }
     else if (String(name).valueOf() === "youtube") {
+        let index = checkApp("youtube");
+        allApps[index].state = "sub";
       subscribeButtonYoutube.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonYoutube.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeYoutube.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -299,6 +543,8 @@ function subscribeOnClick(name) {
       imageSubscribeApp('youtube')
     }
     else if (String(name).valueOf() === "kick") {
+        let index = checkApp("kick");
+        allApps[index].state = "sub";
       subscribeButtonKick.textContent = "Edit Plan"; // change button text to say edit plan since we are now subscribed
       subscribeButtonKick.style.marginTop = "25px"; // move button location so it's aligned evenly
       showUnsubscribeKick.removeAttribute("hidden"); // show unsubscribe button now that we are subscribed 
@@ -306,11 +552,10 @@ function subscribeOnClick(name) {
       imageSubscribeApp('kick')
     }
   }
-
+  localStorage.setItem('apps', JSON.stringify(allApps));
 }
 
-//netflix 
-const netflixHeader = document.querySelector("#netflix-header")
+//netflix
 document.querySelector("#netflix6").addEventListener("click", function() {netflixHeader.innerHTML = "Subscribed <br> Current Plan: $6/month"})
 document.querySelector("#netflix17").addEventListener("click", function() {netflixHeader.innerHTML = "Subscribed <br> Current Plan: $17/month"})
 document.querySelector("#netflix21").addEventListener("click", function() {netflixHeader.innerHTML = "Subscribed <br> Current Plan: $21/month"})
@@ -319,47 +564,39 @@ document.querySelector("#netflix21").addEventListener("click", function() {netfl
 //document.querySelector("#netflix21").addEventListener("click", saveData())
 
 
-//prime 
-const primeHeader = document.querySelector("#prime-header")
+//prime
 document.querySelector("#prime7").addEventListener("click", function() {primeHeader.innerHTML = "Subscribed <br> Current Plan: $7/month"})
 document.querySelector("#prime15").addEventListener("click", function() {primeHeader.innerHTML = "Subscribed <br> Current Plan: $15/month"})
 
-// disney plus 
-const disneyHeader = document.querySelector("#disney-header")
+// disney plus
 document.querySelector("#disney8").addEventListener("click" , function() {disneyHeader.innerHTML = "Subscribed <br> Current plan: $8/month"})
 document.querySelector("#disney12").addEventListener("click" , function() {disneyHeader.innerHTML = "Subscribed <br> Current plan: $12/month"})
 document.querySelector("#disney15").addEventListener("click" , function() {disneyHeader.innerHTML = "Subscribed <br> Current plan: $15/month"})
 
-//spotify 
-const spotifyHeader = document.querySelector("#spotify-header")
+//spotify
 document.querySelector("#spotify6").addEventListener("click" , function() {spotifyHeader.innerHTML = "Subscribed <br> Current plan: $6/month"})
 document.querySelector("#spotify11").addEventListener("click" , function() {spotifyHeader.innerHTML = "Subscribed <br> Current plan: $11/month"})
 document.querySelector("#spotify15").addEventListener("click" , function() {spotifyHeader.innerHTML = "Subscribed <br> Current plan: $15/month"})
 document.querySelector("#spotify17").addEventListener("click" , function() {spotifyHeader.innerHTML = "Subscribed <br> Current plan: $17/month"})
 
 //apple music
-const appleHeader = document.querySelector("#apple-header")
 document.querySelector("#apple6").addEventListener("click" , function() {appleHeader.innerHTML = "Subscribed <br> Current plan: $6/month"})
 document.querySelector("#apple11").addEventListener("click" , function() {appleHeader.innerHTML = "Subscribed <br> Current plan: $11/month"})
 document.querySelector("#apple17").addEventListener("click" , function() {appleHeader.innerHTML = "Subscribed <br> Current plan: $17/month"})
 
 //soundcloud
-const soundcloudHeader = document.querySelector("#soundcloud-header")
 document.querySelector("#soundcloud5").addEventListener("click" , function() {soundcloudHeader.innerHTML = "Subscribed <br> Current plan: $5/month"})
 document.querySelector("#soundcloud10").addEventListener("click" , function() {soundcloudHeader.innerHTML = "Subscribed <br> Current plan: $10/month"})
 
 // twitch
-const twitchHeader = document.querySelector("#twitch-header")
 document.querySelector("#twitch14").addEventListener("click" , function() {twitchHeader.innerHTML = "Subscribed <br> Current plan: CA$14/month"})
 
 // youtube
-const youtubeHeader = document.querySelector("#youtube-header")
 document.querySelector("#youtube8").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Current plan: CA$8/month"})
 document.querySelector("#youtube14").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Current plan: CA$14/month"})
 document.querySelector("#youtube23").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Current plan: CA$23/month"})
 
 // youtube
-const kickHeader = document.querySelector("#kick-header")
 document.querySelector("#kick5").addEventListener("click" , function() {kickHeader.innerHTML = "Subscribed <br> Current plan: CA$5/month"})
 document.querySelector("#kick10").addEventListener("click" , function() {kickHeader.innerHTML = "Subscribed <br> Current plan: CA$10/month"})
 

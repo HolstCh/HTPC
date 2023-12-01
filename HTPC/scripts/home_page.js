@@ -83,7 +83,7 @@ let allData = [
         unsubscribed:["../images/twitch.png", "../images/kick.png"],
     },
     {
-        media:"TV Show",
+        media:"TV",
         title:"Wednesday",
         description: "Smart, sarcastic and a little dead inside, Wednesday Addams investigates a murder spree while making new friends - and foes - at Nevermore Academy.",
         year: "2023",
@@ -97,12 +97,59 @@ let allData = [
         subscribed:["../images/netflix.png"],
         unsubscribed:["../images/amazonicon.png", "../images/disneyplus.png"],
 
-
     }
 ];
 
 let allLists = [
 
+];
+
+let allApps = [
+    {
+        app:"netflix",
+        state:"sub",
+        plan:"$6/month",
+    },
+    {
+        app:"prime",
+        state:"unsub",
+        plan:"No Current Plan",
+    },
+    {
+        app:"disney+",
+        state:"unsub",
+        plan:"No Current Plan",
+    },
+    {
+        app:"spotify",
+        state:"sub",
+        plan:"$10/month",
+    },
+    {
+        app:"apple",
+        state:"sub",
+        plan:"$13/month",
+    },
+    {
+        app:"soundcloud",
+        state:"unsub",
+        plan:"No Current Plan",
+    },
+    {
+        app:"twitch",
+        state:"unsub",
+        plan:"No Current Plan",
+    },
+    {
+        app:"youtube",
+        state:"sub",
+        plan:"$8/month",
+    },
+    {
+        app:"kick",
+        state:"unsub",
+        plan:"No Current Plan",
+    },
 ];
 
 // initialize all content data once
@@ -118,11 +165,19 @@ document.addEventListener('DOMContentLoaded', function ()
         localStorage.setItem('lists', JSON.stringify(allLists));
         console.log(allData);
     }
+    if(!localStorage.getItem('apps'))
+    {
+        localStorage.setItem('apps', JSON.stringify(allApps));
+        console.log(allApps);
+    }
 });
 function clearData() {
     localStorage.removeItem('data');
+    localStorage.removeItem('lists');
+    localStorage.removeItem('apps');
     localStorage.setItem('data', JSON.stringify(allData));
     localStorage.setItem('lists', JSON.stringify(allLists));
+    localStorage.setItem('apps', JSON.stringify(allApps));
 }
 document.querySelector('.clear').addEventListener('click', function() {
     clearData();
