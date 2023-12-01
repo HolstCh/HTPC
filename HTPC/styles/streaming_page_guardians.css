@@ -8,14 +8,10 @@ body {
 
 video {
     width: 100%;
-    max-width: 800px; /* Set a maximum width for the video */
+    max-width: 800px; 
     display: block;
-    margin: 0 auto; /* Center the video horizontally */
-    margin-top: 20px; /* Add some top margin */
-}
-
-h2, h3, p, #list_button {
-    margin-top: 10px; /* Add some top margin to these elements */
+    margin: 0 auto; 
+    margin-top: 20px; 
 }
 
 #list_button {
@@ -23,7 +19,7 @@ h2, h3, p, #list_button {
     margin-left: 2.5rem;
     color: #eee7d8;
     font-family: 'Roboto', sans-serif;
-    background-color: #1e88e5; /* Blue color for the button */
+    background-color: #1e88e5; 
     border: none;
     cursor: pointer;
     padding: 5px 10px;
@@ -31,7 +27,7 @@ h2, h3, p, #list_button {
 
 .w3-container {
     max-width: 80vw;
-    margin: 0 auto; /* Center the content horizontally */
+    margin: 0 auto; 
 }
 
 .flex-container {
@@ -46,5 +42,3 @@ img {
     background-color: #111827;
     object-fit: cover;
 }
-
-/* Add any additional styling for the stars or other elements as needed */
