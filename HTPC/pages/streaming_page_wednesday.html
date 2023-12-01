@@ -70,12 +70,6 @@
       display: inline-block;
     }
 
-    h2,
-    h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-
     p {
       font-size: 1em;
       margin-bottom: 20px;
@@ -104,48 +98,45 @@
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
-
     }
 
     .tag {
       padding: 10px 20px;
       margin: 0 10px;
-      background-color: #303034;
-      border: 2px solid #555;
-      color: #fff;
-      font-size: 16px;
       background-color: #311c52;
       border: 3px solid rgb(139, 32, 163);
+      color: #fff;
+      font-size: 16px;
     }
   </style>
 </head>
 
 <body>
-<header class="bg-slate-900">
-  <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
-    <div>
-      <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
-      <a class="px-4 py-3 active" href="./music_page.html">Music</a>
-      <a class="px-4 py-3" href="./video_page.html">Videos</a>
-    </div>
-    <div class="flex items-end">
-      <a href="./search_page.html">
-        <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
-      </a>
-      <div class="user-profile relative">
-        <div class="overlay absolute top-full left-[-4.8rem] w-50">
-          <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
-          <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
-          <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
-          <a href="#" class="settings-link text-xl clear">Account & Settings</a>
-          <a href="#" class="settings-link text-xl">Logout</a>
+  <header class="bg-slate-900">
+    <div class="flex-navbar flex-nav-items navbar-text justify-between items-center">
+      <div>
+        <a class="px-4 py-3" href="./home_page.html">Movies & TV</a>
+        <a class="px-4 py-3 active" href="./music_page.html">Music</a>
+        <a class="px-4 py-3" href="./video_page.html">Videos</a>
+      </div>
+      <div class="flex items-end">
+        <a href="./search_page.html">
+          <i class="px-4 py-3 fa fa-search mr-10 fa-2x"></i>
+        </a>
+        <div class="user-profile relative">
+          <div class="overlay absolute top-full left-[-4.8rem] w-50">
+            <a href="my_lists_page.html" class="subscription-link text-xl">My Lists</a>
+            <a href="my_ratings_page.html" class="subscription-link text-xl">My Ratings</a>
+            <a href="./subscriptions_page_final.html" class="subscription-link text-xl">Manage Subscriptions</a>
+            <a href="#" class="settings-link text-xl clear">Account & Settings</a>
+            <a href="#" class="settings-link text-xl">Logout</a>
+          </div>
+          <i class="fa fa-user-circle-o user-profile"></i>
         </div>
-        <i class="fa fa-user-circle-o user-profile"></i>
       </div>
     </div>
-  </div>
-  <br>
-</header>
+    <br>
+  </header>
 
   <div class="w3-container">
     <div class="banner-container">
@@ -164,16 +155,14 @@
       <div class="tag">Horror</div>
       <div class="tag">Mystery</div>
       <div class="tag">Supernatural</div>
-
     </div>
-
-    <p>While attending Nevermore Academy, Wednesday Addams attempts to master her emerging psychic ability, thwart a
-      killing spree and solve the mystery that embroiled her parents 25 years ago.</p>
+    
+    <div class="flex-container">
+      <p>While attending Nevermore Academy, Wednesday Addams attempts to master her emerging psychic ability, thwart a
+        killing spree and solve the mystery that embroiled her parents 25 years ago.</p>
+    </div>
+    
   </div>
-
-  <script>
-
-  </script>
 </body>
 
 </html>
