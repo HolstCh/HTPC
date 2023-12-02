@@ -102,6 +102,12 @@
       display: flex;
       align-items: center;
     }
+
+  .spotify-player {
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 12px;
+  }
 /* ---------------------------------------------------------------------------------------------------------------- */
   </style>
 </head>
@@ -131,6 +137,16 @@
   </div>
   <br>
 </header>
+<div class="spotify-player">
+  <iframe style="border-radius:12px" id="MJ" class="hidden"
+          src="https://open.spotify.com/embed/track/2LlQb7Uoj1kKyGhlkBf9aC?utm_source=generator&theme=0" width="100%"
+          height="250" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+  <iframe style="border-radius:12px" id="MGK" class="hidden"
+          src="https://open.spotify.com/embed/track/4kDgnKgZTX6puRz9EoNjle?utm_source=generator" width="100%"
+          height="250" frameBorder="0" allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+</div>
 <!-- The following code is from: ----------------------------------------------------------------------------- */
  OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
 -->

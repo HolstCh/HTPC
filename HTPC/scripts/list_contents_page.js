@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function()
                     <p>Duration: ${item.duration}</p>
                   `;
         }
-        else if(item.media === "TV Show")
+        else if(item.media === "TV")
         {
             contentDetails.innerHTML = `
                     <h5>${item.title}</h5>
@@ -85,10 +85,10 @@ document.addEventListener('DOMContentLoaded', function()
                         <div class="starSearch" style=colors[4]>&#9733;</div>
                     </div>
                     <p>Total User Ratings: ${item.totalUserRatings}</p>
-                    <p>Artist: ${item.artist}</p>
-                    <p>Genre: ${item.genre}</p>
+                    <p>Genre: ${item.tags[0]}</p>
                     <p>Year: ${item.year}</p>
-                    <p>Duration: ${item.duration}</p>
+                    <p>Season: ${item.season}</p>
+                    <p>Episodes: ${item.episodes}</p>
                   `;
         }
         else if(item.media === "Video")
@@ -105,8 +105,6 @@ document.addEventListener('DOMContentLoaded', function()
                     <p>Total User Ratings: ${item.totalUserRatings}</p>
                     <p>Channel: ${item.channel}</p>
                     <p>Genre: ${item.genre}</p>
-                    <p>Views: ${item.viewCount}</p>
-                    <p>Likes: ${item.likeCount}</p>
                     <p>Duration: ${item.duration}</p>
                     `;
         }
@@ -124,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function()
         appsContainer.appendChild(subscribedAppsContainer);
 
         item.subscribed.forEach(src => {
-            const imageElement = createAppImage(src, 'subscribedApp');
+            const imageElement = createAppImage(src, 'subscribedApp', item.title);
             subscribedAppsContainer.appendChild(imageElement);
         });
 
@@ -184,7 +182,7 @@ function deleteItem(button, itemTitle)
 
 // The following code is modified from: -----------------------------------------------------------------
 // OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
-function createAppImage(src, alt) {
+function createAppImage(src, alt, title) {
     const imageElement = document.createElement('img');
     imageElement.src = src;
     imageElement.alt = alt;
@@ -194,11 +192,46 @@ function createAppImage(src, alt) {
 
     // Add click event listener
     imageElement.addEventListener('click', function() {
-        const location = alt === 'subscribedApp' ? 'streaming_page.html' : 'subscriptions_page_final.html';
-        alert(`Image clicked: ${src}`);
-        window.location.href = location;
+        let location = "";
+        if(src === "../images/netflix.png" || src === "../images/amazonicon.png" || src === "../images/disneyplus.png")
+        {
+            if(title === "Spider-Man: Across the Spider-Verse")
+                location = alt === 'subscribedApp' ? 'streaming_page_spiderman.html' : 'subscriptions_page_final.html';
+            else if(title === "Guardians of the Galaxy Vol. 3")
+                location = alt === 'subscribedApp' ? 'streaming_page_guardians.html' : 'subscriptions_page_final.html';
+            else if(title === "Wednesday")
+                location = alt === 'subscribedApp' ? 'streaming_page_wednesday.html' : 'subscriptions_page_final.html';
+            else
+                location = 'subscriptions_page_final.html';
+            window.location.href = location;
+        }
+        else if(src === "../images/youtube.webp" || src === "../images/twitch.png" || src === "../images/kick.png")
+        {
+            if(title === "Messi d'Or - Official Movie")
+                location = alt === 'subscribedApp' ? 'streaming_page_messi.html' : 'subscriptions_page_final.html';
+            else if(title === "Lofi Girl")
+                location = alt === 'subscribedApp' ? 'streaming_page_lofigirl.html' : 'subscriptions_page_final.html';
+            window.location.href = location;
+        }
+        else if(src === "../images/spotify.webp" || src === "../images/applemusic.png" || src === "../images/soundcloud.png")
+        {
+            if(title === "Thriller" && alt === 'subscribedApp')
+            {
+                document.querySelector('#MJ').classList.remove('hidden');
+                document.querySelector('#MGK').classList.add('hidden');
+            }
+            else if(title === "Tickets to My Downfall" && alt === 'subscribedApp')
+            {
+                document.querySelector('#MGK').classList.remove('hidden');
+                document.querySelector('#MJ').classList.add('hidden');
+            }
+            else
+            {
+                location = 'subscriptions_page_final.html';
+                window.location.href = location;
+            }
+        }
     });
-
     return imageElement;
 }
 // ----------------------------------------------------------------------------------------------------------------

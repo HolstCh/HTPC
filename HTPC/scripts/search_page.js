@@ -14,14 +14,14 @@ document.addEventListener('DOMContentLoaded', function()
 
         if (mediaType === 'Movie')
         {
-            const movieGenres = ['Comedy', 'Action', 'Animation', 'Sci-Fi'];
+            const movieGenres = ['Comedy', 'Animation', 'Action', 'Sci-Fi'];
             movieGenres.forEach(genre => {
                 const option = document.createElement('option');
                 option.textContent = genre;
                 genreSelect.appendChild(option);
             });
         }
-        else if (mediaType === 'TV Show')
+        else if (mediaType === 'TV')
         {
             const tvShowGenres = ['Mystery', 'Drama', 'Thriller', 'Fantasy'];
             tvShowGenres.forEach(genre => {
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function()
         }
         else if (mediaType === 'Music')
         {
-            const tvShowGenres = ['Pop Punk', 'EDM', 'Country', 'Rock', 'Jazz'];
+            const tvShowGenres = ['Pop Punk', 'Pop', 'EDM', 'Country', 'Rock', 'Jazz'];
             tvShowGenres.forEach(genre => {
                 const option = document.createElement('option');
                 option.textContent = genre;
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function()
         }
         else if (mediaType === 'Video')
         {
-            const tvShowGenres = ['Sports', 'Gaming', 'Educational'];
+            const tvShowGenres = ['Sports', 'Music', 'Gaming', 'Educational'];
             tvShowGenres.forEach(genre => {
                 const option = document.createElement('option');
                 option.textContent = genre;
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function()
             <p>Duration: ${allData[i].duration}</p>
           `;
         }
-        else if(allData[i].media === "TV Show")
+        else if(allData[i].media === "TV")
         {
             contentDetails.innerHTML = `
             <h5>${allData[i].title}</h5>
@@ -130,7 +130,10 @@ document.addEventListener('DOMContentLoaded', function()
             <p>Total User Ratings: ${allData[i].totalUserRatings}</p>
             <p>Genre: ${allData[i].tags[0]}</p>
             <p>Year: ${allData[i].year}</p>
+            <p>Season: ${allData[i].season}</p>
+            <p>Episodes: ${allData[i].episodes}</p>
           `;
+            console.log("hi", allData[i]);
         }
         else if(allData[i].media === "Video")
         {
@@ -146,8 +149,6 @@ document.addEventListener('DOMContentLoaded', function()
             <p>Total User Ratings: ${allData[i].totalUserRatings}</p>
             <p>Channel: ${allData[i].channel}</p>
             <p>Genre: ${allData[i].genre}</p>
-            <p>Views: ${allData[i].viewCount}</p>
-            <p>Likes: ${allData[i].likeCount}</p>
             <p>Duration: ${allData[i].duration}</p>
             `;
         }
@@ -166,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function()
         appsContainer.appendChild(subscribedAppsContainer);
 
         allData[i].subscribed.forEach(src => {
-            const imageElement = createAppImage(src, 'subscribedApp');
+            const imageElement = createAppImage(src, 'subscribedApp', allData[i].title);
             subscribedAppsContainer.appendChild(imageElement);
         });
 
@@ -209,6 +210,8 @@ document.addEventListener('DOMContentLoaded', function()
             resultsContainer.removeChild(resultsContainer.firstChild);
             console.log("h");
         }
+        document.querySelector('#MGK').classList.add('hidden');
+        document.querySelector('#MJ').classList.add('hidden');
 // ---------------------------------------------------------------------------------------------------------------
         avgRatings = [];
         for(let i = 0; i < allData.length; i++)
@@ -243,6 +246,7 @@ document.addEventListener('DOMContentLoaded', function()
             {
                 appendContainers(resultsContainer, i);
             }
+            else if(mediaType === "" && genre === "" && rating === "" && searchBar === ""){}
             else if(mediaType === "" && genre === dataGenre && rating === "" && searchBar === "")
             {
                 appendContainers(resultsContainer, i);
@@ -263,13 +267,12 @@ document.addEventListener('DOMContentLoaded', function()
             {
                 appendContainers(resultsContainer, i);
             }
-            else {}
         }
         renderStarColors();
     }
 // The following code is modified from: --------------------------------------------------------------------------
 // OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
-    function createAppImage(src, alt) {
+    function createAppImage(src, alt, title) {
         const imageElement = document.createElement('img');
         imageElement.src = src;
         imageElement.alt = alt;
@@ -280,10 +283,46 @@ document.addEventListener('DOMContentLoaded', function()
         // Add click event listener
         imageElement.addEventListener('click', function()
         {
-            const location = alt === 'subscribedApp' ? 'streaming_page.html' : 'subscriptions_page_final.html';
-            window.location.href = location;
+            let location = "";
+            if(src === "../images/netflix.png" || src === "../images/amazonicon.png" || src === "../images/disneyplus.png")
+            {
+                if(title === "Spider-Man: Across the Spider-Verse")
+                    location = alt === 'subscribedApp' ? 'streaming_page_spiderman.html' : 'subscriptions_page_final.html';
+                else if(title === "Guardians of the Galaxy Vol. 3")
+                    location = alt === 'subscribedApp' ? 'streaming_page_guardians.html' : 'subscriptions_page_final.html';
+                else if(title === "Wednesday")
+                    location = alt === 'subscribedApp' ? 'streaming_page_wednesday.html' : 'subscriptions_page_final.html';
+                else
+                    location = 'subscriptions_page_final.html';
+                window.location.href = location;
+            }
+            else if(src === "../images/youtube.webp" || src === "../images/twitch.png" || src === "../images/kick.png")
+            {
+                if(title === "Messi d'Or - Official Movie")
+                    location = alt === 'subscribedApp' ? 'streaming_page_messi.html' : 'streaming_page_messi.html';
+                else if(title === "Lofi Girl")
+                    location = alt === 'subscribedApp' ? 'streaming_page_lofigirl.html' : 'streaming_page_lofigirl.html';
+                window.location.href = location;
+            }
+            else if(src === "../images/spotify.webp" || src === "../images/applemusic.png" || src === "../images/soundcloud.png")
+            {
+                if(title === "Thriller" && alt === 'subscribedApp')
+                {
+                    document.querySelector('#MJ').classList.remove('hidden');
+                    document.querySelector('#MGK').classList.add('hidden');
+                }
+                else if(title === "Tickets to My Downfall" && alt === 'subscribedApp')
+                {
+                    document.querySelector('#MGK').classList.remove('hidden');
+                    document.querySelector('#MJ').classList.add('hidden');
+                }
+                else
+                {
+                    location = 'subscriptions_page_final.html';
+                    window.location.href = location;
+                }
+            }
         });
-
         return imageElement;
     }
 // ---------------------------------------------------------------------------------------------------------------
