@@ -85,7 +85,7 @@ let allData = [
     },
     {
         media:"Video",
-        title: "Lofi Girl",
+        title: "Lofi Girl Offical Stream",
         description: "Lofi Girl is a French channel and music label established in 2017. It provides livestreams of lo-fi hip hop music 24/7, accompanied by a Japanese-style animation of a girl studying or relaxing.",
         channel: "Lofi Girl",
         subscriberCount:"2",
@@ -117,8 +117,25 @@ let allData = [
         src:"../images/wednesdayposter.jpg",
         subscribed:["../images/netflix.png"],
         unsubscribed:["../images/amazonicon.png", "../images/disneyplus.png"],
-
-    }
+    },
+    {
+        media:"Video",
+        title: "PewDiePie Official Stream",
+        description: "By popular request ∞ Official ƿ૯ωძɿ૯ƿɿ૯ Infinity Stream ∞ You can now watch my vids on a forever loop with Twitch Chat! This is an official rerun channel. This channel plays PewDiePie YouTube videos 24/7/365/∞/FOREVER! Enjoy!",
+        channel: "PewDiePie",
+        subscriberCount:"5",
+        viewCount: "10",
+        likeCount: "5",
+        userRating: "",
+        avgRating: "2",
+        totalUserRatings:"10",
+        totalStars: "20",
+        duration: "Live Stream",
+        genre: "Gaming",
+        src:"../images/pewdthumbnail.png",
+        subscribed:["../images/youtube.webp"],
+        unsubscribed:["../images/twitch.png", "../images/kick.png"],
+    },
 ];
 
 let allLists = [

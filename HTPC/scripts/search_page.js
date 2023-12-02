@@ -161,26 +161,79 @@ document.addEventListener('DOMContentLoaded', function()
         appsContainer.classList.add('apps-container', 'text-center');
 
         const subscribedAppsContainer = document.createElement('div');
-        subscribedAppsContainer.classList.add('subscribed-apps', 'text-center');
-        subscribedAppsContainer.innerHTML = `<p class="px-3">Subscribed Apps:</p>`;
+        subscribedAppsContainer.classList.add('subscribed-apps');
 
-        appsContainer.appendChild(subscribedAppsContainer);
-
-        allData[i].subscribed.forEach(src => {
-            const imageElement = createAppImage(src, 'subscribedApp', allData[i].title);
+        if(allData[i].title === "PewDiePie Official Stream")
+        {
+            subscribedAppsContainer.classList.add('px-20', 'py-10','ml-20');
+            subscribedAppsContainer.innerHTML = `<p class="px-3 text-center">Available On:</p>`;
+            appsContainer.appendChild(subscribedAppsContainer);
+            const imageElement = document.createElement('img');
+            imageElement.src = "../images/twitch.png";
+            imageElement.alt = "twitch";
+            imageElement.style.width = "6rem";
+            imageElement.style.height = "6rem";
+            imageElement.style.cursor = "pointer";
             subscribedAppsContainer.appendChild(imageElement);
-        });
+            imageElement.addEventListener('click', function(){
+                window.location.href = "streaming_page_pewdiepie.html";
+            });
+        }
+        else if(allData[i].title === "Lofi Girl Offical Stream")
+        {
+            subscribedAppsContainer.classList.add('px-20', 'py-10','ml-20');
+            subscribedAppsContainer.innerHTML = `<p class="px-3">Available On:</p>`;
+            appsContainer.appendChild(subscribedAppsContainer);
+            const imageElement = document.createElement('img');
+            imageElement.src = "../images/youtube.webp"
+            imageElement.alt = "YT";
+            imageElement.style.width = "6rem";
+            imageElement.style.height = "6rem";
+            imageElement.style.cursor = "pointer";
+            subscribedAppsContainer.appendChild(imageElement);
+            imageElement.addEventListener('click', function(){
+                window.location.href = "streaming_page_lofigirl.html";
+            });
+        }
+        else if(allData[i].title === "Messi d'Or - Official Movie")
+        {
+            subscribedAppsContainer.classList.add('px-20', 'py-10','ml-20');
+            subscribedAppsContainer.innerHTML = `<p class="px-3">Available On:</p>`;
+            const imageElement = document.createElement('img');
+            appsContainer.appendChild(subscribedAppsContainer);
+            imageElement.src = "../images/youtube.webp"
+            imageElement.alt = "YT";
+            imageElement.style.width = "6rem";
+            imageElement.style.height = "6rem";
+            imageElement.style.cursor = "pointer";
+            subscribedAppsContainer.appendChild(imageElement);
+            imageElement.addEventListener('click', function(){
+                window.location.href = "streaming_page_messi.html";
+            });
+        }
+        else
+        {
+            subscribedAppsContainer.innerHTML = `<p class="px-3">Subscribed Apps:</p>`;
+            appsContainer.appendChild(subscribedAppsContainer);
+            subscribedAppsContainer.classList.add('px-5');
 
-        const unsubscribedAppsContainer = document.createElement('div');
-        unsubscribedAppsContainer.classList.add('unsubscribed-apps');
-        unsubscribedAppsContainer.innerHTML = `<p class="px-2">Unsubscribed Apps:</p>`;
+            allData[i].subscribed.forEach(src => {
+                const imageElement = createAppImage(src, 'subscribedApp', allData[i].title);
+                subscribedAppsContainer.appendChild(imageElement);
+            });
 
-        appsContainer.appendChild(unsubscribedAppsContainer);
+            const unsubscribedAppsContainer = document.createElement('div');
+            unsubscribedAppsContainer.classList.add('unsubscribed-apps');
+            unsubscribedAppsContainer.innerHTML = `<p class="px-3">Unsubscribed Apps:</p>`;
+            unsubscribedAppsContainer.classList.add('px-5');
 
-        allData[i].unsubscribed.forEach(src => {
-            const imageElement = createAppImage(src, 'unsubscribedApp');
-            unsubscribedAppsContainer.appendChild(imageElement);
-        });
+            appsContainer.appendChild(unsubscribedAppsContainer);
+
+            allData[i].unsubscribed.forEach(src => {
+                const imageElement = createAppImage(src, 'unsubscribedApp');
+                unsubscribedAppsContainer.appendChild(imageElement);
+            });
+        }
 
         resultItem.appendChild(contentImageContainer);
         resultItem.appendChild(contentDetailsContainer);
