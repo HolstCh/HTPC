@@ -6,6 +6,10 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-image: url('../images/popcornbackground.png');
+            background-position: center;
+            background-repeat: repeat;
+            background-size: 500px;
             background-color: #11194f;
             color: #fff;
             margin: 0;
@@ -16,6 +20,12 @@
             display: flex;
             justify-content: space-between;
             flex-direction: row;
+            background-image: url('../images/bluecontainer.png');
+            background-size: 2000px;
+            background-position: center;
+            border-radius: 10px;
+            border: 3px solid rgb(41, 112, 255);
+
         }
 
         .tvshow-info {
@@ -40,14 +50,14 @@
             flex: 1;
             padding: 0.5rem;
             text-align: center;
-            background-color: #303034;
-            border: 2px solid #555;
+            background-color: #28288c;
+            border: 2px solid rgb(56, 235, 214);
             margin: 0 0.5rem;
         }
 
         .category-title {
             font-size: 14px;
-            margin-bottom: 5px;
+            
         }
 
         .watchlist {
@@ -77,9 +87,14 @@
             top: 465px;
             right: 1188px;
         }
-        .poster{
+
+        .poster {
+            border-radius: 5px;
+            border: 3px solid white;
+            margin-top: 2em;
+            margin-bottom: 1em;
             width: 30rem;
-            height: 35rem;
+            height: 38rem;
         }
 
         /* Style for the dropdown container */
@@ -132,12 +147,10 @@
         }
 
         /* following css code adapted from https://www.javatpoint.com/how-to-create-dropdown-list-using-javascript*/ 
-        /* set the position of dropdown */  
         .dropdown {  
             position: relative;  
             display: inline-block;  
-        }  
-        /* set the size and position of button on web */  
+        }   
         .button1 {  
             border: 2px solid black;
             color: black;
@@ -160,15 +173,14 @@
             border-color: #2196F3;
             color: white;
         }
-
-        /* provide css to background of list items */   
+ 
         #dropdown-items {  
             display: none;  
             position: absolute;  
             background-color: white;  
             min-width: 185px;  
         }  
-        /* provide css to list items */   
+  
         #dropdown-items a {  
             display: block;  
             font-size: 18px;  
@@ -211,6 +223,7 @@
     </div>
     <br>
 </header>
+
 <body class="bg-slate-900">
     <div class="container bg-slate-900 text-white">
         <div class="tvshow-info">
@@ -278,7 +291,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center">Subscribed Apps</p>
+            <p class="text-center">Watch Now Choosing a Subscribed App</p>
             <div id="subscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
             <p class="text-center">Unsubscribed Apps</p>
             <div id="unsubscribed-apps" class="bg-blue-900 flex flex-row items-center justify-center space-x-4"></div>
