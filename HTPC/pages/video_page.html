@@ -39,7 +39,7 @@
         <h1 class="text-4xl py-5 content-title">Trending Videos</h1>
         <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow1">&#9664;</div>
-            <img src="../images/messi.jpg" alt="Videos 1">
+            <img src="../images/messi.jpg" alt="Videos 1" id="messi">
             <img src="../images/fortnite.jpg" alt="Videos 2">
             <img src="../images/fivenights.jpg" alt="Videos 3">
            
@@ -50,9 +50,9 @@
         <h1 class="text-4xl py-5 content-title">Current Live Streams</h1>
         <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow2">&#9664;</div>
-            <img src="../images/pewdthumbnail.png" alt="Videos 5">
+            <img src="../images/pewdthumbnail.png" alt="Videos 5" id="pew">
             <img src="../images/cricketstream.png" alt="Videos 6">
-            <img src="../images/lofigirl.png" alt="Videos 7">
+            <img src="../images/lofigirl.png" alt="Videos 7" id="lofi">
             <div class="arrow right-arrow" id="right-arrow2">&#9654;</div>
         </div>
     </section>
@@ -67,37 +67,72 @@
         </div>
     </section>
     <script>
-        const content = document.querySelector('.content');
-        const leftArrow1 = document.getElementById('left-arrow1');
-        const rightArrow1 = document.getElementById('right-arrow1');
-        const leftArrow2 = document.getElementById('left-arrow2');
-        const rightArrow2 = document.getElementById('right-arrow2');
-        const leftArrow3 = document.getElementById('left-arrow3');
-        const rightArrow3 = document.getElementById('right-arrow3');
-
-        leftArrow1.addEventListener('click', () => {
-            content.scrollLeft -= 200; 
+        let messi = document.getElementById("messi");
+        let originalMessiHeight = messi.style.height;
+        let originalMessiWidth = messi.style.width;
+        messi.addEventListener('mouseover', function()
+        {
+            messi.src = "../images/youtube.webp";
+            messi.alt = "twitch";
+            messi.style.width = "13rem";
+            messi.style.height = "13rem";
+            messi.style.cursor = "pointer";
+            messi.addEventListener('click', function()
+            {
+                window.location.href = "streaming_page_messi.html";
+            });
+        });
+        messi.addEventListener('mouseout', function()
+        {
+            messi.style.width = originalMessiWidth;
+            messi.style.height = originalMessiHeight;
+            messi.src = "../images/messi.jpg";
         });
 
-        rightArrow1.addEventListener('click', () => {
-            content.scrollLeft += 200; 
+        let lofi = document.getElementById("lofi");
+        let originalLofiHeight = lofi.style.height;
+        let originalLofiWidth = lofi.style.width;
+        lofi.addEventListener('mouseover', function()
+        {
+            lofi.src = "../images/youtube.webp";
+            lofi.alt = "twitch";
+            lofi.style.width = "13rem";
+            lofi.style.height = "13rem";
+            lofi.style.cursor = "pointer";
+            lofi.addEventListener('click', function()
+            {
+                window.location.href = "streaming_page_lofigirl.html";
+            });
+        });
+        lofi.addEventListener('mouseout', function()
+        {
+            lofi.style.width = originalLofiWidth;
+            lofi.style.height = originalLofiHeight;
+            lofi.src = "../images/lofigirl.png";
         });
 
-        leftArrow2.addEventListener('click', () => {
-            content.scrollLeft -= 200; 
+        let pew = document.getElementById("pew");
+        let originalPewHeight = pew.style.height;
+        let originalPewWidth = pew.style.width;
+        pew.addEventListener('mouseover', function()
+        {
+            pew.src = "../images/twitch.png";
+            pew.alt = "twitch";
+            pew.style.width = "13rem";
+            pew.style.height = "13rem";
+            pew.style.cursor = "pointer";
+            pew.addEventListener('click', function()
+            {
+                window.location.href = "streaming_page_pewdiepie.html";
+            });
+        });
+        pew.addEventListener('mouseout', function()
+        {
+            pew.style.width = originalPewWidth;
+            pew.style.height = originalPewHeight;
+            pew.src = "../images/pewdthumbnail.png";
         });
 
-        rightArrow2.addEventListener('click', () => {
-            content.scrollLeft += 200; 
-        });
-
-        leftArrow3.addEventListener('click', () => {
-            content.scrollLeft -= 200; 
-        });
-
-        rightArrow3.addEventListener('click', () => {
-            content.scrollLeft += 200; 
-        });
     </script>
 </body>
 </html>
