@@ -150,6 +150,7 @@
         .dropdown {  
             position: relative;  
             display: inline-block;  
+            text-align: center;
         }   
         .button1 {  
             border: 2px solid black;
@@ -158,7 +159,8 @@
             font-size: 16px;
             cursor: pointer;
             border-radius: 5px;
-            margin-left: 10px;
+            margin-bottom: 20px;
+            text-align: center;
         }  
         .button1:hover {
             background-color: #2196F3;
@@ -189,6 +191,10 @@
             text-decoration: none;  
             padding: 10px;  
         }  
+        .flex-container{
+            display: flex;
+            justify-content: center;
+        }
 
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -262,22 +268,7 @@
                         <span class="visually-hidden list-type">Choose List</span>
                     </button>
                     <!-- code for dropdown adapted from https://www.javatpoint.com/how-to-create-dropdown-list-using-javascript-->
-                    <div class="dropdown">  
-                        <button onclick="show_dropdown()" class="button1 success">Episode List
-                        <i class = "bx bx-chevron-down" id ="arrow"> </i>
-                        </button>  
-                            <!-- dropdown list items will show when we click the drop button -->   
-                            <div id="dropdown-items">  
-                               <a href="streaming_page_wednesday.html"> Episode 1 </a>  
-                               <a href="streaming_page_wednesday.html"> Episode 2 </a>  
-                               <a href="streaming_page_wednesday.html"> Episode 3 </a>  
-                               <a href="streaming_page_wednesday.html"> Episode 4 </a>  
-                               <a href="streaming_page_wednesday.html"> Episode 5 </a>  
-                               <a href="streaming_page_wednesday.html"> Episode 6 </a>  
-                               <a href="streaming_page_wednesday.html"> Episode 7 </a>  
-                               <a href="streaming_page_wednesday.html"> Episode 8 </a>  
-                            </div>  
-                    </div>
+
                     <div class="dropdown-menu"></div>
                 </div>
                 <div class="rating-container">
@@ -289,6 +280,24 @@
                         <span class="user-star" data-value="4">&#9733;</span>
                         <span class="user-star" data-value="5">&#9733;</span>
                     </div>
+                </div>
+            </div>
+            <div class = "flex-container">
+                <div class="dropdown">  
+                    <button onclick="show_dropdown()" class="button1 success" style = "margin-bottom: 20px; ">Episode List
+                        <i class = "bx bx-chevron-down" id ="arrow"> </i>
+                    </button>  
+                        <!-- dropdown list items will show when we click the drop button -->   
+                        <div id="dropdown-items">  
+                            <a href="streaming_page_wednesday.html"> Episode 1 </a>  
+                            <a href="streaming_page_wednesday.html"> Episode 2 </a>  
+                            <a href="streaming_page_wednesday.html"> Episode 3 </a>  
+                            <a href="streaming_page_wednesday.html"> Episode 4 </a>  
+                            <a href="streaming_page_wednesday.html"> Episode 5 </a>  
+                            <a href="streaming_page_wednesday.html"> Episode 6 </a>  
+                            <a href="streaming_page_wednesday.html"> Episode 7 </a>  
+                            <a href="streaming_page_wednesday.html"> Episode 8 </a>  
+                        </div>  
                 </div>
             </div>
             <p class="text-center">Watch with Subscribed Apps:</p>
