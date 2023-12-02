@@ -22,9 +22,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const contentMedia = document.createElement('h1');
         contentMedia.innerHTML = `<h1>${allData[index].media}</h1>`;
+        contentMedia.style.paddingBottom = "20px";
+        contentMedia.style.fontSize = "20px";
 
         const contentTitle = document.createElement('h1');
         contentTitle.innerHTML = `<h1>${allData[index].title}</h1>`;
+        contentTitle.style.paddingBottom = "10px";
+
 
         const contentImageContainer = document.createElement('div');
         contentImageContainer.classList.add('content-image-container', 'mr-4');
@@ -49,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <span class="user-star" data-value="5">&#9733;</span>
         </div>
           `;
+          contentDetailsContainer.style.paddingTop = "10px"
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('btn', 'btn-danger');

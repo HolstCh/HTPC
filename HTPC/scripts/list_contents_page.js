@@ -117,7 +117,7 @@ document.addEventListener('DOMContentLoaded', function()
 
         const subscribedAppsContainer = document.createElement('div');
         subscribedAppsContainer.classList.add('subscribed-apps', 'text-center');
-        subscribedAppsContainer.innerHTML = `<p class="px-3">Subscribed Apps:</p>`;
+        subscribedAppsContainer.innerHTML = `<p class="px-3">Access Media with Subscribed Apps:</p>`;
 
         appsContainer.appendChild(subscribedAppsContainer);
 
