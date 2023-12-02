@@ -10,15 +10,29 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <title>Media Search Page</title>
   <style>
-/* The following code is from: ----------------------------------------------------------------------------- */
+/* Some of the following code is from: ----------------------------------------------------------------------------- */
 /* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
     body {
       background-color: #f8f9fa;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('../images/searchwallpaper.png');
+      background-repeat: repeat;
+      background-size: 200px;
     }
 
     .container {
-      margin-top: 50px;
+    background: #4b4b4b;
+    background-image: url('../images/bluecontainercrop.png');
+    background-size: 1500px;
+    background-position: center;
+    border-radius: 5rem;
+    text-align: center;
+    padding-bottom: 5rem;
+    margin-left: 4rem;
+    margin: 3rem;
+    border-color: rgb(31, 91, 255);
+    border-width: 3px;
+    width: 90%
     }
 
     .form-group {
@@ -62,12 +76,20 @@
     .result-container {
       display: flex;
       justify-content: space-between;
+      color: white;
+      background-image: url('../images/bluecontainer.png');
+    background-size: 1500px;
+    background-repeat: repeat;
+    background-position-x: 85%;
       background-color: #ffffff;
       border-radius: 8px;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
-      width: 100%; /* Make containers wider */
+      width: 100%; 
+      border-radius: 10px;
+    border-color: rgb(95, 236, 236);
+    border-width: 2px;
     }
 
     .result-item {
@@ -90,6 +112,8 @@
       height: 48px;
       cursor: pointer;
       border-radius: 4px;
+      border-color: #f8f9fa;
+      border-width: 3px;
       transition: transform 0.2s;
     }
 
@@ -147,12 +171,13 @@
           height="250" frameBorder="0" allowfullscreen=""
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 </div>
-<!-- The following code is from: ----------------------------------------------------------------------------- */
+<!-- Some of the following code is from: ----------------------------------------------------------------------------- */
  OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
 -->
 <div class="container">
   <div class="row justify-content-center">
     <div class="col-md-10">
+      <h2 class="text-white mb-4 font-weight-bold" style="font-size: 2em;">🔎 Search:</h2>
       <div class="form-group">
         <label for="mediaType">Select Media Type</label>
         <select id="mediaType" class="form-control genreChange">
