@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', function()
     function updateGenres()
     {
         const mediaType = document.getElementById('mediaType').value;
+        let paragraphElement = document.getElementById("errorMessage");
+        paragraphElement.textContent = '';
+        if(mediaType == '') {
+            paragraphElement.style.color = 'red';
+            paragraphElement.textContent = 'Select a media type or type content title';
+        }
         const genreDropdown = document.getElementById('genreDropdown');
         const genreSelect = document.getElementById('genre');
 
@@ -257,6 +263,12 @@ document.addEventListener('DOMContentLoaded', function()
         console.log('Genre:', genre);
         console.log('Rating:', rating);
         console.log('Search Query:', searchBar);
+
+        if(mediaType === '' && searchBar === ''){
+            let paragraphElement = document.getElementById("errorMessage");
+            paragraphElement.style.color = 'red';
+            paragraphElement.textContent = 'Select a media type or type content title';
+        }
 
         const resultsContainer = document.getElementById('resultsContainer');
         while (resultsContainer.firstChild) {
