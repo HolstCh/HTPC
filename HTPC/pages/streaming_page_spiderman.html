@@ -66,12 +66,6 @@
       display: inline-block;
     }
 
-    h2,
-    h3 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-
     p {
       font-size: 1em;
       margin-bottom: 20px;
@@ -100,6 +94,7 @@
       display: flex;
       justify-content: center;
       margin-bottom: 20px;
+      
 
     }
 
@@ -112,10 +107,14 @@
       font-size: 16px;
       background-color: #5e1a1a;
       border: 3px solid rgb(255, 147, 58);
+      
     }
     
     .paragraph-container {
       padding: 10px 20px;
+      background-image: url('../images/redcontainer.png');
+      background-size: 6500px;
+      background-position: right;
       margin: 0 10px;
       background-color: #5e1a1a;
       border: 3px solid rgb(255, 147, 58);
@@ -124,6 +123,22 @@
       color: #fff;
     }
 
+    .ratingall-container {
+      display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  background-color: #5e1a1a;
+      border: 3px solid rgb(255, 147, 58);
+      border-radius: 10px;
+      font-size: 16px;
+      color: #fff;
+      margin-top: 5px;
+      margin-bottom: 20px;
+      background-image: url('../images/spiderbelowbanner.png');
+      background-size: 1250px;
+      background-position: center;
+    }
   </style>
 </head>
 <body>
@@ -159,7 +174,9 @@
     <video controls="controls">
       <source src="../videos/spidermanscene.mp4" type="video/mp4" />
     </video>
-    <div class="grid-container grid grid-cols-3 py-4">
+
+    
+    <div class="ratingall-container" </div>
 <!--------- dropdown/button is modified from: https://getbootstrap.com/docs/4.1/components/dropdowns/ -------------------------->
         <div class="btn-group mx-auto">
           <button class="btn btn-primary btn-lg addListItem" type="button">+ Watchlist</button>
