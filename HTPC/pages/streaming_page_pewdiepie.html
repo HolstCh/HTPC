@@ -130,6 +130,7 @@
         About Channel:
         Live ReRuns of former no.1 most subscribed streamer, PewDiePie's Twitch streams.
       </p>
+      <p id="member"></p>
       <p><a href="https://www.twitch.tv/pewdiepie" target="_blank">https://www.twitch.tv/pewdiepie</a></p>
       <div class="grid grid-cols-3 py-4">
         <div class="btn-group mx-auto">
@@ -166,6 +167,18 @@
     let allData = JSON.parse(localStorage.getItem('data'));
     let allLists = JSON.parse(localStorage.getItem('lists'));
     console.log(allLists);
+    let allApps = JSON.parse(localStorage.getItem('apps'));
+    for(let k = 0; k < allApps.length; k++)
+    {
+      if(allApps[k].app === "twitch")
+      {
+        console.log(allApps[k]);
+        if (allApps[k].state === "sub")
+          document.getElementById("member").innerHTML = "You are currently a <b>Premium Member</b>";
+        else if (allApps[k].state === "unsub")
+          document.getElementById("member").innerHTML = "You are a <b>Free Member</b>";
+      }
+    }
     let id = 0;
     for(let i = 0; i < allData.length; i++)
     {

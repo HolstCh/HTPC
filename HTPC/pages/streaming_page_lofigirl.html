@@ -140,6 +140,7 @@
         About Channel:
         That girl studying by the window non-stop
       </p>
+      <p id="member"></p>
       <p><a href="https://www.youtube.com/@LofiGirl" target="_blank">www.youtube.com/@LofiGirl</a></p>
       <div class="grid grid-cols-3 py-4">
         <div class="btn-group mx-auto">
@@ -175,6 +176,18 @@
   <script>
     let allData = JSON.parse(localStorage.getItem('data'));
     let allLists = JSON.parse(localStorage.getItem('lists'));
+    let allApps = JSON.parse(localStorage.getItem('apps'));
+    for(let k = 0; k < allApps.length; k++)
+    {
+      if(allApps[k].app === "youtube")
+      {
+        console.log(allApps[k]);
+        if (allApps[k].state === "sub")
+          document.getElementById("member").innerHTML = "You are currently a <b>Premium Member</b>";
+        else if (allApps[k].state === "unsub")
+          document.getElementById("member").innerHTML = "You are a <b>Free Member</b>";
+      }
+    }
     console.log(allLists);
     let id = 0;
     for(let i = 0; i < allData.length; i++)

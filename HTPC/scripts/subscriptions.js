@@ -403,6 +403,7 @@ function unsubConfirm(name) {
     }
     else if (String(name).valueOf() === "youtube") {
         let index = checkApp("youtube");
+        console.log("hey", index);
         allApps[index].state = "unsub";
         allApps[index].plan = "No Current Plan";
       youtubeHeader.innerHTML = "Unsubscribed <br> Free Plan";
@@ -423,6 +424,7 @@ function unsubConfirm(name) {
     }
   }
   localStorage.setItem('apps', JSON.stringify(allApps));
+  console.log(allApps);
 }
 
 function loadSub(name, i)
@@ -582,6 +584,7 @@ function subscribeOnClick(name) {
     }
   }
   localStorage.setItem('apps', JSON.stringify(allApps));
+  console.log(allApps);
 }
 
 //netflix
@@ -621,13 +624,13 @@ document.querySelector("#soundcloud10").addEventListener("click" , function() {s
 document.querySelector("#twitch14").addEventListener("click" , function() {twitchHeader.innerHTML = "Subscribed <br> Premium plan: $14/month"})
 
 // youtube
-document.querySelector("#youtube8").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Premium plan: CA$8/month"})
-document.querySelector("#youtube14").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Premium plan: CA$14/month"})
-document.querySelector("#youtube23").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Premium plan: CA$23/month"})
+document.querySelector("#youtube8").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Premium plan: $8/month"})
+document.querySelector("#youtube14").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Premium plan: $14/month"})
+document.querySelector("#youtube23").addEventListener("click" , function() {youtubeHeader.innerHTML = "Subscribed <br> Premium plan: $23/month"})
 
 // youtube
-document.querySelector("#kick5").addEventListener("click" , function() {kickHeader.innerHTML = "Subscribed <br> Premium plan: CA$5/month"})
-document.querySelector("#kick10").addEventListener("click" , function() {kickHeader.innerHTML = "Subscribed <br> Premium plan: CA$10/month"})
+document.querySelector("#kick5").addEventListener("click" , function() {kickHeader.innerHTML = "Subscribed <br> Premium plan: $5/month"})
+document.querySelector("#kick10").addEventListener("click" , function() {kickHeader.innerHTML = "Subscribed <br> Premium plan: $10/month"})
 
 
 
