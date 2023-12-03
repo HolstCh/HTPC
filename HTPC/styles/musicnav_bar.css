@@ -64,7 +64,8 @@ a:hover {
         align-items: end;
     }
 }
-
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
 /* Reset some default styles */
 body, html {
     margin: 0;

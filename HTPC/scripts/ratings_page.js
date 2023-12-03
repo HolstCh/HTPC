@@ -12,8 +12,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     selectStars();
-
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
     function createRatingCard(index) {
+
         const ratingCard = document.createElement('div');
         ratingCard.classList.add('rating-container');
 
@@ -28,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const contentTitle = document.createElement('h1');
         contentTitle.innerHTML = `<h1>${allData[index].title}</h1>`;
         contentTitle.style.paddingBottom = "10px";
-
 
         const contentImageContainer = document.createElement('div');
         contentImageContainer.classList.add('content-image-container', 'mr-4');
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         return ratingCard;
     }
-
+// ---------------------------------------------------------------------------------------------------------
     function selectStars() {
         for(let index = 0; index < cardIds.length; index++)
         {
@@ -154,6 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     handleStars(allData[index].userRating);
                 });
             });
-        };
+        }
     }
 });

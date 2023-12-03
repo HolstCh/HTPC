@@ -242,35 +242,3 @@ document.getElementById('guardians').addEventListener('click', function() {
 document.getElementById('wednesday').addEventListener('click', function() {
     renderContent('Wednesday');
 });
-
-const content = document.querySelector('.content');
-const leftArrow1 = document.getElementById('left-arrow1');
-const rightArrow1 = document.getElementById('right-arrow1');
-const leftArrow2 = document.getElementById('left-arrow2');
-const rightArrow2 = document.getElementById('right-arrow2');
-const leftArrow3 = document.getElementById('left-arrow3');
-const rightArrow3 = document.getElementById('right-arrow3');
-
-leftArrow1.addEventListener('click', () => {
-    content.scrollLeft -= 200; // Adjust the scroll distance as needed
-});
-
-rightArrow1.addEventListener('click', () => {
-    content.scrollLeft += 200; // Adjust the scroll distance as needed
-});
-
-leftArrow2.addEventListener('click', () => {
-    content.scrollLeft -= 200; // Adjust the scroll distance as needed
-});
-
-rightArrow2.addEventListener('click', () => {
-    content.scrollLeft += 200; // Adjust the scroll distance as needed
-});
-
-leftArrow3.addEventListener('click', () => {
-    content.scrollLeft -= 200; // Adjust the scroll distance as needed
-});
-
-rightArrow3.addEventListener('click', () => {
-    content.scrollLeft += 200; // Adjust the scroll distance as needed
-});

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <title>Movie Description</title>
     <style>
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
         body {
             font-family: Arial, sans-serif;
             background-image: url('../images/popcornbackground.png');
@@ -138,6 +140,7 @@
         .dropdown-item:hover {
             background-color: #546e7a;
         }
+/* --------------------------------------------------------------------------------------------------------- */
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/nav_bar.css">
@@ -203,6 +206,7 @@
                 </div>
             </div>
             <div class="flex flex-row items-center justify-center space-x-4">
+<!--------- code is modified from: https://getbootstrap.com/docs/4.1/components/dropdowns/ -------------------------->
                 <div class="btn-group px-2 py-4">
                     <button class="btn btn-primary btn-lg addListItem" type="button">+ Watchlist</button>
                     <button type="button" class="btn btn-lg btn-primary dropdown-toggle dropdown-toggle-split"
@@ -211,6 +215,7 @@
                     </button>
                     <div class="dropdown-menu"></div>
                 </div>
+<!--------------------------------------------------------------------------------------------------------------->
                 <div class="rating-container">
                     <p>Your Rating:</p>
                     <div class="rating-stars" id="stars">
@@ -366,7 +371,8 @@
                 document.querySelector('#star5').style.color = '#ffcc00';
             }
         }
-
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
         function addSubscribedApps(src) {
             const imageElement = document.createElement('img');
             imageElement.src = src;
@@ -375,7 +381,6 @@
             imageElement.style.height = "6rem";
             imageElement.style.cursor = "pointer";
             imageElement.addEventListener('click', function () {
-                alert('Image clicked: ' + src);
                 if (allData[id].title === 'Spider-Man: Across the Spider-Verse') {
                     window.location.href = "streaming_page_spiderman.html";
                 }
@@ -395,12 +400,11 @@
             imageElement.style.height = "6rem";
             imageElement.style.cursor = "pointer";
             imageElement.addEventListener('click', function () {
-                alert('Image clicked: ' + src);
                 window.location.href = "subscriptions_page_final.html";
             });
             unsubscribedApps.appendChild(imageElement);
         }
-
+// --------------------------------------------------------------------------------------------------------------------
         function handleItemClick(item) {
             document.querySelector('.list-type').textContent = item;
         }

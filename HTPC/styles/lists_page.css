@@ -31,7 +31,8 @@
         max-width: 1792px;
     }
 }
-
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
 body {
     font-family: Arial, sans-serif;
     background-image: url('../images/listwallpaper.png');

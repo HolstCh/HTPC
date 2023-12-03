@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function()
 
         // container for content details
         const contentDetailsContainer = document.createElement('div');
-        contentDetailsContainer.classList.add('content-details-container', 'mr-4');
+        contentDetailsContainer.classList.add('content-details-container', 'mr-4', 'text-left');
 
         // content details
         const contentDetails = document.createElement('div');

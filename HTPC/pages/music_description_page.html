@@ -5,14 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Streamix</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/musicnav_bar.css">
     <link rel="stylesheet" href="../styles/ratingSystem.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
         body {
             background-image: url('../images/notesdarkgreen.png');
             background-position: center;
@@ -59,28 +61,29 @@
             border-width: 3px;
         }
 
-        .second-container {
-    position: relative;
-    background: #444444;
-    background-color: #244e43;
-    background-image: url('../images/greencontainer.jpg');
-    background-size: 1080px;
-    background-position: center;
-    border-radius: 5rem;
-    text-align: center;
-    padding-bottom: 3rem;
-    margin-left: 2rem;
-    margin-right: 1rem;
-    border-color: #3cffe8;
-    border-width: 3px;
-    width: 120%;
-}
-.songs {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-70%, -50%);
-}
+        .second-container
+        {
+            position: relative;
+            background: #444444;
+            background-color: #244e43;
+            background-image: url('../images/greencontainer.jpg');
+            background-size: 1080px;
+            background-position: center;
+            border-radius: 5rem;
+            text-align: center;
+            padding-bottom: 3rem;
+            margin-left: 2rem;
+            margin-right: 1rem;
+            border-color: #3cffe8;
+            border-width: 3px;
+            width: 120%;
+        }
+        .songs {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-70%, -50%);
+        }
         .third-container {
             background: #444444;
             background-color: #244e43;
@@ -100,7 +103,7 @@
             margin-top: 2rem;
             border: 3px solid #ffffff;
         }
-
+/* ------------------------------------------------------------------------------------------------------------
     </style>
 </head>
 <header class="bg-slate-900">
@@ -128,7 +131,6 @@
     </div>
     <br>
 </header>
-
 <body class="bg-slate-900">
     <div class="spotify-player">
         <iframe style="border-radius:12px" id="MJ" class="hidden"
@@ -198,6 +200,7 @@
                         <span class="user-star" data-value="5">&#9733;</span>
                     </div>
                 </div>
+ <!--------- code is modified from: https://getbootstrap.com/docs/4.1/components/dropdowns/ ------------------>
                 <div class="btn-group py-3">
                     <button class="btn btn-primary btn-md addListItem" type="button">+ Playlist</button>
                     <button type="button" class="btn btn-md btn-primary dropdown-toggle dropdown-toggle-split"
@@ -206,12 +209,14 @@
                     </button>
                     <div class="dropdown-menu"></div>
                 </div>
+<!--------------------------------------------------------------------------------------------------------------->
                 <p class="text-center mt-3 py-3">Listen with Subscribed Apps:</p>
                 <div id="subscribed-apps" class="flex flex-row items-center justify-center space-x-4"></div>
                 <p class="text-center py-3">Unsubscribed Apps</p>
                 <div id="unsubscribed-apps" class="flex flex-row items-center justify-center space-x-4"></div>
             </div>
-        </div>
+        </section>
+    </div>
         <script src="../scripts/music_description_page.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
@@ -355,7 +360,8 @@
                     document.querySelector('#star5').style.color = '#ffcc00';
                 }
             }
-    
+/* The following code is modified from: --------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
             function addSubscribedApps(src) {
                 const imageElement = document.createElement('img');
                 imageElement.src = src;
@@ -381,12 +387,11 @@
                 imageElement.style.height = "6rem";
                 imageElement.style.cursor = "pointer";
                 imageElement.addEventListener('click', function () {
-                    alert('Image clicked: ' + src);
                     window.location.href = "subscriptions_page_final.html";
                 });
                 unsubscribedApps.appendChild(imageElement);
             }
-    
+ // -----------------------------------------------------------------------------------------------------------------
             function handleItemClick(item) {
                 document.querySelector('.list-type').textContent = item;
             }
@@ -431,7 +436,7 @@
                 console.log(allLists);
             });
         </script>
-        </section>
+
 
 
         
