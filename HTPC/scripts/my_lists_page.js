@@ -12,6 +12,7 @@ function loadData()
             if(allLists[i].title === "")
                 continue;
             let listTitle = allLists[i].title;
+            let mediaType = allLists[i].media;
             console.log(listTitle);
             let listItem = document.createElement('li');
             listItem.innerHTML = `
@@ -20,6 +21,7 @@ function loadData()
                         <h2>${allLists[i].title}</h2>
                     </a>
                 </div>
+                <p class="mr-20">${mediaType}</p>
                 <button class="delete-button">X</button>
             `;
             let deleteButton = listItem.querySelector('.delete-button');
@@ -93,6 +95,7 @@ document.addEventListener('DOMContentLoaded', function ()
                             <h2>${title}</h2>
                         </a>
                     </div>
+                    <p class="mr-20">${mediaType}</p>
                     <button class="delete-button">X</button>
                 `;
 
