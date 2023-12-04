@@ -58,6 +58,7 @@ pew.addEventListener('mouseout', function()
     pew.src = "../images/pewdthumbnail.png";
 });
 
+// this code was modified from: https://www.w3schools.com/cssref/css3_pr_transform.php
 let rowPosition1 = 0;
 const leftArrow1 = document.getElementById('left-arrow1');
 const rightArrow1 = document.getElementById('right-arrow1');
