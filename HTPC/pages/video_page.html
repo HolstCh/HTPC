@@ -40,9 +40,8 @@
         <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow1">&#9664;</div>
             <img src="../images/messi.jpg" alt="Videos 1" id="messi">
-            <img src="../images/fortnite.jpg" alt="Videos 2">
-            <img src="../images/fivenights.jpg" alt="Videos 3">
-           
+            <img src="../images/fortnite.jpg" alt="Videos 2" id="fortnite">
+            <img src="../images/fivenights.jpg" alt="Videos 3" id="fivenights">
             <div class="arrow right-arrow" id="right-arrow1">&#9654;</div>
         </div>
     </section>
@@ -51,7 +50,7 @@
         <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow2">&#9664;</div>
             <img src="../images/pewdthumbnail.png" alt="Videos 5" id="pew">
-            <img src="../images/cricketstream.png" alt="Videos 6">
+            <img src="../images/cricketstream.png" alt="Videos 6" id="cricket">
             <img src="../images/lofigirl.png" alt="Videos 7" id="lofi">
             <div class="arrow right-arrow" id="right-arrow2">&#9654;</div>
         </div>
@@ -60,73 +59,12 @@
         <h1 class="text-4xl py-5 content-title">Videos Watch Later List</h1>
         <div class="content space-x-1">
             <div class="arrow left-arrow" id="left-arrow3">&#9664;</div>
-            <img src="../images/impaulsive.jpg" alt="Videos 9">
-            <img src="../images/tips.jpg" alt="Videos 10">
-            <img src="../images/coc.jpg" alt="Videos 11">
+            <img src="../images/impaulsive.jpg" alt="Videos 9" id="impaulsive">
+            <img src="../images/tips.jpg" alt="Videos 10" id="tips">
+            <img src="../images/coc.jpg" alt="Videos 11" id="clash">
             <div class="arrow right-arrow" id="right-arrow3">&#9654;</div>
         </div>
     </section>
-    <script>
-        let messi = document.getElementById("messi");
-        let originalMessiHeight = messi.style.height;
-        let originalMessiWidth = messi.style.width;
-        messi.addEventListener('mouseover', function()
-        {
-            messi.src = "../images/messiwithicon.png";
-            messi.alt = "twitch";
-            messi.style.cursor = "pointer";
-            messi.addEventListener('click', function()
-            {
-                window.location.href = "streaming_page_messi.html";
-            });
-        });
-        messi.addEventListener('mouseout', function()
-        {
-            messi.style.width = originalMessiWidth;
-            messi.style.height = originalMessiHeight;
-            messi.src = "../images/messi.jpg";
-        });
-
-        let lofi = document.getElementById("lofi");
-        let originalLofiHeight = lofi.style.height;
-        let originalLofiWidth = lofi.style.width;
-        lofi.addEventListener('mouseover', function()
-        {
-            lofi.src = "../images/lofithumbnail.png";
-            lofi.alt = "twitch";
-            lofi.style.cursor = "pointer";
-            lofi.addEventListener('click', function()
-            {
-                window.location.href = "streaming_page_lofigirl.html";
-            });
-        });
-        lofi.addEventListener('mouseout', function()
-        {
-            lofi.style.width = originalLofiWidth;
-            lofi.style.height = originalLofiHeight;
-            lofi.src = "../images/lofigirl.png";
-        });
-
-        let pew = document.getElementById("pew");
-        let originalPewHeight = pew.style.height;
-        let originalPewWidth = pew.style.width;
-        pew.addEventListener('mouseover', function()
-        {
-            pew.src = "../images/pewdsthumbnail.png";
-            pew.alt = "twitch";
-            pew.style.cursor = "pointer";
-            pew.addEventListener('click', function()
-            {
-                window.location.href = "streaming_page_pewdiepie.html";
-            });
-        });
-        pew.addEventListener('mouseout', function()
-        {
-            pew.style.width = originalPewWidth;
-            pew.style.height = originalPewHeight;
-            pew.src = "../images/pewdthumbnail.png";
-        });
-
-    </script>
+    <script src="../scripts/video_page.js"></script>
 </body>
 </html>
