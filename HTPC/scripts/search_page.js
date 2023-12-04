@@ -160,7 +160,6 @@ document.addEventListener('DOMContentLoaded', function()
         }
 // The following code is modified from: --------------------------------------------------------------------------
 // OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
-
         contentDetailsContainer.appendChild(contentDetails);
 
         const appsContainer = document.createElement('div');

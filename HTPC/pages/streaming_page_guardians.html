@@ -13,6 +13,8 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
+  /* the following code is modified from: ----------------------------------------------------------------------------- */
+  /* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
     body {
       background-color: black;
       background-image: url('../images/guardianswallpaper.jpg');
@@ -124,10 +126,10 @@
 
     .ratingall-container {
       display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  background-color: #5e1a1a;
+      grid-template-columns: repeat(3, 1fr);
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      background-color: #5e1a1a;
       border: 3px solid rgb(255, 147, 58);
       border-radius: 10px;
       font-size: 16px;
@@ -138,6 +140,7 @@
       background-size: 1250px;
       background-position: center;
     }
+/* ------------------------------------------------------------------------------------------------------- */
   </style>
 </head>
 
@@ -185,6 +188,9 @@
         </button>
         <div class="dropdown-menu"></div>
       </div>
+<!--------------------------------------------------------------------------------------------------------------
+The following code is modified from:
+OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */ ------------------------------------>
       <div class="rating-container">
         <p>Your Rating:</p>
         <div class="rating-stars" id="stars">
@@ -195,6 +201,7 @@
           <span class="user-star" data-value="5">&#9733;</span>
         </div>
       </div>
+<!---------------------------------------------------------------------------------------------------------------->
       <div class="mx-auto">
         <p class="totalRatings text-center"></p>
         <div class="avg-rating space-x-2">
@@ -249,7 +256,8 @@
     console.log(allData);
     document.querySelector('.totalRatings').textContent = "( " + allData[id].totalUserRatings + " User Ratings )";
     renderStars();
-
+/* the following code is modified from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
     const stars = document.querySelectorAll('.user-star');
     if(allData[id].userRating !== "") {
       handleStars(allData[id].userRating);
@@ -271,7 +279,7 @@
         handleStars(allData[id].userRating);
       });
     });
-
+/* ---------------------------------------------------------------------------------------------------------------*/
     function updateRating(currentRating)
     {
       let totalStars = parseInt(allData[id].totalStars);
@@ -300,6 +308,8 @@
       document.querySelector('.totalRatings').textContent = "( " + totalUserRatings + " User Ratings" + " )";
       renderStars();
     }
+/* the following code is modified from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
     function handleStars(value) {
       stars.forEach(star => {
         if (star.getAttribute('data-value') <= value) {
@@ -309,6 +319,7 @@
         }
       });
     }
+  /* ---------------------------------------------------------------------------------------------------------------*/
     function renderStars()
     {
       console.log(allData[id].avgRating);
@@ -353,7 +364,8 @@
         document.querySelector('#star5').style.color = '#ffcc00';
       }
     }
-
+/* the following code is modified from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
     function addSubscribedApps(src) {
       const imageElement = document.createElement('img');
       imageElement.src = src;
@@ -387,7 +399,7 @@
       });
       unsubscribedApps.appendChild(imageElement);
     }
-
+  /* ---------------------------------------------------------------------------------------------------------------*/
     function handleItemClick(item) {
       document.querySelector('.list-type').textContent = item;
     }

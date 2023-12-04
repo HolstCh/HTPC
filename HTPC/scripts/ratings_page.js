@@ -85,6 +85,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (allData[index].userRating !== "") {
                 handleStars(allData[index].userRating);
             }
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
             stars.forEach(star => {
                 star.addEventListener('click', function () {
                     const value = this.getAttribute('data-value');
@@ -111,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     }
                 });
             }
-
+//---------------------------------------------------------------------------------------------------------------------
             function updateRating(currentRating) {
                 let totalStars = parseInt(allData[index].totalStars);
                 let totalUserRatings = parseInt(allData[index].totalUserRatings);
@@ -139,6 +141,8 @@ document.addEventListener('DOMContentLoaded', function () {
             if (allData[index].userRating !== "") {
                 handleStars(allData[index].userRating);
             }
+// The following code is modified from: --------------------------------------------------------------------------
+// OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com
             stars.forEach(star => {
                 star.addEventListener('click', function () {
                     const value = this.getAttribute('data-value');

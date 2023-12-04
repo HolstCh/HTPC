@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>TV Show Description</title>
     <style>
+/* the following code is modified from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
         body {
             font-family: Arial, sans-serif;
             background-image: url('../images/popcornbackground.png');
@@ -195,7 +197,7 @@
             display: flex;
             justify-content: center;
         }
-
+/* ------------------------------------------------------------------------------------------------------- */
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="../styles/nav_bar.css">
@@ -271,6 +273,9 @@
 
                     <div class="dropdown-menu"></div>
                 </div>
+<!--------------------------------------------------------------------------------------------------------------
+The following code is modified from:
+OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com --------------------------------------->
                 <div class="rating-container">
                     <p>Your Rating:</p>
                     <div class="rating-stars" id="stars">
@@ -282,6 +287,7 @@
                     </div>
                 </div>
             </div>
+<!-------------------------------------------------------------------------------------------------------------->
             <div class = "flex-container">
                 <div class="dropdown">  
                     <button onclick="show_dropdown()" class="button1 success" style = "margin-bottom: 20px; ">Episode List
@@ -365,6 +371,8 @@
         allData[id].unsubscribed.forEach(addUnsubscribedApps)
         renderStars();
 
+/* the following code is modified from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
         const stars = document.querySelectorAll('.user-star');
         if(allData[id].userRating !== "") {
             handleStars(allData[id].userRating);
@@ -386,7 +394,7 @@
                 handleStars(allData[id].userRating);
             });
         });
-
+/* ------------------------------------------------------------------------------------------------------------------- */
         function updateRating(currentRating)
         {
             let totalStars = parseInt(allData[id].totalStars);
@@ -415,6 +423,8 @@
             document.querySelector('.totalRatings').textContent = "( " + totalUserRatings + " ratings" + " )";
             renderStars();
         }
+/* the following code is modified from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
         function handleStars(value) {
             stars.forEach(star => {
                 if (star.getAttribute('data-value') <= value) {
@@ -424,6 +434,7 @@
                 }
             });
         }
+/*--------------------------------------------------------------------------------------------------------------------*/
         function renderStars()
         {
             console.log(allData[id].avgRating);
@@ -468,7 +479,8 @@
                 document.querySelector('#star5').style.color = '#ffcc00';
             }
         }
-
+/* the following code is modified from: ----------------------------------------------------------------------------- */
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com  */
         function addSubscribedApps(src) {
             const imageElement = document.createElement('img');
             imageElement.src = src;
@@ -477,7 +489,6 @@
             imageElement.style.height = "6rem";
             imageElement.style.cursor = "pointer";
             imageElement.addEventListener('click', function() {
-                alert('Image clicked: ' + src);
                 window.location.href = "streaming_page_wednesday.html";
             });
             subscribedApps.appendChild(imageElement);
@@ -491,12 +502,11 @@
             imageElement.style.height = "6rem";
             imageElement.style.cursor = "pointer";
             imageElement.addEventListener('click', function() {
-                alert('Image clicked: ' + src);
                 window.location.href = "subscriptions_page_final.html";
             });
             unsubscribedApps.appendChild(imageElement);
         }
-
+/*-------------------------------------------------------------------------------------------------------------------- */
         function handleItemClick(item) {
             document.querySelector('.list-type').textContent = item;
         }

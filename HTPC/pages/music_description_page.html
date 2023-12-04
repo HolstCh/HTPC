@@ -171,6 +171,9 @@
                         <span class="duration"></span>
                     </div>
                 </div>
+<!--------------------------------------------------------------------------------------------------------------
+The following code is modified from:
+                /* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */ ------------------->
                 <div class="avg-rating space-x-2 items-center justify-center">
                     <div class="star" id="star1">&#9733;</div>
                     <div class="star" id="star2">&#9733;</div>
@@ -178,6 +181,7 @@
                     <div class="star" id="star4">&#9733;</div>
                     <div class="star" id="star5">&#9733;</div>
                 </div>
+<!---------------------------------------------------------------------------------------------------------------->
                 <p class="totalRatings text-center"></p>
             </div>
         </section>
@@ -266,7 +270,8 @@
             allData[id2].subscribed.forEach(addSubscribedApps)
             allData[id2].unsubscribed.forEach(addUnsubscribedApps)
             renderStars();
-    
+/* The following code is modified from: ------------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
             const stars = document.querySelectorAll('.user-star');
             if (allData[id2].userRating !== "") {
                 handleStars(allData[id2].userRating);
@@ -288,7 +293,7 @@
                     handleStars(allData[id2].userRating);
                 });
             });
-    
+/* --------------------------------------------------------------------------------------------------------- */
             function updateRating(currentRating) {
                 let totalStars = parseInt(allData[id2].totalStars);
                 let totalUserRatings = parseInt(allData[id2].totalUserRatings);
@@ -314,7 +319,8 @@
                 document.querySelector('.totalRatings').textContent = "( " + allData[id2].totalUserRatings + " ratings" + " )";
                 renderStars();
             }
-    
+/* The following code is modified from: ------------------------------------------------------------------------------
+/* OpenAI. (2023). ChatGPT [Large language model]. https://chat.openai.com */
             function handleStars(value) {
                 stars.forEach(star => {
                     if (star.getAttribute('data-value') <= value) {
@@ -324,7 +330,7 @@
                     }
                 });
             }
-    
+/* --------------------------------------------------------------------------------------------------------- */
             function renderStars() {
                 console.log(allData[id2].avgRating);
                 if (allData[id2].avgRating === "1") {
