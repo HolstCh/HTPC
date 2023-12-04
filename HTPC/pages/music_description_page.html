@@ -183,7 +183,7 @@
         </section>
 
         <section class="second-container">
-            <div class="flex justify-center text-lg songs py-3 pl-20 ml-3"></div>
+            <div class="text-left text-lg songs whitespace-nowrap ml-20"></div>
         </section>
         
 
@@ -365,8 +365,16 @@
                 const imageElement = document.createElement('img');
                 imageElement.src = src;
                 imageElement.alt = 'subscribedApp';
-                imageElement.style.width = "6rem";
-                imageElement.style.height = "6rem";
+                if (src === "../images/applemusic.png")
+                {
+                    imageElement.style.width = "5.3em";
+                    imageElement.style.height = "5.3em";
+                }
+                else
+                {
+                    imageElement.style.width = "4.3em";
+                    imageElement.style.height = "4.3em";
+                }
                 imageElement.style.cursor = "pointer";
                 imageElement.addEventListener('click', function () {
                     console.log("spotify", allData[id2].title);
@@ -382,8 +390,16 @@
                 const imageElement = document.createElement('img');
                 imageElement.src = src;
                 imageElement.alt = 'unsubscribedApp';
-                imageElement.style.width = "6rem";
-                imageElement.style.height = "6rem";
+                if (src === "../images/applemusic.png")
+                {
+                    imageElement.style.width = "5.3em";
+                    imageElement.style.height = "5.3em";
+                }
+                else
+                {
+                    imageElement.style.width = "4.3em";
+                    imageElement.style.height = "4.3em";
+                }
                 imageElement.style.cursor = "pointer";
                 imageElement.addEventListener('click', function () {
                     window.location.href = "subscriptions_page_final.html";
