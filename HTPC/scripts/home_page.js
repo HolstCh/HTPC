@@ -242,3 +242,73 @@ document.getElementById('guardians').addEventListener('click', function() {
 document.getElementById('wednesday').addEventListener('click', function() {
     renderContent('Wednesday');
 });
+
+let rowPosition1 = 0;
+const leftArrow1 = document.getElementById('left-arrow1');
+const rightArrow1 = document.getElementById('right-arrow1');
+
+leftArrow1.addEventListener('click', () => {
+    if(rowPosition1!==-75){
+        rowPosition1 -= 15;
+        document.getElementById('spiderman').style.transform = `translateX(${rowPosition1}em)`;
+        document.getElementById('guardians').style.transform = `translateX(${rowPosition1}em)`;
+        document.getElementById('mario').style.transform = `translateX(${rowPosition1}em)`;
+    }
+    console.log("left arrow clicked");
+});
+rightArrow1.addEventListener('click', () => {
+    if(rowPosition1!==75){
+        rowPosition1 += 15;
+        document.getElementById('spiderman').style.transform = `translateX(${rowPosition1}em)`;
+        document.getElementById('guardians').style.transform = `translateX(${rowPosition1}em)`;
+        document.getElementById('mario').style.transform = `translateX(${rowPosition1}em)`;
+    }
+    console.log("right arrow clicked");
+});
+
+let rowPosition2 = 0;
+const leftArrow2 = document.getElementById('left-arrow2');
+const rightArrow2 = document.getElementById('right-arrow2');
+
+leftArrow2.addEventListener('click', () => {
+    if(rowPosition2!==-75){
+        rowPosition2 -= 15;
+        document.getElementById('wednesday').style.transform = `translateX(${rowPosition2}em)`;
+        document.getElementById('avatar').style.transform = `translateX(${rowPosition2}em)`;
+        document.getElementById('mermaid').style.transform = `translateX(${rowPosition2}em)`;
+    }
+    console.log("left arrow 2 clicked");
+});
+rightArrow2.addEventListener('click', () => {
+    if(rowPosition2!==75){
+        rowPosition2 += 15;
+        document.getElementById('wednesday').style.transform = `translateX(${rowPosition2}em)`;
+        document.getElementById('avatar').style.transform = `translateX(${rowPosition2}em)`;
+        document.getElementById('mermaid').style.transform = `translateX(${rowPosition2}em)`;
+    }
+    console.log("right arrow 2 clicked");
+});
+
+let rowPosition3 = 0;
+const leftArrow3 = document.getElementById('left-arrow3');
+const rightArrow3 = document.getElementById('right-arrow3');
+
+leftArrow3.addEventListener('click', () => {
+    if(rowPosition3!==-75){
+        rowPosition3 -= 15;
+        document.getElementById('dinosaur').style.transform = `translateX(${rowPosition3}em)`;
+        document.getElementById('sourcing').style.transform = `translateX(${rowPosition3}em)`;
+        document.getElementById('antman').style.transform = `translateX(${rowPosition3}em)`;
+    }
+    console.log("left arrow 3 clicked");
+});
+rightArrow3.addEventListener('click', () => {
+    if(rowPosition3!==75){
+        rowPosition3 += 15;
+        document.getElementById('dinosaur').style.transform = `translateX(${rowPosition3}em)`;
+        document.getElementById('sourcing').style.transform = `translateX(${rowPosition3}em)`;
+        document.getElementById('antman').style.transform = `translateX(${rowPosition3}em)`;
+    }
+    console.log("right arrow 3 clicked");
+});
+
