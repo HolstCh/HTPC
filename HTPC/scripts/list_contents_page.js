@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function()
                 window.location.href = "streaming_page_pewdiepie.html";
             });
         }
-        else if(item.title === "Lofi Girl Offical Stream")
+        else if(item.title === "Lofi Girl Official Stream")
         {
             subscribedAppsContainer.classList.add('px-20', 'py-10','ml-20');
             subscribedAppsContainer.innerHTML = `<p class="px-3">Available On:</p>`;

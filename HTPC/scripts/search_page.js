@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function()
         const mediaType = document.getElementById('mediaType').value;
         let paragraphElement = document.getElementById("errorMessage");
         paragraphElement.textContent = '';
-        if(mediaType == '') {
+        if(mediaType === '') {
             paragraphElement.style.color = 'red';
             paragraphElement.textContent = 'Select a media type or type content title';
         }
@@ -184,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function()
                 window.location.href = "streaming_page_pewdiepie.html";
             });
         }
-        else if(allData[i].title === "Lofi Girl Offical Stream")
+        else if(allData[i].title === "Lofi Girl Official Stream")
         {
             subscribedAppsContainer.classList.add('px-20', 'py-10','ml-20');
             subscribedAppsContainer.innerHTML = `<p class="px-3">Available On:</p>`;
