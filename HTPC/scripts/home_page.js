@@ -85,7 +85,7 @@ let allData = [
     },
     {
         media:"Video",
-        title: "Lofi Girl Offical Stream",
+        title: "Lofi Girl Official Stream",
         description: "Lofi Girl is a French channel and music label established in 2017. It provides livestreams of lo-fi hip hop music 24/7, accompanied by a Japanese-style animation of a girl studying or relaxing.",
         channel: "Lofi Girl",
         subscriberCount:"2",
