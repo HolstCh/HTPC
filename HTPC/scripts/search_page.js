@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function()
 
         if (mediaType === 'Movie')
         {
-            const movieGenres = ['Comedy', 'Animation', 'Action', 'Sci-Fi'];
+            const movieGenres = ['Comedy', 'Animation', 'Western', 'Sci-Fi'];
             movieGenres.forEach(genre => {
                 const option = document.createElement('option');
                 option.textContent = genre;
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function()
         }
         else if (mediaType === 'TV')
         {
-            const tvShowGenres = ['Mystery', 'Drama', 'Thriller', 'Fantasy'];
+            const tvShowGenres = ['Mystery', 'Drama', 'Reality', 'Fantasy'];
             tvShowGenres.forEach(genre => {
                 const option = document.createElement('option');
                 option.textContent = genre;
