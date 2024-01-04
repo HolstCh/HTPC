@@ -9,7 +9,7 @@ By default, the user will be navigated to the homepage (the Movies & TV page). B
 
 From here, the user can navigate to any of the other tabs (Music or Videos) by clicking on their respective tabs.
 
-In the top right corner, the user can see the search and profile icon. Clicking on the search icon takes the user to a search page where the user can look up items (See ##Searching). Hovering over the profile icon triggers a dropdown list with options for the user’s account like Lists, Ratings, Subscriptions, Account Settings, and Logout. 
+In the top right corner, the user can see the search and profile icon. Clicking on the search icon takes the user to a search page where the user can look up items (See Searching). Hovering over the profile icon triggers a dropdown list with options for the user’s account like Lists, Ratings, Subscriptions, Account Settings, and Logout. 
 
 In the main part of the home page (the Movies & TV page), we have sections where movies are allotted by differing criteria. The first section will always be a recommended section where its contents are targeted towards the individual user. The following sections are determined by other criteria like trending or highly rated.
 
@@ -57,7 +57,7 @@ To assign a rating to the content, the user should select the number of stars th
 The user can also view and delete ratings they have made on the My Ratings page. This page is accessible by hovering the cursor over the profile icon and selecting My Ratings in the dropdown list that appears.
 
 ## Playing Content
-To play a movie, the user selects the poster that correlates with the movie the user wishes to stream, opening its description page. On the description page, select the icon of the service the user is subscribed to begin streaming (See ## Subscriptions if no subscribed service is available). The user can similarly play a TV show with an additional dropdown located below the Watch list labeled Episode List. The Episode List allows the user to select which episode the user wishes to watch.
+To play a movie, the user selects the poster that correlates with the movie the user wishes to stream, opening its description page. On the description page, select the icon of the service the user is subscribed to begin streaming (See Subscriptions if no subscribed service is available). The user can similarly play a TV show with an additional dropdown located below the Watch list labeled Episode List. The Episode List allows the user to select which episode the user wishes to watch.
 
 Similarly, clicking on an album cover for any music will take the user to a description page where the user can see information about the music the user selected. Similar to the movies, the user can play the music by clicking the icon for any of the services the user is subscribed to. 
 
