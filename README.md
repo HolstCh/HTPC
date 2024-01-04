@@ -57,7 +57,7 @@ To assign a rating to the content, the user should select the number of stars th
 The user can also view and delete ratings they have made on the My Ratings page. This page is accessible by hovering the cursor over the profile icon and selecting My Ratings in the dropdown list that appears.
 
 ## Playing Content
-To play a movie, the user selects the poster that correlates with the movie the user wishes to stream, opening its description page. On the description page, select the icon of the service the user is subscribed to begin streaming (See Subscriptions if no subscribed service is available). The user can similarly play a TV show with an additional dropdown located below the Watch list labeled Episode List. The Episode List allows the user to select which episode the user wishes to watch.
+To play a movie, the user selects the poster that correlates with the movie the user wishes to stream, opening its description page. On the description page, select the icon of the service the user is subscribed to begin streaming (See ## Subscriptions if no subscribed service is available). The user can similarly play a TV show with an additional dropdown located below the Watch list labeled Episode List. The Episode List allows the user to select which episode the user wishes to watch.
 
 Similarly, clicking on an album cover for any music will take the user to a description page where the user can see information about the music the user selected. Similar to the movies, the user can play the music by clicking the icon for any of the services the user is subscribed to. 
 
